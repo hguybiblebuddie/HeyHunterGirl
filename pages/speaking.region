@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speaking — HeyHunterGirl</title>
+  <meta name="description" content="Book Hunter to speak at your conference, church, campus, or corporate event. Topics cover identity, purpose, and the user experience of being who God designed you to be.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  {squarespace-headers}
+  <style>
+    .page-hero {
+      background: var(--deep);
+      padding: calc(var(--nav-h) + 4rem) 0 4rem;
+      text-align: center;
+    }
+    .page-hero .section-eyebrow { color: var(--gold); }
+    .page-hero h1 { color: var(--white); margin-bottom: 1rem; font-size: clamp(2.5rem,5vw,4rem); }
+    .page-hero p { color: rgba(250,246,240,0.75); font-size: 1.1rem; max-width: 560px; margin: 0 auto; }
+
+    .speaking-page-topics { background: var(--cream-dark); }
+
+    .topic-detail-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--gold);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .topic-detail-num {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--cream-dark);
+      line-height: 1;
+    }
+    .topic-detail-content h3 { color: var(--deep); margin-bottom: 0.6rem; }
+    .topic-detail-content p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; }
+    .topic-detail-content .tag {
+      display: inline-block;
+      background: rgba(201,152,58,0.12);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+      margin-top: 1rem;
+    }
+
+    .speaking-formats { background: var(--cream); }
+    .formats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .format-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: var(--white);
+      border-radius: 8px;
+      border-top: 3px solid var(--deep);
+    }
+    .format-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .format-card h3 { color: var(--deep); font-size: 1.1rem; margin-bottom: 0.6rem; }
+    .format-card p { font-size: 0.88rem; color: var(--text-mid); }
+
+    .speaking-inquiry-section { background: var(--deep); }
+    .speaking-inquiry-section .section-title { color: var(--white); }
+    .speaking-inquiry-section .section-eyebrow { color: var(--gold); }
+    .speaking-inquiry-section .section-subtitle { color: rgba(250,246,240,0.65); }
+
+    .inquiry-form-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .inquiry-form-wrap .form-card {
+      border-top-color: var(--gold);
+    }
+
+    .what-to-expect { background: var(--cream-dark); }
+    .expect-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .expect-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .expect-check {
+      width: 28px;
+      height: 28px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-size: 0.75rem;
+      color: var(--deep);
+      font-weight: 700;
+    }
+    .expect-item h4 { font-size: 1rem; color: var(--deep); margin-bottom: 0.25rem; }
+    .expect-item p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .formats-grid { grid-template-columns: 1fr; }
+      .expect-list { grid-template-columns: 1fr; }
+      .topic-detail-card { grid-template-columns: 1fr; gap: 1rem; }
+      .topic-detail-num { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav-container">
+      <a href="/" class="nav-logo">
+        <span class="logo-hey">Hey</span><span class="logo-hunter">Hunter</span><span class="logo-girl">Girl</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="/#about">About</a>
+        <a href="/speaking">Speaking</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#accomplishments">Work</a>
+        <a href="/#testimonials">Reviews</a>
+        <a href="/apply" class="nav-cta btn btn-outline">Work With Me</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-eyebrow">On Every Stage</p>
+      <h1>Let's Build Something<br>in That Room</h1>
+      <p>I bring truth, energy, and transformation to keynotes, panels, conferences, churches, and campuses.</p>
+    </div>
+  </section>
+
+  <!-- SPEAKING TOPICS DETAIL -->
+  <section class="speaking-page-topics section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Signature Topics</p>
+        <h2 class="section-title">What I Speak On</h2>
+        <p class="section-subtitle">Each topic is designed to do more than inform — it's designed to transform how people see themselves and show up.</p>
+      </div>
+
+      <div class="topic-detail-card">
+        <div class="topic-detail-num">01</div>
+        <div class="topic-detail-content">
+          <h3>The User Experience of You</h3>
+          <p>Just like great design makes a product intuitive and delightful, God made you with an intentional design. This talk explores the intersection of personality, purpose, and calling — and what it looks like to stop fighting who you are and start deploying it. Audiences leave with a new language for self-understanding and a permission slip to be fully themselves.</p>
+          <span class="tag">Identity · Personality · Purpose</span>
+        </div>
+      </div>
+
+      <div class="topic-detail-card">
+        <div class="topic-detail-num">02</div>
+        <div class="topic-detail-content">
+          <h3>Built to Build</h3>
+          <p>What does it mean to be a builder? This isn't about construction — it's about the divine impulse to create, contribute, and bring order to chaos. For anyone who has ever been told they're too much, too ambitious, or too driven: this talk reframes those traits as a calling, not a liability. Your builder instinct is by design.</p>
+          <span class="tag">Leadership · Calling · Entrepreneurship</span>
+        </div>
+      </div>
+
+      <div class="topic-detail-card">
+        <div class="topic-detail-num">03</div>
+        <div class="topic-detail-content">
+          <h3>Glorify by Being</h3>
+          <p>What if one of the most powerful things you can do for God is simply become who He made you? This talk dismantles the idea that we glorify God by shrinking, conforming, or disappearing — and replaces it with a theology of full expression. When you operate as your true design, you become a witness in the room before you say a word.</p>
+          <span class="tag">Faith · Worship · Identity</span>
+        </div>
+      </div>
+
+      <div class="topic-detail-card">
+        <div class="topic-detail-num">04</div>
+        <div class="topic-detail-content">
+          <h3>Custom for Your Context</h3>
+          <p>I develop content specific to your audience, theme, and organizational culture. Whether it's a leadership summit, women's conference, campus event, or corporate workshop — we'll build something that lands with precision for your room. Reach out and let's talk about what your people need most right now.</p>
+          <span class="tag">Custom · Tailored · Collaborative</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="what-to-expect section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">The Experience</p>
+        <h2 class="section-title">What You Can Expect</h2>
+      </div>
+      <div class="expect-list">
+        <div class="expect-item">
+          <div class="expect-check">✓</div>
+          <div>
+            <h4>Pre-Event Consultation</h4>
+            <p>We connect before the event to align on your audience, goals, and context so the content lands exactly where it needs to.</p>
+          </div>
+        </div>
+        <div class="expect-item">
+          <div class="expect-check">✓</div>
+          <div>
+            <h4>Fully Prepared & On Time</h4>
+            <p>No chasing. No last-minute surprises. I show up prepared, professional, and ready to serve your room well.</p>
+          </div>
+        </div>
+        <div class="expect-item">
+          <div class="expect-check">✓</div>
+          <div>
+            <h4>High-Energy, Heart-First Delivery</h4>
+            <p>I don't just recite information — I build an experience. Your audience will feel it as much as they hear it.</p>
+          </div>
+        </div>
+        <div class="expect-item">
+          <div class="expect-check">✓</div>
+          <div>
+            <h4>Post-Event Follow-Through</h4>
+            <p>Resources for your attendees, social content, and a debrief to make sure the impact extends beyond the room.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAT OPTIONS -->
+  <section class="speaking-formats section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Formats</p>
+        <h2 class="section-title">Available For</h2>
+      </div>
+      <div class="formats-grid">
+        <div class="format-card">
+          <div class="format-icon">🎤</div>
+          <h3>Keynote</h3>
+          <p>45–60 minute signature talk for your conference, retreat, or event main stage.</p>
+        </div>
+        <div class="format-card">
+          <div class="format-icon">🏛️</div>
+          <h3>Panel & Fireside</h3>
+          <p>Dynamic conversation format — moderated discussions, Q&amp;A sessions, and panels.</p>
+        </div>
+        <div class="format-card">
+          <div class="format-icon">⚒️</div>
+          <h3>Workshop</h3>
+          <p>Interactive half-day or full-day deep-dive for teams, leadership cohorts, or campus groups.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKING INQUIRY FORM -->
+  <section class="speaking-inquiry-section section" id="inquiry">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <p class="section-eyebrow">Let's Connect</p>
+        <h2 class="section-title">Submit a Speaking Inquiry</h2>
+        <p class="section-subtitle">Tell me about your event and I'll respond within 3–5 business days.</p>
+      </div>
+      <div class="inquiry-form-wrap">
+        <div class="form-card">
+          <h3>Speaking Request</h3>
+          <!-- ↓ Replace with a Squarespace Form Block in the editor ↓ -->
+          <p style="font-size:0.85rem;color:var(--text-light);background:var(--cream-dark);padding:1rem;border-radius:4px;line-height:1.7;">
+            <strong>Editor Note:</strong> Add a Squarespace Form Block here with the following fields:<br><br>
+            • First Name / Last Name<br>
+            • Email Address<br>
+            • Organization / Church / Campus Name<br>
+            • Event Name<br>
+            • Estimated Event Date<br>
+            • Event Type (Conference / Church / Campus / Corporate / Other)<br>
+            • Estimated Audience Size<br>
+            • Speaking Topic Interest<br>
+            • Budget Range (dropdown)<br>
+            • Tell me about your event and what you're hoping to accomplish<br><br>
+            Set form notifications to forward to your email.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">HeyHunterGirl</a>
+          <p>Speaker. Podcast Host. Builder.</p>
+          <p class="footer-tagline">Glorifying God by becoming<br>who He made me to be.</p>
+        </div>
+        <div class="footer-nav">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/speaking">Speaking</a></li>
+            <li><a href="/podcast">Podcast</a></li>
+            <li><a href="/apply">Work With Me</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <div class="footer-social-links">
+            <a href="https://instagram.com/heyhuntergirl" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://linkedin.com/in/heyhuntergirl" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://youtube.com/@heyhuntergirl" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://tiktok.com/@heyhuntergirl" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="/podcast">Podcast</a>
+          </div>
+        </div>
+        <div class="footer-cta">
+          <h4>Ready to Build?</h4>
+          <p>Have a stage that needs a builder? Let's talk.</p>
+          <a href="#inquiry" class="btn btn-primary btn-sm">Submit Inquiry</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 HeyHunterGirl. All rights reserved.</p>
+        <p>heyhuntergirl.com</p>
+      </div>
+    </div>
+  </footer>
+
+  {squarespace-footers}
+</body>
+</html>

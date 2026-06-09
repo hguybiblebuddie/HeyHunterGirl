@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The User Experience of You — Podcast by HeyHunterGirl</title>
+  <meta name="description" content="The User Experience of You — a podcast with Hunter about being the person God designed you to be. Holistically, authentically, unapologetically. Coming Summer 2025.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  {squarespace-headers}
+  <style>
+    .podcast-page-hero {
+      background: var(--deep);
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .podcast-page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 60% 50%, rgba(201,152,58,0.14) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 50% at 0% 100%, rgba(201,98,58,0.08) 0%, transparent 50%);
+    }
+    .podcast-hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 5rem;
+      align-items: center;
+      padding: calc(var(--nav-h) + 3rem) 0 4rem;
+    }
+    .podcast-hero-cover {
+      width: 320px;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--deep-mid) 0%, #3D3A6E 50%, #2A2848 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(201,152,58,0.3);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2.5rem;
+      flex-shrink: 0;
+    }
+    .podcast-hero-cover .cover-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .podcast-hero-cover h2 {
+      font-size: 1.5rem;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+    .podcast-hero-cover .cover-host {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+    }
+    .cover-wave {
+      display: flex;
+      gap: 4px;
+      align-items: flex-end;
+      height: 40px;
+      margin: 1.5rem 0;
+    }
+    .cover-wave span {
+      display: block;
+      width: 4px;
+      border-radius: 2px;
+      background: var(--gold);
+      opacity: 0.7;
+    }
+    .cover-wave span:nth-child(1) { height: 20px; }
+    .cover-wave span:nth-child(2) { height: 32px; }
+    .cover-wave span:nth-child(3) { height: 40px; }
+    .cover-wave span:nth-child(4) { height: 28px; }
+    .cover-wave span:nth-child(5) { height: 36px; }
+    .cover-wave span:nth-child(6) { height: 18px; }
+    .cover-wave span:nth-child(7) { height: 30px; }
+
+    .podcast-hero-text .section-eyebrow { color: var(--gold); }
+    .podcast-hero-text h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+    .podcast-hero-text .hero-tagline {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.3rem;
+      color: rgba(250,246,240,0.8);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .podcast-hero-text p {
+      color: rgba(250,246,240,0.7);
+      max-width: 540px;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: rgba(201,152,58,0.15);
+      border: 1px solid rgba(201,152,58,0.4);
+      border-radius: 100px;
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .notify-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 440px;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .notify-form input[type="email"] {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.8rem 1rem;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.2);
+      border-radius: 4px;
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .notify-form input[type="email"]::placeholder { color: rgba(255,255,255,0.35); }
+    .notify-form input[type="email"]:focus { border-color: var(--gold); }
+    .platform-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* What the show is about */
+    .show-about { background: var(--cream); }
+    .show-about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .show-about-text p { color: var(--text-mid); margin-bottom: 1rem; line-height: 1.75; }
+    .show-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .show-pillar {
+      padding: 1.5rem;
+      background: var(--white);
+      border-radius: 6px;
+      border-left: 3px solid var(--gold);
+    }
+    .show-pillar h4 { color: var(--deep); font-size: 1rem; margin-bottom: 0.35rem; }
+    .show-pillar p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.6; margin: 0; }
+
+    /* Topics we'll cover */
+    .episode-topics { background: var(--deep); }
+    .episode-topics .section-title { color: var(--white); }
+    .episode-topics .section-eyebrow { color: var(--gold); }
+    .topics-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .ep-topic {
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+    }
+    .ep-topic-icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
+    .ep-topic h4 { color: var(--white); font-size: 0.95rem; margin-bottom: 0.35rem; }
+    .ep-topic p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+    /* CTA strip */
+    .podcast-cta-strip {
+      background: var(--gold);
+      padding: 3rem 0;
+      text-align: center;
+    }
+    .podcast-cta-strip h2 {
+      color: var(--deep);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 0.75rem;
+    }
+    .podcast-cta-strip p { color: rgba(28,27,58,0.7); margin-bottom: 1.5rem; font-size: 1rem; }
+    .podcast-cta-strip .btn-secondary { background: var(--deep); color: var(--white); }
+
+    @media (max-width: 900px) {
+      .podcast-hero-inner { grid-template-columns: 1fr; }
+      .podcast-hero-cover { width: 240px; margin: 0 auto; }
+      .show-about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .topics-list { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .topics-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav-container">
+      <a href="/" class="nav-logo">
+        <span class="logo-hey">Hey</span><span class="logo-hunter">Hunter</span><span class="logo-girl">Girl</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="/#about">About</a>
+        <a href="/speaking">Speaking</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#accomplishments">Work</a>
+        <a href="/#testimonials">Reviews</a>
+        <a href="/apply" class="nav-cta btn btn-outline">Work With Me</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PODCAST HERO -->
+  <section class="podcast-page-hero">
+    <div class="container">
+      <div class="podcast-hero-inner">
+        <div class="podcast-hero-cover">
+          <p class="cover-label">The Podcast</p>
+          <h2>The User Experience<br>of You</h2>
+          <div class="cover-wave">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <p class="cover-host">with Hunter</p>
+        </div>
+        <div class="podcast-hero-text">
+          <p class="section-eyebrow">New Podcast</p>
+          <div class="coming-soon-badge">
+            <span>●</span> Coming Summer 2025
+          </div>
+          <h1>The User Experience<br>of You</h1>
+          <p class="hero-tagline">"What if your personality isn't a problem to manage — it's a power to deploy?"</p>
+          <p>This podcast is about being the person God designed you to be — holistically, authentically, unapologetically. We're going to talk personality, purpose, faith, and what happens when you stop trying to fit the mold and start becoming the fullest version of yourself.</p>
+          <p>Because when you operate as who He made you, you don't just live better — you glorify Him more fully.</p>
+          <!-- Notify form — connect to Squarespace Form Block or Mailchimp embed -->
+          <form class="notify-form" action="#" method="post">
+            <input type="email" name="email" placeholder="Enter your email to be notified" required>
+            <button type="submit" class="btn btn-primary">Notify Me</button>
+          </form>
+          <div class="platform-row">
+            Coming to
+            <span class="platform-badge">Apple Podcasts</span>
+            <span class="platform-badge">Spotify</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT THE SHOW -->
+  <section class="show-about section">
+    <div class="container">
+      <div class="show-about-grid">
+        <div class="show-about-text">
+          <p class="section-eyebrow">About the Show</p>
+          <h2 class="section-title">You Were Designed, Not Defaulted</h2>
+          <p class="body-large">Most people spend their whole lives trying to become someone — when the work was always to become themselves.</p>
+          <p>The User Experience of You is a podcast for people who are done shrinking, done conforming, and done apologizing for how they're wired. We're going to dig into the why behind how you think, how you love, how you lead, and how you exist in the world.</p>
+          <p>This is a show about self-knowledge in service of God-glorification. When you understand your design, you stop fighting it — and start functioning in it. That's the user experience God intended.</p>
+        </div>
+        <div class="show-pillars">
+          <div class="show-pillar">
+            <h4>Personality as Calling</h4>
+            <p>Your traits aren't accidents — they're architecture. We'll unpack what yours are designed to do.</p>
+          </div>
+          <div class="show-pillar">
+            <h4>Purpose in the Everyday</h4>
+            <p>You don't need a platform to live your purpose. We're talking about Monday mornings, not highlight reels.</p>
+          </div>
+          <div class="show-pillar">
+            <h4>Faith-Integrated Identity</h4>
+            <p>What does it mean to be made in the image of God — and to actually live from that truth?</p>
+          </div>
+          <div class="show-pillar">
+            <h4>Real Conversations</h4>
+            <p>Guests who've wrestled with their own design and come out knowing who they are and why it matters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS WE'LL COVER -->
+  <section class="episode-topics section">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <p class="section-eyebrow">What We'll Explore</p>
+        <h2 class="section-title">Topics on the Table</h2>
+      </div>
+      <div class="topics-list">
+        <div class="ep-topic">
+          <div class="ep-topic-icon">🧠</div>
+          <h4>Personality &amp; Design</h4>
+          <p>Enneagram, Myers-Briggs, love languages, and what all of it actually means for how you move through life.</p>
+        </div>
+        <div class="ep-topic">
+          <div class="ep-topic-icon">🙏</div>
+          <h4>Faith &amp; Identity</h4>
+          <p>Being made in the image of God — not as theology, but as lived reality.</p>
+        </div>
+        <div class="ep-topic">
+          <div class="ep-topic-icon">🏗️</div>
+          <h4>The Builder Mindset</h4>
+          <p>What it means to be someone who creates, constructs, and contributes to the world around them.</p>
+        </div>
+        <div class="ep-topic">
+          <div class="ep-topic-icon">🔥</div>
+          <h4>Calling &amp; Courage</h4>
+          <p>Showing up as yourself when the room expects someone else entirely.</p>
+        </div>
+        <div class="ep-topic">
+          <div class="ep-topic-icon">💬</div>
+          <h4>Relationships &amp; Community</h4>
+          <p>How knowing yourself changes how you relate to everyone else.</p>
+        </div>
+        <div class="ep-topic">
+          <div class="ep-topic-icon">📈</div>
+          <h4>Growth Without Losing Yourself</h4>
+          <p>Becoming better without becoming someone else — and the difference between growth and performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="podcast-cta-strip">
+    <div class="container">
+      <h2>Don't Miss the Launch</h2>
+      <p>Be the first to know when The User Experience of You drops.</p>
+      <a href="/#apply" class="btn btn-secondary">Get Notified</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">HeyHunterGirl</a>
+          <p>Speaker. Podcast Host. Builder.</p>
+          <p class="footer-tagline">Glorifying God by becoming<br>who He made me to be.</p>
+        </div>
+        <div class="footer-nav">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/speaking">Speaking</a></li>
+            <li><a href="/podcast">Podcast</a></li>
+            <li><a href="/apply">Work With Me</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <div class="footer-social-links">
+            <a href="https://instagram.com/heyhuntergirl" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://linkedin.com/in/heyhuntergirl" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://youtube.com/@heyhuntergirl" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://tiktok.com/@heyhuntergirl" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="/podcast">Podcast</a>
+          </div>
+        </div>
+        <div class="footer-cta">
+          <h4>Ready to Build?</h4>
+          <p>Have a stage that needs a builder? Let's talk.</p>
+          <a href="/speaking" class="btn btn-primary btn-sm">Book Me to Speak</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 HeyHunterGirl. All rights reserved.</p>
+        <p>heyhuntergirl.com</p>
+      </div>
+    </div>
+  </footer>
+
+  {squarespace-footers}
+</body>
+</html>

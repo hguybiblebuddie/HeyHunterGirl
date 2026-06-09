@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" class="homepage">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HeyHunterGirl — Speaker, Podcast Host &amp; Builder</title>
+  <meta name="description" content="Hunter is a speaker, podcast host, and builder helping people discover who God designed them to be. Book her to speak, listen to The User Experience of You podcast.">
+  <meta property="og:title" content="HeyHunterGirl — Speaker &amp; Builder">
+  <meta property="og:description" content="Speaker. Podcast Host. Builder. Glorifying God by becoming who He made me to be.">
+  <meta property="og:url" content="https://heyhuntergirl.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  {squarespace-headers}
+</head>
+<body id="homepage">
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════════ -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-container">
+      <a href="/" class="nav-logo">
+        <span class="logo-hey">Hey</span><span class="logo-hunter">Hunter</span><span class="logo-girl">Girl</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="/#about">About</a>
+        <a href="/speaking">Speaking</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#accomplishments">Work</a>
+        <a href="/#testimonials">Reviews</a>
+        <a href="/apply" class="nav-cta btn btn-outline">Work With Me</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Speaker · Podcast Host · Builder</p>
+      <h1 class="hero-name">Hey, I'm <span class="accent">Hunter.</span></h1>
+      <p class="hero-tagline">I build things — people, spaces, and possibilities — the way God designed.</p>
+      <div class="hero-actions">
+        <a href="/speaking" class="btn btn-primary">Book Me to Speak</a>
+        <a href="/podcast" class="btn btn-ghost">The User Experience of You →</a>
+      </div>
+      <div class="hero-social">
+        <!-- Instagram -->
+        <a href="https://instagram.com/heyhuntergirl" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/heyhuntergirl" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <!-- YouTube -->
+        <a href="https://youtube.com/@heyhuntergirl" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <!-- TikTok -->
+        <a href="https://tiktok.com/@heyhuntergirl" class="social-icon" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       BUILDER IDENTITY
+  ═══════════════════════════════════════════════ -->
+  <section class="builder-section section" id="about">
+    <div class="container">
+      <div class="builder-grid">
+        <div class="builder-text">
+          <p class="section-eyebrow">Who I Am</p>
+          <h2 class="section-title">A Builder at Heart</h2>
+          <p class="body-large">I don't just speak — I build. I build stages for others to stand on. I build frameworks that help people see themselves more clearly. I build spaces where purpose meets action.</p>
+          <p>At the core of everything I do is a conviction that each person is a divine design. My work is about helping you find and live from that design — not shrinking yourself to fit someone else's mold, but expanding into who God always made you to be.</p>
+          <a href="/about" class="btn btn-secondary" style="margin-top:1.25rem">My Full Story</a>
+        </div>
+        <div class="builder-pillars">
+          <div class="pillar-card">
+            <div class="pillar-icon">🎤</div>
+            <h3>Speaker</h3>
+            <p>Keynotes, panels, conferences — I bring energy, truth, and transformation to every stage.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🎙️</div>
+            <h3>Podcast Host</h3>
+            <p>The User Experience of You — exploring how to live as the fullest version of who God made you.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🏗️</div>
+            <h3>Builder</h3>
+            <p>Creating programs, communities, and frameworks that give people the tools to build their best life.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       PODCAST
+  ═══════════════════════════════════════════════ -->
+  <section class="podcast-section section" id="podcast">
+    <div class="container">
+      <div class="podcast-grid">
+        <div class="podcast-art">
+          <div class="podcast-cover">
+            <div class="podcast-cover-inner">
+              <p class="podcast-label">Coming Summer 2025</p>
+              <h3>The User Experience of You</h3>
+              <p class="podcast-subtitle">with Hunter</p>
+            </div>
+          </div>
+        </div>
+        <div class="podcast-text">
+          <p class="section-eyebrow">New Podcast</p>
+          <h2 class="section-title">The User Experience<br>of You</h2>
+          <p class="body-large">What if your personality isn't a problem to manage — it's a power to deploy?</p>
+          <p>This podcast is about being the person God designed you to be — holistically, authentically, unapologetically. We explore personality, purpose, faith, and what happens when you stop trying to fit the mold and start becoming the fullest version of yourself.</p>
+          <p>Because when you operate as who He made you, you don't just live better — you glorify Him more fully.</p>
+          <div class="podcast-cta-group">
+            <a href="/podcast" class="btn btn-primary">Learn More &amp; Get Notified</a>
+            <div class="podcast-platforms">
+              <span>Coming to</span>
+              <span class="platform-badge">Apple Podcasts</span>
+              <span class="platform-badge">Spotify</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SPEAKING TOPICS
+  ═══════════════════════════════════════════════ -->
+  <section class="speaking-section section" id="speaking-topics">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Speaking</p>
+        <h2 class="section-title">Topics That Move Rooms</h2>
+        <p class="section-subtitle">I speak to organizations, conferences, churches, and campuses on the intersection of identity, purpose, and performance.</p>
+      </div>
+      <div class="topics-grid">
+        <div class="topic-card">
+          <div class="topic-number">01</div>
+          <h3>The User Experience of You</h3>
+          <p>Understanding how you are uniquely designed — and how that design is a gift, not a liability.</p>
+        </div>
+        <div class="topic-card">
+          <div class="topic-number">02</div>
+          <h3>Built to Build</h3>
+          <p>Discovering your builder identity and the calling to create, contribute, and construct what doesn't yet exist.</p>
+        </div>
+        <div class="topic-card">
+          <div class="topic-number">03</div>
+          <h3>Glorify by Being</h3>
+          <p>How simply being who God made you to be is one of the most powerful acts of worship and witness.</p>
+        </div>
+        <div class="topic-card">
+          <div class="topic-number">04</div>
+          <h3>Custom for Your Audience</h3>
+          <p>I develop content specific to your audience and organizational need. Let's build something together.</p>
+        </div>
+      </div>
+      <div class="speaking-cta">
+        <a href="/speaking" class="btn btn-primary btn-large">Inquire About Speaking</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       ACCOMPLISHMENTS
+       (Edit this section in Squarespace using
+        Code Blocks / Text Blocks / Image Blocks)
+  ═══════════════════════════════════════════════ -->
+  <section class="accomplishments-section section" id="accomplishments">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Credibility</p>
+        <h2 class="section-title">Stages, Accolades &amp; Engagements</h2>
+        <p class="section-subtitle">A track record of showing up — on stages, in rooms, and in the lives of people ready to build.</p>
+      </div>
+      <div class="accomplishments-content">
+        {content}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       TESTIMONIALS
+  ═══════════════════════════════════════════════ -->
+  <section class="testimonials-section section" id="testimonials">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <p class="section-eyebrow">From the People</p>
+        <h2 class="section-title">What They're Saying</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.6)">Real words from people who've experienced the room after Hunter speaks.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Hunter doesn't just deliver a talk — she builds an experience. Our entire team walked away with a new framework for understanding themselves.</p>
+          <div class="testimonial-author">
+            <span class="author-name">— Add Name Here</span>
+            <span class="author-title">Event Organizer / Organization</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">She has a rare gift: making a room full of strangers feel like they've known themselves — and each other — for years.</p>
+          <div class="testimonial-author">
+            <span class="author-name">— Add Name Here</span>
+            <span class="author-title">Conference Attendee</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Booking Hunter was one of the best decisions we made for our conference. She showed up prepared, passionate, and deeply present.</p>
+          <div class="testimonial-author">
+            <span class="author-name">— Add Name Here</span>
+            <span class="author-title">Ministry Leader</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       APPLY / WORK WITH ME
+  ═══════════════════════════════════════════════ -->
+  <section class="apply-section section" id="apply">
+    <div class="container">
+      <div class="apply-grid">
+        <div class="apply-text">
+          <p class="section-eyebrow">Collaboration</p>
+          <h2 class="section-title">Apply to Work With Me</h2>
+          <p class="body-large">I'm intentional about who I partner with. If you feel led to work with me — for speaking, content, or something else entirely — I want to hear about it.</p>
+          <p>Fill out the inquiry and tell me what you're building. If it's a fit, we'll connect.</p>
+          <ul class="apply-list">
+            <li>✓ Speaking engagements &amp; keynotes</li>
+            <li>✓ Podcast collaborations</li>
+            <li>✓ Brand partnerships</li>
+            <li>✓ Church &amp; ministry events</li>
+            <li>✓ Campus &amp; organizational workshops</li>
+          </ul>
+          <a href="/apply" class="btn btn-secondary" style="margin-top:2rem">See Full Application</a>
+        </div>
+        <div class="apply-form-container">
+          <div class="form-card">
+            <h3>Speaking Inquiry</h3>
+            <!-- Replace this placeholder with a Squarespace Form Block in the CMS -->
+            <p style="font-size:0.85rem;color:var(--text-light);background:var(--cream-dark);padding:1rem;border-radius:4px;line-height:1.6;">
+              <strong>CMS Note:</strong> In Squarespace, add a Form Block here with fields for:<br>
+              Name · Email · Organization · Event Date · Event Type · Budget Range · Message
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">HeyHunterGirl</a>
+          <p>Speaker. Podcast Host. Builder.</p>
+          <p class="footer-tagline">Glorifying God by becoming<br>who He made me to be.</p>
+        </div>
+        <div class="footer-nav">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/speaking">Speaking</a></li>
+            <li><a href="/podcast">Podcast</a></li>
+            <li><a href="/apply">Work With Me</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <div class="footer-social-links">
+            <a href="https://instagram.com/heyhuntergirl" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://linkedin.com/in/heyhuntergirl" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://youtube.com/@heyhuntergirl" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://tiktok.com/@heyhuntergirl" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="/podcast" rel="noopener">Podcast</a>
+          </div>
+        </div>
+        <div class="footer-cta">
+          <h4>Ready to Build?</h4>
+          <p>Have a stage that needs a builder? Let's talk.</p>
+          <a href="/speaking" class="btn btn-primary btn-sm">Book Me to Speak</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 HeyHunterGirl. All rights reserved.</p>
+        <p>heyhuntergirl.com</p>
+      </div>
+    </div>
+  </footer>
+
+  {squarespace-footers}
+</body>
+</html>

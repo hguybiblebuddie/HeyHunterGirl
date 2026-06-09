@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{squarespace.page-title} — HeyHunterGirl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  {squarespace-headers}
+  <style>
+    .interior-hero {
+      background: var(--deep);
+      padding: calc(var(--nav-h) + 3.5rem) 0 3rem;
+      text-align: center;
+    }
+    .interior-hero h1 {
+      color: var(--white);
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      margin-bottom: 0.75rem;
+    }
+    .interior-breadcrumb {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+    }
+    .interior-breadcrumb a { color: var(--gold); }
+    .interior-breadcrumb a:hover { text-decoration: underline; }
+
+    .interior-content {
+      background: var(--cream);
+      padding: 4rem 0;
+    }
+    .interior-content .container {
+      max-width: 820px;
+    }
+    /* Squarespace block typography resets */
+    .interior-content h2 { color: var(--deep); margin: 2rem 0 0.75rem; font-size: 1.8rem; }
+    .interior-content h3 { color: var(--deep); margin: 1.5rem 0 0.6rem; }
+    .interior-content p { color: var(--text-mid); margin-bottom: 1rem; line-height: 1.8; }
+    .interior-content ul { padding-left: 1.5rem; margin-bottom: 1rem; list-style: disc; }
+    .interior-content ul li { color: var(--text-mid); margin-bottom: 0.4rem; line-height: 1.7; }
+    .interior-content a { color: var(--gold); }
+    .interior-content a:hover { text-decoration: underline; }
+    .interior-content img { border-radius: 8px; margin: 1.5rem 0; }
+    .interior-content blockquote {
+      border-left: 3px solid var(--gold);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background: var(--white);
+      border-radius: 0 6px 6px 0;
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--text-mid);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav-container">
+      <a href="/" class="nav-logo">
+        <span class="logo-hey">Hey</span><span class="logo-hunter">Hunter</span><span class="logo-girl">Girl</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="/#about">About</a>
+        <a href="/speaking">Speaking</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#accomplishments">Work</a>
+        <a href="/#testimonials">Reviews</a>
+        <a href="/apply" class="nav-cta btn btn-outline">Work With Me</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="interior-hero">
+    <div class="container">
+      <p class="interior-breadcrumb"><a href="/">Home</a> / {squarespace.page-title}</p>
+      <h1>{squarespace.page-title}</h1>
+    </div>
+  </section>
+
+  <section class="interior-content">
+    <div class="container">
+      {content}
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">HeyHunterGirl</a>
+          <p>Speaker. Podcast Host. Builder.</p>
+          <p class="footer-tagline">Glorifying God by becoming<br>who He made me to be.</p>
+        </div>
+        <div class="footer-nav">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/speaking">Speaking</a></li>
+            <li><a href="/podcast">Podcast</a></li>
+            <li><a href="/apply">Work With Me</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <div class="footer-social-links">
+            <a href="https://instagram.com/heyhuntergirl" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://linkedin.com/in/heyhuntergirl" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://youtube.com/@heyhuntergirl" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://tiktok.com/@heyhuntergirl" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="/podcast">Podcast</a>
+          </div>
+        </div>
+        <div class="footer-cta">
+          <h4>Ready to Build?</h4>
+          <p>Have a stage that needs a builder?</p>
+          <a href="/speaking" class="btn btn-primary btn-sm">Book Me to Speak</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 HeyHunterGirl. All rights reserved.</p>
+        <p>heyhuntergirl.com</p>
+      </div>
+    </div>
+  </footer>
+
+  {squarespace-footers}
+</body>
+</html>
