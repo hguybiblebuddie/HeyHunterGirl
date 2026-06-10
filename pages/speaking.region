@@ -11,13 +11,23 @@
   {squarespace-headers}
   <style>
     .page-hero {
-      background: var(--forest);
+      background: var(--cream);
       padding: calc(var(--nav-h) + 4rem) 0 4rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    .page-hero .section-eyebrow { color: var(--gold); }
-    .page-hero h1 { color: var(--white); margin-bottom: 1rem; font-size: clamp(2.5rem,5vw,4rem); }
-    .page-hero p { color: rgba(240,234,224,0.75); font-size: 1.1rem; max-width: 560px; margin: 0 auto; }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 70% 0%, rgba(196,154,60,0.14) 0%, transparent 55%),
+                  radial-gradient(ellipse 50% 60% at 0% 100%, rgba(160,88,64,0.06) 0%, transparent 50%);
+    }
+    .page-hero > * { position: relative; z-index: 1; }
+    .page-hero .section-eyebrow { color: var(--terra); }
+    .page-hero h1 { color: var(--text); margin-bottom: 1rem; font-size: clamp(2.5rem,5vw,4rem); }
+    .page-hero p { color: var(--text-mid); font-size: 1.1rem; max-width: 560px; margin: 0 auto; }
 
     .speaking-page-topics { background: var(--cream-dark); }
 
@@ -71,10 +81,10 @@
     .format-card h3 { color: var(--forest); font-size: 1.1rem; margin-bottom: 0.6rem; }
     .format-card p { font-size: 0.88rem; color: var(--text-mid); }
 
-    .speaking-inquiry-section { background: var(--forest); }
-    .speaking-inquiry-section .section-title { color: var(--white); }
-    .speaking-inquiry-section .section-eyebrow { color: var(--gold); }
-    .speaking-inquiry-section .section-subtitle { color: rgba(240,234,224,0.65); }
+    .speaking-inquiry-section { background: var(--cream-dark); }
+    .speaking-inquiry-section .section-title { color: var(--text); }
+    .speaking-inquiry-section .section-eyebrow { color: var(--terra); }
+    .speaking-inquiry-section .section-subtitle { color: var(--text-mid); }
 
     .inquiry-form-wrap {
       max-width: 720px;
@@ -267,7 +277,7 @@
   <!-- SPEAKING INQUIRY FORM -->
   <section class="speaking-inquiry-section section" id="inquiry">
     <div class="container">
-      <div class="section-header section-header--light">
+      <div class="section-header">
         <p class="section-eyebrow">Let's Connect</p>
         <h2 class="section-title">Submit a Speaking Inquiry</h2>
         <p class="section-subtitle">Tell me about your event and I'll respond within 3–5 business days.</p>
