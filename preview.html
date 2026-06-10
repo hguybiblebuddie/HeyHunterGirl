@@ -1,588 +1,1254 @@
 <!DOCTYPE html>
-<html lang="en" class="homepage">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HeyHunterGirl — Speaker, Podcast Host &amp; Builder</title>
+  <title>HeyHunterGirl — Old Money. New Experiences. Eternal Purpose.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
-/* ==========================================================================
-   HeyHunterGirl — Old Money · New Experiences palette
-   Navy, Dusty Blue, Warm Cream, Gold
-   Stewardship · Excellence · Grace
-   ========================================================================== */
+/* ════════════════════════════════════════════
+   TOKENS
+════════════════════════════════════════════ */
 :root {
-  /* Navy — anchor dark color (footer bg, deep accents, nav) */
   --forest:         #1E3860;
   --forest-mid:     #2E4E78;
   --forest-light:   #4A6A90;
-  --deep:           #1E3860;
-
-  /* Dusty blue — signature accent */
   --sky:            #7BAEC4;
   --sky-mid:        #9BCADC;
   --sky-light:      #BDDBE8;
   --sky-pale:       #E4F2F8;
-  --sage:           #7BAEC4;
-  --sage-mid:       #9BCADC;
-  --sage-light:     #BDDBE8;
-  --sage-pale:      #E4F2F8;
-  --cream-sage:     #EAF4F8;
-
-  /* Sunshine yellow */
   --sunshine:       #E8B84B;
   --sunshine-light: #F5D17E;
   --sunshine-pale:  #FEF3D6;
-
-  /* Gold — warm refined */
   --gold:           #C49A3C;
-  --gold-light:     #DEB96A;
   --gold-pale:      #F7EDD3;
-
-  /* Dusty rose — muted secondary warm accent */
   --terra:          #C47868;
   --terra-light:    #D49888;
-
-  /* Warm cream — candlelight */
   --cream:          #FFF9EF;
   --cream-dark:     #F5EDD8;
   --cream-sky:      #EAF4F8;
-
-  /* Text — navy */
   --text:           #1E3860;
   --text-mid:       #4A6080;
   --text-light:     #8A9AAC;
   --white:          #FFFFFF;
+  --deep:           #1E3860;
 
   --font-serif:   'Playfair Display', Georgia, serif;
   --font-lora:    'Lora', Georgia, serif;
   --font-sans:    'DM Sans', system-ui, sans-serif;
   --font-script:  'Great Vibes', cursive;
   --max-w:        1200px;
-  --nav-h:        80px;
+  --nav-h:        72px;
   --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* ════════════════════════════════════════════
+   BASE
+════════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body { font-family: var(--font-sans); color: var(--text); background: var(--cream); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
-h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.15; font-weight: 700; }
-h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); }
-h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
-h3 { font-size: clamp(1.25rem, 2.5vw, 1.6rem); }
+h1,h2,h3,h4 { font-family: var(--font-serif); line-height: 1.15; font-weight: 700; }
 p { line-height: 1.75; }
-.section-eyebrow { font-family: var(--font-sans); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.75rem; }
-.section-title { font-family: var(--font-serif); color: var(--text); margin-bottom: 1.25rem; }
-.section-subtitle { font-family: var(--font-lora); font-style: italic; font-size: 1.1rem; color: var(--text-mid); max-width: 640px; margin: 0 auto; }
-.body-large { font-family: var(--font-lora); font-size: 1.15rem; line-height: 1.8; color: var(--text-mid); margin-bottom: 1rem; }
 .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
-.section { padding: 5rem 0; }
-.section-header { text-align: center; margin-bottom: 3.5rem; }
-.section-header--light .section-title { color: var(--text); }
-.section-header--light .section-subtitle { color: var(--text-mid); }
+.section { padding: 5.5rem 0; }
+.eyebrow { font: 700 0.68rem/1 var(--font-sans); letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.75rem; }
+.section-title { font-family: var(--font-serif); color: var(--text); margin-bottom: 1.25rem; font-size: clamp(2rem, 4vw, 3.2rem); }
+.section-subtitle { font-family: var(--font-lora); font-style: italic; font-size: 1.05rem; color: var(--text-mid); max-width: 620px; margin: 0 auto; line-height: 1.7; }
 
-/* Buttons */
-.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; border-radius: 3px; font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; transition: all 0.25s var(--ease-out); border: 2px solid transparent; white-space: nowrap; }
+/* ════════════════════════════════════════════
+   BUTTONS
+════════════════════════════════════════════ */
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; border-radius: 2px; font-family: var(--font-sans); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.09em; text-transform: uppercase; cursor: pointer; transition: all 0.25s var(--ease-out); border: 1.5px solid transparent; white-space: nowrap; }
 .btn-primary { background: var(--sunshine); color: var(--text); border-color: var(--sunshine); }
-.btn-primary:hover { background: var(--sunshine-light); border-color: var(--sunshine-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,184,75,0.4); }
+.btn-primary:hover { background: var(--sunshine-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,184,75,0.4); }
 .btn-secondary { background: var(--forest); color: var(--white); border-color: var(--forest); }
 .btn-secondary:hover { background: var(--forest-mid); transform: translateY(-2px); }
-.btn-outline { background: transparent; color: var(--text); border-color: rgba(42,24,16,0.3); }
-.btn-outline:hover { background: var(--sunshine); color: var(--text); border-color: var(--sunshine); }
-.btn-ghost { background: transparent; color: var(--text-mid); border-color: rgba(42,24,16,0.3); }
-.btn-ghost:hover { background: rgba(42,24,16,0.05); border-color: rgba(42,24,16,0.6); }
-.btn-sm { padding: 0.6rem 1.25rem; font-size: 0.8rem; }
-.btn-large { padding: 1.1rem 2.8rem; font-size: 1rem; }
+.btn-outline { background: transparent; color: var(--text); border-color: rgba(30,56,96,0.28); }
+.btn-outline:hover { background: var(--forest); color: var(--white); border-color: var(--forest); }
+.btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.35); }
+.btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+.btn-sky { background: var(--sky); color: var(--white); border-color: var(--sky); }
+.btn-sky:hover { background: var(--sky-mid); transform: translateY(-2px); }
+.btn-sm { padding: 0.6rem 1.25rem; font-size: 0.72rem; }
+.btn-lg { padding: 1rem 2.5rem; font-size: 0.85rem; }
 
-/* Navigation */
-.site-header { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); z-index: 1000; transition: background 0.3s ease, box-shadow 0.3s ease; }
-.site-header.scrolled { background: rgba(255,249,236,0.96); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(42,24,16,0.08), 0 4px 20px rgba(42,24,16,0.05); }
+/* ════════════════════════════════════════════
+   NAVIGATION
+════════════════════════════════════════════ */
+.site-header { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); z-index: 1000; transition: background 0.3s, box-shadow 0.3s; }
+.site-header.scrolled { background: rgba(255,249,239,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(30,56,96,0.08), 0 4px 20px rgba(30,56,96,0.05); }
 .nav-container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-.nav-logo { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600; color: var(--text); flex-shrink: 0; }
-.nav-logo .logo-hey { font-family: var(--font-script); font-size: 2rem; color: var(--terra); line-height: 1; }
-.nav-logo .logo-hunter { font-family: var(--font-serif); font-size: 1.4rem; color: var(--text); }
-.nav-logo .logo-girl { font-family: var(--font-script); font-size: 2rem; color: var(--sky); line-height: 1; }
+.nav-logo { flex-shrink: 0; line-height: 1; }
+.nav-logo .logo-hey    { font-family: var(--font-script); font-size: 1.9rem; color: var(--terra); }
+.nav-logo .logo-hunter { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: var(--text); vertical-align: baseline; }
+.nav-logo .logo-girl   { font-family: var(--font-script); font-size: 1.9rem; color: var(--sky); }
 .nav-links { display: flex; align-items: center; gap: 0.25rem; }
-.nav-links a { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; color: rgba(42,24,16,0.55); padding: 0.5rem 0.85rem; border-radius: 3px; transition: color 0.2s; text-transform: uppercase; }
+.nav-links a { font: 600 0.75rem/1 var(--font-sans); letter-spacing: 0.05em; text-transform: uppercase; color: rgba(30,56,96,0.55); padding: 0.5rem 0.8rem; border-radius: 2px; transition: color 0.2s; }
 .nav-links a:hover { color: var(--text); }
-.nav-links .nav-cta { margin-left: 0.75rem; color: var(--text); border-color: rgba(42,24,16,0.28); }
-.nav-links .nav-cta:hover { background: var(--sunshine); border-color: var(--sunshine); color: var(--text); }
-.nav-links ul { display: flex; align-items: center; gap: 0; }
+.nav-cta-btn { margin-left: 0.75rem; }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--text); transition: all 0.3s; border-radius: 2px; }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
 
-/* Hero */
-.hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; background: var(--cream); overflow: hidden; }
-.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 65% 80% at 80% 5%, rgba(232,184,75,0.22) 0%, transparent 55%), radial-gradient(ellipse 50% 55% at 92% 0%, rgba(245,209,126,0.14) 0%, transparent 45%), radial-gradient(ellipse 55% 50% at 0% 90%, rgba(91,168,190,0.1) 0%, transparent 50%); }
-.hero-content { position: relative; z-index: 2; max-width: var(--max-w); margin: 0 auto; padding: calc(var(--nav-h) + 3rem) 1.5rem 5rem; width: 100%; }
-.hero-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sky); margin-bottom: 1.25rem; }
-.hero-name { color: var(--text); margin-bottom: 1.5rem; max-width: 16ch; }
-.hero-name .accent { color: var(--sunshine); }
-.hero-tagline { font-size: clamp(1.1rem, 2.2vw, 1.4rem); color: var(--text-mid); max-width: 520px; margin-bottom: 2.5rem; font-style: italic; font-family: var(--font-lora); line-height: 1.6; }
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
-.hero-social { display: flex; gap: 1rem; align-items: center; }
-.social-icon { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(42,24,16,0.2); color: var(--text-light); transition: all 0.25s; }
-.social-icon:hover { color: var(--sunshine); border-color: var(--sunshine); transform: translateY(-2px); }
-.hero-scroll-indicator { position: absolute; bottom: 2rem; right: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; color: rgba(42,24,16,0.3); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; writing-mode: vertical-rl; }
-.scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, rgba(232,184,75,0.4), transparent); }
+/* ════════════════════════════════════════════
+   HERO — SPLIT EDITORIAL LAYOUT
+════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 46% 54%;
+  overflow: hidden;
+  background: var(--cream);
+}
+.hero-text-col {
+  padding: calc(var(--nav-h) + 4rem) 3.5rem 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.hero-welcome {
+  font: 700 0.68rem/1 var(--font-sans);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 0.75rem;
+}
+.hero-main-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 6.5vw, 6.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.hero-main-title .period { color: var(--sunshine); }
+.hero-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.hero-rule-line { flex: 0 0 32px; height: 1.5px; background: var(--sunshine); }
+.hero-tagline-phrases {
+  font: italic 600 1rem/1 var(--font-lora);
+  color: var(--text-mid);
+  letter-spacing: 0.01em;
+}
+.hero-tagline-phrases span { margin: 0 0.4rem; opacity: 0.45; }
+.hero-desc {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+.hero-actions {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.75rem;
+}
+.hero-social { display: flex; gap: 0.85rem; }
+.social-icon { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(30,56,96,0.2); color: var(--text-light); transition: all 0.25s; }
+.social-icon:hover { color: var(--sky); border-color: var(--sky); transform: translateY(-2px); }
 
-/* Builder Section */
-.builder-section { background: var(--cream); }
-.builder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-.builder-text p { color: var(--text-mid); margin-bottom: 1rem; }
-.builder-pillars { display: flex; flex-direction: column; gap: 1.5rem; }
-.pillar-card { background: var(--cream); border: 1px solid var(--cream-dark); border-left: 3px solid var(--sky); border-radius: 6px; padding: 1.75rem; transition: transform 0.25s var(--ease-out), box-shadow 0.25s; }
-.pillar-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(90,62,44,0.1); }
-.pillar-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
-.pillar-card h3 { font-size: 1.1rem; color: var(--forest); margin-bottom: 0.5rem; }
-.pillar-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; }
+.hero-img-col {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--sky-pale);
+}
+.hero-img-col::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(255,249,239,0.4) 0%, transparent 40%),
+              radial-gradient(ellipse 70% 80% at 60% 100%, rgba(30,56,96,0.12) 0%, transparent 55%);
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2rem;
+  z-index: 2;
+}
+.hero-photo-silhouette {
+  width: 260px;
+  height: 400px;
+  border-radius: 130px 130px 60px 60px;
+  background: linear-gradient(180deg, var(--sky-mid) 0%, var(--sky) 70%, var(--forest-light) 100%);
+  box-shadow: 0 40px 80px rgba(30,56,96,0.2);
+  margin-bottom: 1.5rem;
+  opacity: 0.55;
+}
+.hero-photo-badge {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 100px;
+  padding: 0.45rem 1.25rem;
+  font: 700 0.68rem/1 var(--font-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sky);
+  box-shadow: 0 4px 16px rgba(30,56,96,0.12);
+}
+/* Floating quote note */
+.hero-float-note {
+  position: absolute;
+  top: 35%;
+  left: 6%;
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(8px);
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  max-width: 200px;
+  box-shadow: 0 8px 32px rgba(30,56,96,0.1);
+  z-index: 3;
+  transform: rotate(-2deg);
+}
+.hero-float-note p {
+  font-family: var(--font-lora);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+.hero-float-note .note-sig {
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  color: var(--sky);
+  display: block;
+}
+/* Decorative botanical element */
+.hero-botanical {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(ellipse at 80% 80%, rgba(123,174,196,0.25) 0%, transparent 65%);
+  z-index: 0;
+}
 
-/* Podcast Section */
-.podcast-section { background: var(--cream-sky); position: relative; overflow: hidden; }
-.podcast-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba(232,184,75,0.1) 0%, transparent 55%), radial-gradient(ellipse 40% 60% at 100% 0%, rgba(91,168,190,0.1) 0%, transparent 50%); }
-.podcast-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; position: relative; z-index: 1; }
-.podcast-cover { aspect-ratio: 1; background: linear-gradient(145deg, #E4F2F8 0%, #9BCADC 50%, #7BAEC4 100%); border-radius: 12px; border: 1px solid rgba(123,174,196,0.5); display: flex; align-items: center; justify-content: center; box-shadow: 0 24px 56px rgba(30,56,96,0.15), inset 0 1px 0 rgba(255,255,255,0.6); padding: 2.5rem; max-width: 320px; }
-.podcast-cover-inner { text-align: center; color: var(--text); }
-.podcast-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terra); margin-bottom: 1rem; }
-.podcast-cover-inner h3 { font-size: 1.4rem; font-family: var(--font-serif); line-height: 1.3; margin-bottom: 0.75rem; }
-.podcast-subtitle { font-size: 0.85rem; color: var(--text-light); }
-.podcast-text .section-title { color: var(--text); }
-.podcast-text .section-eyebrow { color: var(--sky); }
-.podcast-text p { color: var(--text-mid); margin-bottom: 1rem; }
-.podcast-cta-group { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem; }
-.podcast-platforms { display: flex; align-items: center; gap: 0.75rem; font-size: 0.8rem; color: var(--text-light); }
-.platform-badge { padding: 0.3rem 0.75rem; border: 1px solid rgba(42,24,16,0.18); border-radius: 100px; color: var(--text-mid); font-size: 0.75rem; }
+/* ════════════════════════════════════════════
+   CHOOSE YOUR EXPERIENCE
+════════════════════════════════════════════ */
+.experience-section {
+  background: var(--white);
+  border-top: 1px solid var(--cream-dark);
+}
+.experience-top {
+  text-align: center;
+  padding: 2.5rem 1.5rem 0;
+}
+.experience-top .eyebrow { color: var(--text-light); margin-bottom: 0; }
+.exp-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 2rem;
+}
+.exp-tile {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.exp-tile-bg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.5s var(--ease-out);
+}
+.exp-tile:hover .exp-tile-bg { transform: scale(1.06); }
+.exp-tile-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(30,56,96,0.82) 0%, rgba(30,56,96,0.2) 55%, transparent 100%);
+  transition: background 0.3s;
+}
+.exp-tile:hover .exp-tile-overlay { background: linear-gradient(to top, rgba(30,56,96,0.88) 0%, rgba(30,56,96,0.4) 60%, rgba(30,56,96,0.1) 100%); }
+.exp-tile-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  z-index: 1;
+}
+.exp-tile-num {
+  font: 700 0.62rem/1 var(--font-sans);
+  letter-spacing: 0.15em;
+  color: var(--sunshine);
+  margin-bottom: 0.4rem;
+  opacity: 0.8;
+}
+.exp-tile-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+.exp-tile-desc {
+  font-size: 0.78rem;
+  color: rgba(255,249,239,0.6);
+  line-height: 1.5;
+  max-width: 200px;
+}
+.exp-tile-arrow {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font: 700 0.68rem/1 var(--font-sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sunshine);
+  border-bottom: 1px solid rgba(232,184,75,0.4);
+  padding-bottom: 0.1rem;
+  transition: color 0.2s;
+}
+/* Tile background gradients (color-coded per category) */
+.tile-speaking .exp-tile-bg { background: linear-gradient(160deg, var(--sky-pale) 0%, var(--sky-light) 50%, var(--sky) 100%); }
+.tile-writing  .exp-tile-bg { background: linear-gradient(160deg, var(--sunshine-pale) 0%, var(--sunshine-light) 50%, var(--sunshine) 100%); }
+.tile-podcast  .exp-tile-bg { background: linear-gradient(160deg, var(--cream-dark) 0%, #DDB88A 50%, #C49A3C 100%); }
+.tile-coaching .exp-tile-bg { background: linear-gradient(160deg, var(--cream) 0%, var(--terra-light) 50%, var(--terra) 100%); }
 
-/* Speaking Section */
-.speaking-section { background: var(--cream-dark); }
-.topics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
-.topic-card { background: var(--white); border-radius: 6px; padding: 2rem; border-left: 3px solid var(--sunshine); transition: transform 0.25s var(--ease-out), box-shadow 0.25s; }
-.topic-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(232,184,75,0.15); }
-.topic-number { font-family: var(--font-sans); font-weight: 700; font-size: 0.7rem; letter-spacing: 0.12em; color: var(--sunshine); margin-bottom: 0.75rem; }
-.topic-card h3 { font-size: 1.15rem; color: var(--text); margin-bottom: 0.6rem; }
-.topic-card p { font-size: 0.9rem; color: var(--text-mid); }
-.speaking-cta { text-align: center; }
+/* ════════════════════════════════════════════
+   ABOUT — "A Life Well Observed"
+════════════════════════════════════════════ */
+.about-section { background: var(--cream); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 5.5rem;
+  align-items: center;
+}
+.about-photo-col { position: relative; }
+.about-photo-frame {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 32px 72px rgba(30,56,96,0.15);
+}
+.about-photo-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--sky-pale) 0%, var(--sky-light) 40%, var(--sky-mid) 80%, var(--sky) 100%);
+}
+.about-photo-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 50% 85%, rgba(30,56,96,0.2) 0%, transparent 60%);
+}
+.about-photo-name {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.about-photo-name span {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 100px;
+  padding: 0.45rem 1.5rem;
+  font: 700 0.68rem/1 var(--font-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sky);
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(30,56,96,0.12);
+}
+.about-photo-col .gold-dot {
+  position: absolute;
+  top: -1.5rem;
+  left: -1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--sunshine);
+  border-radius: 50%;
+}
+.about-text { }
+.about-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.about-eyebrow-rule { flex: 0 0 28px; height: 1.5px; background: var(--sunshine); }
+.about-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.about-body p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.9rem; }
+.about-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font: 700 0.72rem/1 var(--font-sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-top: 0.75rem;
+  border-bottom: 1.5px solid var(--sky);
+  padding-bottom: 0.15rem;
+  transition: all 0.2s;
+}
+.about-read-more:hover { color: var(--forest); border-bottom-color: var(--forest); }
 
-/* Accomplishments */
-.accomplishments-section { background: var(--cream); }
-.accomplishments-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-.stat-card { text-align: center; padding: 2.5rem 1.5rem; background: var(--white); border-radius: 6px; border-top: 2px solid var(--sunshine); }
-.stat-number { font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.5rem; }
-.stat-label { font-size: 0.85rem; color: var(--text-light); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
-.awards-list { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
-.award-badge { padding: 0.6rem 1.25rem; background: var(--sky-pale); color: var(--sky); border: 1px solid rgba(91,168,190,0.3); border-radius: 100px; font-size: 0.8rem; font-weight: 600; }
+/* ════════════════════════════════════════════
+   CREDENTIALS ROW
+════════════════════════════════════════════ */
+.credentials-section {
+  background: var(--white);
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--cream-dark);
+}
+.credentials-label {
+  font: 700 0.65rem/1 var(--font-sans);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+.credentials-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.cred-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  opacity: 0.55;
+  transition: opacity 0.2s;
+  cursor: default;
+}
+.cred-item:hover { opacity: 0.9; }
+.cred-name {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.cred-sub {
+  font: 600 0.6rem/1 var(--font-sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
 
-/* Testimonials */
-.testimonials-section { background: var(--cream-sky); }
-.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.testimonial-card { background: #FFFFFF; border: 1px solid var(--cream-dark); border-radius: 8px; padding: 2rem; transition: border-color 0.25s, box-shadow 0.25s; }
-.testimonial-card:hover { border-color: rgba(232,184,75,0.5); box-shadow: 0 8px 32px rgba(232,184,75,0.12); }
-.testimonial-quote { font-family: var(--font-lora); font-style: italic; font-size: 1.05rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.5rem; }
-.testimonial-quote::before { content: '\201C'; color: var(--sunshine); font-size: 1.3em; }
-.testimonial-quote::after  { content: '\201D'; color: var(--sunshine); font-size: 1.3em; }
-.testimonial-author { display: flex; flex-direction: column; gap: 0.2rem; }
-.author-name { font-weight: 600; font-size: 0.9rem; color: var(--text); }
-.author-title { font-size: 0.8rem; color: var(--text-light); }
+/* ════════════════════════════════════════════
+   CONTENT SECTION — Podcast + Articles
+════════════════════════════════════════════ */
+.content-section { background: var(--cream-dark); }
+.content-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+.content-view-all {
+  font: 700 0.7rem/1 var(--font-sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sky);
+  border-bottom: 1.5px solid var(--sky);
+  padding-bottom: 0.1rem;
+  transition: all 0.2s;
+}
+.content-view-all:hover { color: var(--forest); border-bottom-color: var(--forest); }
+.content-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+/* Dark feature panel */
+.content-feature-panel {
+  background: var(--forest);
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.content-feature-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 20% 80%, rgba(123,174,196,0.18) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 10%, rgba(232,184,75,0.08) 0%, transparent 50%);
+}
+.feature-badge {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font: 700 0.62rem/1 var(--font-sans);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sky-mid);
+  margin-bottom: 0.75rem;
+}
+.feature-badge::before { content: '●'; font-size: 0.4rem; }
+.feature-of-you {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-script);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  color: var(--sunshine);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+.feature-show-name {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(255,249,239,0.85);
+  margin-bottom: 0.75rem;
+}
+.feature-desc {
+  position: relative;
+  z-index: 1;
+  font-size: 0.82rem;
+  color: rgba(255,249,239,0.55);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  max-width: 240px;
+}
+.feature-links {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.feature-links a {
+  font: 700 0.65rem/1 var(--font-sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,249,239,0.45);
+  border-bottom: 1px solid rgba(255,249,239,0.15);
+  padding-bottom: 0.15rem;
+  transition: all 0.2s;
+}
+.feature-links a:hover { color: var(--sunshine); border-bottom-color: rgba(232,184,75,0.5); }
+/* Content cards grid */
+.content-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.content-card {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s;
+}
+.content-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(30,56,96,0.1); }
+.content-card-img {
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+}
+.card-img-bg { position: absolute; inset: 0; transition: transform 0.4s var(--ease-out); }
+.content-card:hover .card-img-bg { transform: scale(1.04); }
+.content-card-body { padding: 1.25rem; }
+.card-cat {
+  font: 700 0.62rem/1 var(--font-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 0.4rem;
+}
+.content-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.35;
+  margin-bottom: 0.4rem;
+}
+.content-card p { font-size: 0.8rem; color: var(--text-light); line-height: 1.55; }
+/* Card color themes */
+.card-becoming .card-img-bg { background: linear-gradient(135deg, var(--sky-pale) 0%, var(--sky-light) 100%); }
+.card-leadership .card-img-bg { background: linear-gradient(135deg, var(--sunshine-pale) 0%, var(--sunshine-light) 100%); }
+.card-systems .card-img-bg { background: linear-gradient(135deg, var(--cream-dark) 0%, var(--gold-pale) 100%); }
+.card-beauty .card-img-bg { background: linear-gradient(135deg, #F9E8E8 0%, var(--terra-light) 100%); opacity: 0.7; }
 
-/* Apply Section */
-.apply-section { background: var(--cream); }
-.apply-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
-.apply-text .section-eyebrow { color: var(--terra); }
-.apply-text p { color: var(--text-mid); margin-bottom: 1rem; }
-.apply-list { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
-.apply-list li { font-size: 0.9rem; color: var(--text-mid); display: flex; align-items: center; gap: 0.5rem; }
-.form-card { background: var(--white); border-radius: 8px; padding: 2.5rem; box-shadow: 0 4px 24px rgba(42,24,16,0.07); border-top: 2px solid var(--sunshine); }
-.form-card h3 { font-size: 1.3rem; color: var(--text); margin-bottom: 1.75rem; }
+/* ════════════════════════════════════════════
+   QUOTE CALLOUT
+════════════════════════════════════════════ */
+.quote-callout {
+  background: var(--forest);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.quote-callout::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 55% 70% at 25% 50%, rgba(123,174,196,0.14) 0%, transparent 60%),
+              radial-gradient(ellipse 45% 60% at 80% 70%, rgba(232,184,75,0.07) 0%, transparent 55%);
+}
+.quote-callout .container { position: relative; z-index: 1; }
+.quote-ornament {
+  font-family: var(--font-script);
+  font-size: 5rem;
+  color: var(--sunshine);
+  line-height: 0.5;
+  margin-bottom: 1rem;
+  opacity: 0.4;
+}
+.quote-main {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.9rem);
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.35;
+  max-width: 780px;
+  margin: 0 auto 1.5rem;
+  font-weight: 400;
+}
+.quote-main em { color: var(--sunshine); font-style: normal; }
+.quote-sig {
+  font-family: var(--font-script);
+  font-size: 2.5rem;
+  color: var(--sky-light);
+  display: block;
+}
 
-/* Footer */
-.site-footer { background: var(--forest); padding: 4rem 0 2rem; border-top: 1px solid rgba(123,174,196,0.2); }
-.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 3rem; margin-bottom: 3rem; }
-.footer-logo { font-family: var(--font-script); font-size: 2rem; font-weight: normal; color: var(--sunshine-light); display: block; margin-bottom: 0.75rem; }
-.footer-brand p { font-size: 0.9rem; color: rgba(255,249,236,0.55); line-height: 1.6; }
-.footer-tagline { font-style: italic; color: rgba(232,184,75,0.85) !important; font-size: 0.85rem !important; margin-top: 0.75rem; }
-.footer-nav h4, .footer-social h4, .footer-cta h4 { font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,249,236,0.35); margin-bottom: 1.25rem; }
+/* ════════════════════════════════════════════
+   BLOG — Latest Stories
+════════════════════════════════════════════ */
+.blog-section { background: var(--cream); }
+.blog-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+.blog-view-all {
+  font: 700 0.7rem/1 var(--font-sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sky);
+  border-bottom: 1.5px solid var(--sky);
+  padding-bottom: 0.1rem;
+  transition: all 0.2s;
+}
+.blog-view-all:hover { color: var(--forest); border-bottom-color: var(--forest); }
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.blog-card {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s;
+}
+.blog-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(30,56,96,0.11); }
+.blog-card-img {
+  width: 100%;
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+}
+.blog-img-bg { position: absolute; inset: 0; transition: transform 0.45s var(--ease-out); }
+.blog-card:hover .blog-img-bg { transform: scale(1.05); }
+.blog-card-body { padding: 1.5rem 1.5rem 1.75rem; }
+.blog-cat {
+  font: 700 0.62rem/1 var(--font-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 0.5rem;
+}
+.blog-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.35;
+  margin-bottom: 0.6rem;
+}
+.blog-card p { font-size: 0.84rem; color: var(--text-mid); line-height: 1.65; margin-bottom: 1rem; }
+.blog-read {
+  font: 700 0.68rem/1 var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sky);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+/* Blog card image colors */
+.blog-1 .blog-img-bg { background: linear-gradient(145deg, #F0E8DC 0%, #D4B88C 60%, #C49A3C 100%); }
+.blog-2 .blog-img-bg { background: linear-gradient(145deg, var(--sky-pale) 0%, var(--sky-light) 60%, var(--sky) 100%); }
+.blog-3 .blog-img-bg { background: linear-gradient(145deg, var(--cream-dark) 0%, #D49888 60%, var(--terra) 100%); }
+
+/* ════════════════════════════════════════════
+   WORLD OF HUNTER — Image Strip
+════════════════════════════════════════════ */
+.world-section {
+  background: var(--forest);
+  padding: 4rem 0;
+  overflow: hidden;
+}
+.world-label {
+  text-align: center;
+  font: 700 0.65rem/1 var(--font-sans);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,249,239,0.35);
+  margin-bottom: 2rem;
+}
+.world-strip {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr 1fr 1.3fr;
+  gap: 0.75rem;
+  padding: 0 1.5rem;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+.world-img {
+  border-radius: 4px;
+  overflow: hidden;
+  height: 200px;
+  position: relative;
+}
+.world-img-bg { position: absolute; inset: 0; }
+.world-img-1 .world-img-bg { background: linear-gradient(160deg, var(--sky-pale) 0%, var(--sky) 100%); }
+.world-img-2 .world-img-bg { background: linear-gradient(160deg, var(--sunshine-pale) 0%, var(--sunshine) 100%); }
+.world-img-3 .world-img-bg { background: linear-gradient(160deg, var(--cream-dark) 0%, var(--gold-pale) 100%); }
+.world-img-4 .world-img-bg { background: linear-gradient(160deg, #DDE8F0 0%, var(--sky-mid) 100%); }
+.world-img-5 .world-img-bg { background: linear-gradient(160deg, var(--cream) 0%, var(--terra-light) 100%); }
+.world-img-6 .world-img-bg { background: linear-gradient(160deg, var(--forest-mid) 0%, var(--forest) 100%); }
+
+/* ════════════════════════════════════════════
+   CTA — LET'S BUILD SOMETHING MEANINGFUL
+════════════════════════════════════════════ */
+.build-cta {
+  background: var(--cream-dark);
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.build-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 70% 30%, rgba(232,184,75,0.1) 0%, transparent 55%),
+              radial-gradient(ellipse 40% 50% at 15% 70%, rgba(123,174,196,0.08) 0%, transparent 50%);
+}
+.build-cta .container { position: relative; z-index: 1; }
+.build-cta .eyebrow { text-align: center; margin-bottom: 0.75rem; }
+.build-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.build-title .plus { color: var(--sunshine); }
+.build-desc { font-size: 1rem; color: var(--text-mid); max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.75; font-family: var(--font-lora); font-style: italic; }
+.build-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ════════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════════ */
+.site-footer {
+  background: var(--forest);
+  padding: 4.5rem 0 2rem;
+  border-top: 1px solid rgba(123,174,196,0.15);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.footer-brand p { font-size: 0.85rem; color: rgba(255,249,239,0.5); line-height: 1.65; }
+.footer-tagline {
+  font-family: var(--font-lora) !important;
+  font-style: italic !important;
+  color: rgba(232,184,75,0.75) !important;
+  font-size: 0.85rem !important;
+  margin-top: 0.75rem;
+}
+.footer-nav h4, .footer-social h4, .footer-cta h4 {
+  font: 700 0.62rem/1 var(--font-sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,249,239,0.35);
+  margin-bottom: 1.25rem;
+}
 .footer-nav ul { display: flex; flex-direction: column; gap: 0.6rem; }
-.footer-nav a { font-size: 0.9rem; color: rgba(255,249,236,0.5); transition: color 0.2s; }
-.footer-nav a:hover { color: var(--sunshine-light); }
+.footer-nav a { font-size: 0.85rem; color: rgba(255,249,239,0.5); transition: color 0.2s; }
+.footer-nav a:hover { color: var(--sunshine); }
 .footer-social-links { display: flex; flex-direction: column; gap: 0.6rem; }
-.footer-social-links a { font-size: 0.9rem; color: rgba(255,249,236,0.5); transition: color 0.2s; }
-.footer-social-links a:hover { color: var(--sky-light); }
-.footer-cta p { font-size: 0.85rem; color: rgba(255,249,236,0.5); margin-bottom: 1rem; line-height: 1.5; }
-.footer-bottom { border-top: 1px solid rgba(123,174,196,0.12); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-.footer-bottom p { font-size: 0.78rem; color: rgba(255,249,236,0.28); }
+.footer-social-links a { font-size: 0.85rem; color: rgba(255,249,239,0.5); transition: color 0.2s; }
+.footer-social-links a:hover { color: var(--sunshine); }
+.footer-cta p { font-size: 0.82rem; color: rgba(255,249,239,0.45); margin-bottom: 1rem; line-height: 1.6; }
+.footer-bottom { border-top: 1px solid rgba(123,174,196,0.1); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.footer-bottom p { font-size: 0.72rem; color: rgba(255,249,239,0.25); }
 
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .builder-grid, .podcast-grid, .apply-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .podcast-art { display: flex; justify-content: center; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .content-layout { grid-template-columns: 1fr; }
+  .content-cards-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .testimonials-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .world-strip { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .exp-tiles { grid-template-columns: 1fr 1fr; }
+  .blog-grid { grid-template-columns: 1fr 1fr; }
+  .credentials-row { gap: 1.75rem; }
 }
 @media (max-width: 768px) {
   :root { --nav-h: 64px; }
-  .nav-links { position: fixed; top: var(--nav-h); left: 0; right: 0; background: rgba(255,249,236,0.98); backdrop-filter: blur(14px); box-shadow: 0 8px 32px rgba(42,24,16,0.1); flex-direction: column; align-items: flex-start; padding: 1.5rem; gap: 0.25rem; transform: translateY(-120%); transition: transform 0.35s var(--ease-out); pointer-events: none; }
-  .nav-links.open { transform: translateY(0); pointer-events: auto; }
-  .nav-links a { font-size: 1rem; padding: 0.75rem 0.5rem; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-img-col { display: none; }
+  .hero-text-col { padding: calc(var(--nav-h) + 3rem) 1.5rem 4rem; }
+  .nav-links { display: none; }
   .nav-toggle { display: flex; }
-  .topics-grid, .accomplishments-content, .footer-grid { grid-template-columns: 1fr; }
-  .hero-actions { flex-direction: column; align-items: flex-start; }
-  .hero-scroll-indicator { display: none; }
-  .section { padding: 3.5rem 0; }
+  .section { padding: 3.75rem 0; }
+  .exp-tiles { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .world-strip { grid-template-columns: 1fr 1fr; }
 }
   </style>
 </head>
-<body id="homepage">
+<body>
 
-  <header class="site-header" id="site-header">
-    <nav class="nav-container">
-      <a href="#" class="nav-logo">
-        <span class="logo-hey">Hey</span><span class="logo-hunter">Hunter</span><span class="logo-girl">Girl</span>
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<header class="site-header scrolled" id="site-header">
+  <nav class="nav-container">
+    <a href="/" class="nav-logo">
+      <span class="logo-hey">Hey</span><span class="logo-hunter">Hunter</span><span class="logo-girl">Girl</span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#writing">Writing</a>
+      <a href="#speaking-topics">Speaking</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#apply" class="btn btn-secondary btn-sm nav-cta-btn">Book Hunter</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero" id="home">
+  <!-- LEFT: Editorial text -->
+  <div class="hero-text-col">
+    <p class="hero-welcome">Welcome to</p>
+    <h1 class="hero-main-title">Hey Hunter<br>Girl<span class="period">.</span></h1>
+    <div class="hero-rule">
+      <div class="hero-rule-line"></div>
+      <p class="hero-tagline-phrases">Old money.<span>·</span>New experiences.<span>·</span>Eternal purpose.</p>
+    </div>
+    <p class="hero-desc">Speaker, author, entrepreneur, strategist. Faith-led and committed to the lifelong work of becoming.</p>
+    <div class="hero-actions">
+      <a href="#about" class="btn btn-primary btn-lg">Read My Story</a>
+      <a href="#apply" class="btn btn-outline btn-lg">Book Me Now</a>
+    </div>
+    <div class="hero-social">
+      <a href="https://instagram.com/heyhuntergirl" class="social-icon" aria-label="Instagram" target="_blank">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
       </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-links" id="nav-links">
-        <a href="#about">About</a>
-        <a href="#writing">Writing</a>
-        <a href="#speaking-topics">Speaking</a>
-        <a href="#podcast">Podcast</a>
-        <a href="#apply" class="nav-cta btn btn-outline">Work With Me</a>
-      </div>
-    </nav>
-  </header>
+      <a href="https://youtube.com/@heyhuntergirl" class="social-icon" aria-label="YouTube" target="_blank">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://tiktok.com/@heyhuntergirl" class="social-icon" aria-label="TikTok" target="_blank">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg>
+      </a>
+      <a href="/podcast" class="social-icon" aria-label="Podcast">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/></svg>
+      </a>
+    </div>
+  </div>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <p class="hero-eyebrow">Speaker · Podcast Host · Builder</p>
-      <h1 class="hero-name">Hey, I'm <span class="accent">Hunter.</span></h1>
-      <p class="hero-tagline">Old Money · New Experiences.</p>
-      <div class="hero-actions">
-        <a href="#apply" class="btn btn-primary">Book Me to Speak</a>
-        <a href="#podcast" class="btn btn-ghost">The User Experience of You →</a>
-      </div>
-      <div class="hero-social">
-        <a href="#" class="social-icon" aria-label="Instagram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="#" class="social-icon" aria-label="LinkedIn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="#" class="social-icon" aria-label="YouTube">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="#" class="social-icon" aria-label="TikTok">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg>
-        </a>
+  <!-- RIGHT: Photo area -->
+  <div class="hero-img-col">
+    <div class="hero-botanical"></div>
+    <!-- Floating handwritten note -->
+    <div class="hero-float-note">
+      <p>The most important experience you'll ever design is your life.</p>
+      <span class="note-sig">Hunter</span>
+    </div>
+    <!-- Photo placeholder -->
+    <div class="hero-photo-placeholder">
+      <div class="hero-photo-silhouette"></div>
+      <div class="hero-photo-badge">Speaker · Host · Builder</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CHOOSE YOUR EXPERIENCE ═══════════════════ -->
+<section class="experience-section" id="experience">
+  <div class="experience-top">
+    <p class="eyebrow">Choose Your Experience</p>
+  </div>
+  <div class="exp-tiles">
+    <div class="exp-tile tile-speaking">
+      <div class="exp-tile-bg"></div>
+      <div class="exp-tile-overlay"></div>
+      <div class="exp-tile-content">
+        <div class="exp-tile-num">01</div>
+        <div class="exp-tile-title">Speaking</div>
+        <div class="exp-tile-desc">Keynotes, panels, and workshops that move rooms and transform people.</div>
+        <a href="#speaking-topics" class="exp-tile-arrow">Inquire →</a>
       </div>
     </div>
-    <div class="hero-scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- BUILDER IDENTITY -->
-  <section class="builder-section section" id="about">
-    <div class="container">
-      <div class="builder-grid">
-        <div class="builder-text">
-          <p class="section-eyebrow">Who I Am</p>
-          <h2 class="section-title">A Builder at Heart</h2>
-          <p class="body-large">I don't just speak — I build. I build stages for others to stand on. I build frameworks that help people see themselves more clearly. I build spaces where purpose meets action.</p>
-          <p>At the core of everything I do is a conviction that each person is a divine design. My work is about helping you find and live from that design — not shrinking yourself to fit someone else's mold, but expanding into who God always made you to be.</p>
-          <a href="#" class="btn btn-secondary" style="margin-top:1.25rem">My Full Story</a>
-        </div>
-        <div class="builder-pillars">
-          <div class="pillar-card">
-            <div class="pillar-icon">✦</div>
-            <h3>Becoming</h3>
-            <p>Identity and purpose — discovering who you are and walking fully in it.</p>
-          </div>
-          <div class="pillar-card">
-            <div class="pillar-icon">⬡</div>
-            <h3>Leadership</h3>
-            <p>Leading people, building a legacy, and leaving an impact that outlasts you.</p>
-          </div>
-          <div class="pillar-card">
-            <div class="pillar-icon">◈</div>
-            <h3>Systems</h3>
-            <p>Technology, processes, and organizational design — the architecture of a life that works.</p>
-          </div>
-          <div class="pillar-card">
-            <div class="pillar-icon">◇</div>
-            <h3>Beauty</h3>
-            <p>Aesthetic living and living with intention — because how you inhabit your life matters.</p>
-          </div>
-        </div>
+    <div class="exp-tile tile-writing">
+      <div class="exp-tile-bg"></div>
+      <div class="exp-tile-overlay"></div>
+      <div class="exp-tile-content">
+        <div class="exp-tile-num">02</div>
+        <div class="exp-tile-title">Writing</div>
+        <div class="exp-tile-desc">Essays and stories on faith, systems, identity, and living with intention.</div>
+        <a href="#writing" class="exp-tile-arrow">Read →</a>
       </div>
     </div>
-  </section>
-
-  <!-- PODCAST -->
-  <section class="podcast-section section" id="podcast">
-    <div class="container">
-      <div class="podcast-grid">
-        <div class="podcast-art">
-          <div class="podcast-cover">
-            <div class="podcast-cover-inner">
-              <p class="podcast-label">Coming Summer 2025</p>
-              <h3>The User Experience of You</h3>
-              <p class="podcast-subtitle">with Hunter</p>
-            </div>
-          </div>
-        </div>
-        <div class="podcast-text">
-          <p class="section-eyebrow">New Podcast</p>
-          <h2 class="section-title">The User Experience<br>of You</h2>
-          <p class="body-large">What if your personality isn't a problem to manage — it's a power to deploy?</p>
-          <p>Lessons from technology, leadership, faith, entrepreneurship, and the lifelong work of becoming. Real conversations. Purpose-driven. Purposeful living.</p>
-          <p>This is the podcast for the woman who knows she was made for more — and is ready to do the work of figuring out exactly what that means.</p>
-          <div class="podcast-cta-group">
-            <a href="#" class="btn btn-primary">Learn More &amp; Get Notified</a>
-            <div class="podcast-platforms">
-              <span>Coming to</span>
-              <span class="platform-badge">Apple Podcasts</span>
-              <span class="platform-badge">Spotify</span>
-            </div>
-          </div>
-        </div>
+    <div class="exp-tile tile-podcast">
+      <div class="exp-tile-bg"></div>
+      <div class="exp-tile-overlay"></div>
+      <div class="exp-tile-content">
+        <div class="exp-tile-num">03</div>
+        <div class="exp-tile-title">Podcast</div>
+        <div class="exp-tile-desc">The User Experience of You — conversations about the lifelong work of becoming.</div>
+        <a href="#podcast" class="exp-tile-arrow">Listen →</a>
       </div>
     </div>
-  </section>
-
-  <!-- SPEAKING TOPICS -->
-  <section class="speaking-section section" id="speaking-topics">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Speaking</p>
-        <h2 class="section-title">Topics That Move Rooms</h2>
-        <p class="section-subtitle">I speak to organizations, conferences, churches, and campuses on the intersection of identity, purpose, and performance.</p>
-      </div>
-      <div class="topics-grid">
-        <div class="topic-card">
-          <div class="topic-number">01</div>
-          <h3>The User Experience of You</h3>
-          <p>Understanding how you are uniquely designed — and how that design is a gift, not a liability.</p>
-        </div>
-        <div class="topic-card">
-          <div class="topic-number">02</div>
-          <h3>Built to Build</h3>
-          <p>Discovering your builder identity and the calling to create, contribute, and construct what doesn't yet exist.</p>
-        </div>
-        <div class="topic-card">
-          <div class="topic-number">03</div>
-          <h3>Glorify by Being</h3>
-          <p>How simply being who God made you to be is one of the most powerful acts of worship and witness.</p>
-        </div>
-        <div class="topic-card">
-          <div class="topic-number">04</div>
-          <h3>Custom for Your Audience</h3>
-          <p>I develop content specific to your audience and organizational need. Let's build something together.</p>
-        </div>
-      </div>
-      <div class="speaking-cta">
-        <a href="#apply" class="btn btn-primary btn-large">Inquire About Speaking</a>
+    <div class="exp-tile tile-coaching">
+      <div class="exp-tile-bg"></div>
+      <div class="exp-tile-overlay"></div>
+      <div class="exp-tile-content">
+        <div class="exp-tile-num">04</div>
+        <div class="exp-tile-title">Work With Me</div>
+        <div class="exp-tile-desc">Intentional partnerships — speaking, brand, ministry, and beyond.</div>
+        <a href="#apply" class="exp-tile-arrow">Apply →</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ACCOMPLISHMENTS -->
-  <section class="accomplishments-section section" id="accomplishments">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Credibility</p>
-        <h2 class="section-title">Stages, Accolades &amp; Engagements</h2>
-        <p class="section-subtitle">A track record of showing up — on stages, in rooms, and in the lives of people ready to build.</p>
+<!-- ═══════════════════ ABOUT ═══════════════════ -->
+<section class="about-section section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Photo column -->
+      <div class="about-photo-col">
+        <div class="gold-dot"></div>
+        <div class="about-photo-frame">
+          <div class="about-photo-bg"></div>
+          <div class="about-photo-name"><span>Hunter</span></div>
+        </div>
       </div>
-      <div class="accomplishments-content">
-        <div class="stat-card">
-          <div class="stat-number">50+</div>
-          <div class="stat-label">Speaking Engagements</div>
+      <!-- Text column -->
+      <div class="about-text">
+        <div class="about-eyebrow-row">
+          <div class="about-eyebrow-rule"></div>
+          <p class="eyebrow" style="margin:0">About Hunter</p>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">10k+</div>
-          <div class="stat-label">Lives Impacted</div>
+        <h2 class="about-title">A Life Well<br>Observed.</h2>
+        <div class="about-body">
+          <p>I'm a founder, award-winning speaker, and strategist committed to helping people, organizations, and communities build well — with intention, clarity, and faith.</p>
+          <p>My work lives at the intersection of identity and impact. I believe the most important work you'll ever do is the work of becoming who you were made to be. Everything else flows from that.</p>
+          <p>Old money instincts, new world solutions, eternal purpose driving every decision.</p>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">5★</div>
-          <div class="stat-label">Average Event Rating</div>
-        </div>
-        <div class="awards-list">
-          <span class="award-badge">Update with your real awards</span>
-          <span class="award-badge">Past Organizations</span>
-          <span class="award-badge">Conferences Spoken At</span>
-          <span class="award-badge">Recognition Received</span>
-        </div>
+        <a href="#" class="about-read-more">Read My Story →</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials-section section" id="testimonials">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">From the People</p>
-        <h2 class="section-title">What They're Saying</h2>
-        <p class="section-subtitle">Real words from people who've experienced the room after Hunter speaks.</p>
+<!-- ═══════════════════ CREDENTIALS ═══════════════════ -->
+<div class="credentials-section">
+  <div class="container">
+    <p class="credentials-label">As Seen On &amp; Featured With</p>
+    <div class="credentials-row">
+      <div class="cred-item"><div class="cred-name">Today</div><div class="cred-sub">NBC</div></div>
+      <div class="cred-item"><div class="cred-name">Wheaton</div><div class="cred-sub">Illinois</div></div>
+      <div class="cred-item"><div class="cred-name">Amplify</div><div class="cred-sub">Conference</div></div>
+      <div class="cred-item"><div class="cred-name">Legacy</div><div class="cred-sub">Summit</div></div>
+      <div class="cred-item"><div class="cred-name">Dobson</div><div class="cred-sub">Institute</div></div>
+      <div class="cred-item"><div class="cred-name">Torson</div><div class="cred-sub">Leadership</div></div>
+      <div class="cred-item"><div class="cred-name">Study</div><div class="cred-sub">AS 10</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ CONTENT / PODCAST ═══════════════════ -->
+<section class="content-section section" id="podcast">
+  <div class="container">
+    <div class="content-header">
+      <div>
+        <p class="eyebrow">Latest Content</p>
+        <h2 class="section-title" style="margin-bottom:0">From the Journal</h2>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p class="testimonial-quote">Hunter doesn't just deliver a talk — she builds an experience. Our entire team walked away with a new framework for understanding themselves.</p>
-          <div class="testimonial-author">
-            <span class="author-name">— Add Name Here</span>
-            <span class="author-title">Event Organizer / Organization</span>
+      <a href="#" class="content-view-all">View All Latest Articles →</a>
+    </div>
+    <div class="content-layout">
+      <!-- Dark podcast feature panel -->
+      <div class="content-feature-panel">
+        <p class="feature-badge">New Podcast</p>
+        <div class="feature-of-you">of You</div>
+        <p class="feature-show-name">The User Experience of You</p>
+        <p class="feature-desc">Conversations about becoming, and how God designs a purposeful journey.</p>
+        <div class="feature-links">
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+      <!-- Content cards 2×2 -->
+      <div class="content-cards-grid">
+        <div class="content-card card-becoming">
+          <div class="content-card-img"><div class="card-img-bg"></div></div>
+          <div class="content-card-body">
+            <p class="card-cat">Becoming</p>
+            <h4>The Difference Between Volume and Significance</h4>
+            <p>Doing more isn't the same as doing what matters. Here's how I learned to tell the difference.</p>
           </div>
         </div>
-        <div class="testimonial-card">
-          <p class="testimonial-quote">She has a rare gift: making a room full of strangers feel like they've known themselves — and each other — for years.</p>
-          <div class="testimonial-author">
-            <span class="author-name">— Add Name Here</span>
-            <span class="author-title">Conference Attendee</span>
+        <div class="content-card card-leadership">
+          <div class="content-card-img"><div class="card-img-bg"></div></div>
+          <div class="content-card-body">
+            <p class="card-cat">Leadership</p>
+            <h4>Why Every Builder Needs a Vision for Rest</h4>
+            <p>The systems that sustain you are just as important as the ones that grow you.</p>
           </div>
         </div>
-        <div class="testimonial-card">
-          <p class="testimonial-quote">Booking Hunter was one of the best decisions we made for our conference. She showed up prepared, passionate, and deeply present.</p>
-          <div class="testimonial-author">
-            <span class="author-name">— Add Name Here</span>
-            <span class="author-title">Ministry Leader</span>
+        <div class="content-card card-systems">
+          <div class="content-card-img"><div class="card-img-bg"></div></div>
+          <div class="content-card-body">
+            <p class="card-cat">Systems</p>
+            <h4>Every System Produces Exactly What It's Designed To</h4>
+            <p>If you don't like the outputs, look at the inputs. This applies to everything.</p>
+          </div>
+        </div>
+        <div class="content-card card-beauty">
+          <div class="content-card-img"><div class="card-img-bg"></div></div>
+          <div class="content-card-body">
+            <p class="card-cat">Beauty</p>
+            <h4>Stewardship in an Age of Self-Protection</h4>
+            <p>What it means to hold your gifts, your influence, and your season with open hands.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- APPLY -->
-  <section class="apply-section section" id="apply">
-    <div class="container">
-      <div class="apply-grid">
-        <div class="apply-text">
-          <p class="section-eyebrow">Collaboration</p>
-          <h2 class="section-title">Apply to Work With Me</h2>
-          <p class="body-large">I'm intentional about who I partner with. If you feel led to work with me — for speaking, content, or something else entirely — I want to hear about it.</p>
-          <p>Fill out the inquiry and tell me what you're building. If it's a fit, we'll connect.</p>
-          <ul class="apply-list">
-            <li>✓ Speaking engagements &amp; keynotes</li>
-            <li>✓ Podcast collaborations</li>
-            <li>✓ Brand partnerships</li>
-            <li>✓ Church &amp; ministry events</li>
-            <li>✓ Campus &amp; organizational workshops</li>
-          </ul>
-          <a href="#" class="btn btn-secondary" style="margin-top:2rem">See Full Application</a>
+<!-- ═══════════════════ QUOTE CALLOUT ═══════════════════ -->
+<section class="quote-callout">
+  <div class="container">
+    <div class="quote-ornament">"</div>
+    <blockquote>
+      <p class="quote-main">The most important experience you'll ever design<br>is <em>your life.</em></p>
+      <footer class="quote-sig">Hunter</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ═══════════════════ BLOG — Latest Stories ═══════════════════ -->
+<section class="blog-section section" id="writing">
+  <div class="container">
+    <div class="blog-header">
+      <div>
+        <p class="eyebrow">Latest Stories</p>
+        <h2 class="section-title" style="margin-bottom:0">From the Blog</h2>
+      </div>
+      <a href="#" class="blog-view-all">View All Blog Articles →</a>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card blog-1">
+        <div class="blog-card-img"><div class="blog-img-bg"></div></div>
+        <div class="blog-card-body">
+          <p class="blog-cat">Faith</p>
+          <h3>Why Virtue Teaches Taught Me About People</h3>
+          <p>What I learned about character, trust, and what it actually means to lead from a place of integrity.</p>
+          <a href="#" class="blog-read">Read More →</a>
         </div>
-        <div>
-          <div class="form-card">
-            <h3>Speaking Inquiry</h3>
-            <div style="display:flex;flex-direction:column;gap:1rem">
-              <div>
-                <label style="font-size:0.75rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-mid);display:block;margin-bottom:0.4rem">Your Name</label>
-                <input type="text" placeholder="First &amp; Last Name" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--cream-dark);border-radius:4px;font-family:var(--font-sans);font-size:0.9rem;background:var(--cream);outline:none">
-              </div>
-              <div>
-                <label style="font-size:0.75rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-mid);display:block;margin-bottom:0.4rem">Email Address</label>
-                <input type="email" placeholder="you@organization.com" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--cream-dark);border-radius:4px;font-family:var(--font-sans);font-size:0.9rem;background:var(--cream);outline:none">
-              </div>
-              <div>
-                <label style="font-size:0.75rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-mid);display:block;margin-bottom:0.4rem">Organization &amp; Event</label>
-                <input type="text" placeholder="Organization name &amp; event type" style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--cream-dark);border-radius:4px;font-family:var(--font-sans);font-size:0.9rem;background:var(--cream);outline:none">
-              </div>
-              <div>
-                <label style="font-size:0.75rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--text-mid);display:block;margin-bottom:0.4rem">Tell me what you're building</label>
-                <textarea rows="4" placeholder="Describe your event and what you're hoping to accomplish..." style="width:100%;padding:0.75rem 1rem;border:1.5px solid var(--cream-dark);border-radius:4px;font-family:var(--font-sans);font-size:0.9rem;background:var(--cream);outline:none;resize:vertical"></textarea>
-              </div>
-              <button type="submit" style="background:var(--terra);color:var(--white);border:none;padding:0.9rem 2rem;border-radius:3px;font-weight:600;font-size:0.9rem;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;width:100%;font-family:var(--font-sans)">Submit Inquiry</button>
-            </div>
-          </div>
+      </div>
+      <div class="blog-card blog-2">
+        <div class="blog-card-img"><div class="blog-img-bg"></div></div>
+        <div class="blog-card-body">
+          <p class="blog-cat">Becoming</p>
+          <h3>The Difference Between Volume and Significance</h3>
+          <p>Why doing more isn't the same as doing what matters — and how to finally tell the difference.</p>
+          <a href="#" class="blog-read">Read More →</a>
+        </div>
+      </div>
+      <div class="blog-card blog-3">
+        <div class="blog-card-img"><div class="blog-img-bg"></div></div>
+        <div class="blog-card-body">
+          <p class="blog-cat">Systems</p>
+          <h3>Every System Produces Exactly What It's Designed To</h3>
+          <p>A framework for diagnosing the areas of your life that keep producing results you don't want.</p>
+          <a href="#" class="blog-read">Read More →</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="#" class="footer-logo">HeyHunterGirl</a>
-          <p>Speaker. Podcast Host. Builder.</p>
-          <p class="footer-tagline">Stewardship · Excellence · Grace</p>
-        </div>
-        <div class="footer-nav">
-          <h4>Navigate</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#writing">Writing</a></li>
-            <li><a href="#speaking-topics">Speaking</a></li>
-            <li><a href="#podcast">Podcast</a></li>
-            <li><a href="#apply">Work With Me</a></li>
-          </ul>
-        </div>
-        <div class="footer-social">
-          <h4>Connect</h4>
-          <div class="footer-social-links">
-            <a href="#">Instagram</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">YouTube</a>
-            <a href="#">TikTok</a>
-            <a href="#">Podcast</a>
-          </div>
-        </div>
-        <div class="footer-cta">
-          <h4>Ready to Build?</h4>
-          <p>Have a stage that needs a builder? Let's talk.</p>
-          <a href="#apply" class="btn btn-primary btn-sm">Book Me to Speak</a>
+<!-- ═══════════════════ WORLD OF HUNTER ═══════════════════ -->
+<section class="world-section">
+  <p class="world-label">The World of Hunter</p>
+  <div class="world-strip">
+    <div class="world-img world-img-1"><div class="world-img-bg"></div></div>
+    <div class="world-img world-img-2"><div class="world-img-bg"></div></div>
+    <div class="world-img world-img-3"><div class="world-img-bg"></div></div>
+    <div class="world-img world-img-4"><div class="world-img-bg"></div></div>
+    <div class="world-img world-img-5"><div class="world-img-bg"></div></div>
+    <div class="world-img world-img-6"><div class="world-img-bg"></div></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ BUILD CTA ═══════════════════ -->
+<section class="build-cta" id="apply">
+  <div class="container">
+    <p class="eyebrow">Let's Connect</p>
+    <h2 class="build-title">Let's Build Something<br>Meaningful<span class="plus"> +</span></h2>
+    <p class="build-desc">Whether it's a keynote, a partnership, or a conversation — if you're building something with intention, I want to hear about it.</p>
+    <div class="build-actions">
+      <a href="#" class="btn btn-secondary btn-lg">Book Me to Speak</a>
+      <a href="#" class="btn btn-outline btn-lg">Submit an Inquiry</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">HeyHunterGirl</a>
+        <p>Speaker. Podcast Host. Builder.</p>
+        <p class="footer-tagline">Stewardship · Excellence · Grace</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/writing">Writing</a></li>
+          <li><a href="/speaking">Speaking</a></li>
+          <li><a href="/podcast">Podcast</a></li>
+          <li><a href="/apply">Work With Me</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <div class="footer-social-links">
+          <a href="https://instagram.com/heyhuntergirl" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://linkedin.com/in/heyhuntergirl" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://youtube.com/@heyhuntergirl" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://tiktok.com/@heyhuntergirl" target="_blank" rel="noopener">TikTok</a>
+          <a href="/podcast">Podcast</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2025 HeyHunterGirl. All rights reserved.</p>
-        <p>heyhuntergirl.com</p>
+      <div class="footer-cta">
+        <h4>Ready to Build?</h4>
+        <p>Have a stage, a show, or a project that needs a builder?</p>
+        <a href="/apply" class="btn btn-primary btn-sm">Book Me to Speak</a>
       </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <p>© 2025 HeyHunterGirl. All rights reserved.</p>
+      <p>heyhuntergirl.com</p>
+    </div>
+  </div>
+</footer>
 
-  <script>
+<script>
 (function () {
-  'use strict';
   var header = document.getElementById('site-header');
-  if (header) {
-    var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 40); };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
+  var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 40); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
   var toggle = document.getElementById('nav-toggle');
   var navLinks = document.getElementById('nav-links');
   if (toggle && navLinks) {
     toggle.addEventListener('click', function () {
       var open = navLinks.classList.toggle('open');
       toggle.classList.toggle('open', open);
-      document.body.style.overflow = open ? 'hidden' : '';
-    });
-    navLinks.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-        toggle.classList.remove('open');
-        document.body.style.overflow = '';
-      });
+      toggle.setAttribute('aria-expanded', open);
     });
   }
-  var style = document.createElement('style');
-  style.textContent = '.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1)}.reveal.visible{opacity:1;transform:none}';
-  document.head.appendChild(style);
-  if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.pillar-card,.topic-card,.testimonial-card,.stat-card,.podcast-cover,.apply-text,.builder-text').forEach(function (el, i) {
-      el.classList.add('reveal');
-      el.style.transitionDelay = (i % 4 * 0.08) + 's';
-      observer.observe(el);
+
+  // Fade-in on scroll
+  var els = document.querySelectorAll('.exp-tile, .content-card, .blog-card, .about-grid, .cred-item, .world-img');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; io.unobserve(e.target); }
     });
-  }
-})();
-  </script>
+  }, { threshold: 0.12 });
+  els.forEach(function (el, i) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease ' + (i * 0.05) + 's, transform 0.6s ease ' + (i * 0.05) + 's';
+    io.observe(el);
+  });
+}());
+</script>
 </body>
 </html>
