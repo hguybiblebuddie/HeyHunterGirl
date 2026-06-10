@@ -9,27 +9,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
 /* ==========================================================================
-   HeyHunterGirl — Martha's Vineyard Summer palette
-   Sunshine · Sky blue · Warm cream · Axon brown · Gold
+   HeyHunterGirl — Old Money · New Experiences palette
+   Navy, Dusty Blue, Warm Cream, Gold
+   Stewardship · Excellence · Grace
    ========================================================================== */
 :root {
-  /* Warm espresso — footer, deepest dark */
-  --forest:         #2A1810;
-  --forest-mid:     #3D2518;
-  --forest-light:   #5C3824;
-  --deep:           #2A1810;
-  --deep-mid:       #3D2518;
+  /* Navy — anchor dark color (footer bg, deep accents, nav) */
+  --forest:         #1E3860;
+  --forest-mid:     #2E4E78;
+  --forest-light:   #4A6A90;
+  --deep:           #1E3860;
 
-  /* Sky blue — Martha's Vineyard water */
-  --sky:            #5BA8BE;
-  --sky-mid:        #84C2D2;
-  --sky-light:      #B5DCE7;
-  --sky-pale:       #DFF0F5;
-  --sage:           #5BA8BE;
-  --sage-mid:       #84C2D2;
-  --sage-light:     #B5DCE7;
-  --sage-pale:      #DFF0F5;
-  --cream-sage:     #EBF6FA;
+  /* Dusty blue — signature accent */
+  --sky:            #7BAEC4;
+  --sky-mid:        #9BCADC;
+  --sky-light:      #BDDBE8;
+  --sky-pale:       #E4F2F8;
+  --sage:           #7BAEC4;
+  --sage-mid:       #9BCADC;
+  --sage-light:     #BDDBE8;
+  --sage-pale:      #E4F2F8;
+  --cream-sage:     #EAF4F8;
 
   /* Sunshine yellow */
   --sunshine:       #E8B84B;
@@ -41,25 +41,24 @@
   --gold-light:     #DEB96A;
   --gold-pale:      #F7EDD3;
 
-  /* Coral terracotta */
-  --terra:          #C4603A;
-  --terra-light:    #D98060;
-  --coral:          #C4603A;
+  /* Dusty rose — muted secondary warm accent */
+  --terra:          #C47868;
+  --terra-light:    #D49888;
 
   /* Warm cream — candlelight */
-  --cream:          #FFF9EC;
+  --cream:          #FFF9EF;
   --cream-dark:     #F5EDD8;
-  --cream-sky:      #EBF6FA;
+  --cream-sky:      #EAF4F8;
 
-  /* Text — warm brown */
-  --text:           #2A1810;
-  --text-mid:       #6B4230;
-  --text-light:     #A07860;
+  /* Text — navy */
+  --text:           #1E3860;
+  --text-mid:       #4A6080;
+  --text-light:     #8A9AAC;
   --white:          #FFFFFF;
 
-  --font-serif:   'Cormorant Garamond', Georgia, serif;
+  --font-serif:   'Playfair Display', Georgia, serif;
   --font-lora:    'Lora', Georgia, serif;
-  --font-sans:    'Nunito', system-ui, sans-serif;
+  --font-sans:    'DM Sans', system-ui, sans-serif;
   --font-script:  'Great Vibes', cursive;
   --max-w:        1200px;
   --nav-h:        80px;
@@ -146,7 +145,7 @@ p { line-height: 1.75; }
 .podcast-section { background: var(--cream-sky); position: relative; overflow: hidden; }
 .podcast-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba(232,184,75,0.1) 0%, transparent 55%), radial-gradient(ellipse 40% 60% at 100% 0%, rgba(91,168,190,0.1) 0%, transparent 50%); }
 .podcast-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: center; position: relative; z-index: 1; }
-.podcast-cover { aspect-ratio: 1; background: linear-gradient(145deg, var(--sunshine-pale) 0%, #F5E0A0 50%, var(--cream-dark) 100%); border-radius: 12px; border: 1px solid rgba(232,184,75,0.45); display: flex; align-items: center; justify-content: center; box-shadow: 0 24px 56px rgba(42,24,16,0.12), inset 0 1px 0 rgba(255,255,255,0.8); padding: 2.5rem; max-width: 320px; }
+.podcast-cover { aspect-ratio: 1; background: linear-gradient(145deg, #E4F2F8 0%, #9BCADC 50%, #7BAEC4 100%); border-radius: 12px; border: 1px solid rgba(123,174,196,0.5); display: flex; align-items: center; justify-content: center; box-shadow: 0 24px 56px rgba(30,56,96,0.15), inset 0 1px 0 rgba(255,255,255,0.6); padding: 2.5rem; max-width: 320px; }
 .podcast-cover-inner { text-align: center; color: var(--text); }
 .podcast-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--terra); margin-bottom: 1rem; }
 .podcast-cover-inner h3 { font-size: 1.4rem; font-family: var(--font-serif); line-height: 1.3; margin-bottom: 0.75rem; }
@@ -200,7 +199,7 @@ p { line-height: 1.75; }
 .form-card h3 { font-size: 1.3rem; color: var(--text); margin-bottom: 1.75rem; }
 
 /* Footer */
-.site-footer { background: var(--forest); padding: 4rem 0 2rem; border-top: 2px solid var(--sunshine); }
+.site-footer { background: var(--forest); padding: 4rem 0 2rem; border-top: 1px solid rgba(123,174,196,0.2); }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 3rem; margin-bottom: 3rem; }
 .footer-logo { font-family: var(--font-script); font-size: 2rem; font-weight: normal; color: var(--sunshine-light); display: block; margin-bottom: 0.75rem; }
 .footer-brand p { font-size: 0.9rem; color: rgba(255,249,236,0.55); line-height: 1.6; }
@@ -213,7 +212,7 @@ p { line-height: 1.75; }
 .footer-social-links a { font-size: 0.9rem; color: rgba(255,249,236,0.5); transition: color 0.2s; }
 .footer-social-links a:hover { color: var(--sky-light); }
 .footer-cta p { font-size: 0.85rem; color: rgba(255,249,236,0.5); margin-bottom: 1rem; line-height: 1.5; }
-.footer-bottom { border-top: 1px solid rgba(232,184,75,0.15); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.footer-bottom { border-top: 1px solid rgba(123,174,196,0.12); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
 .footer-bottom p { font-size: 0.78rem; color: rgba(255,249,236,0.28); }
 
 @media (max-width: 1024px) {
@@ -247,10 +246,9 @@ p { line-height: 1.75; }
       </button>
       <div class="nav-links" id="nav-links">
         <a href="#about">About</a>
+        <a href="#writing">Writing</a>
         <a href="#speaking-topics">Speaking</a>
         <a href="#podcast">Podcast</a>
-        <a href="#accomplishments">Work</a>
-        <a href="#testimonials">Reviews</a>
         <a href="#apply" class="nav-cta btn btn-outline">Work With Me</a>
       </div>
     </nav>
@@ -261,7 +259,7 @@ p { line-height: 1.75; }
     <div class="hero-content">
       <p class="hero-eyebrow">Speaker · Podcast Host · Builder</p>
       <h1 class="hero-name">Hey, I'm <span class="accent">Hunter.</span></h1>
-      <p class="hero-tagline">I build things — people, spaces, and possibilities — the way God designed.</p>
+      <p class="hero-tagline">Old Money · New Experiences.</p>
       <div class="hero-actions">
         <a href="#apply" class="btn btn-primary">Book Me to Speak</a>
         <a href="#podcast" class="btn btn-ghost">The User Experience of You →</a>
@@ -300,19 +298,24 @@ p { line-height: 1.75; }
         </div>
         <div class="builder-pillars">
           <div class="pillar-card">
-            <div class="pillar-icon">🎤</div>
-            <h3>Speaker</h3>
-            <p>Keynotes, panels, conferences — I bring energy, truth, and transformation to every stage.</p>
+            <div class="pillar-icon">✦</div>
+            <h3>Becoming</h3>
+            <p>Identity and purpose — discovering who you are and walking fully in it.</p>
           </div>
           <div class="pillar-card">
-            <div class="pillar-icon">🎙️</div>
-            <h3>Podcast Host</h3>
-            <p>The User Experience of You — exploring how to live as the fullest version of who God made you.</p>
+            <div class="pillar-icon">⬡</div>
+            <h3>Leadership</h3>
+            <p>Leading people, building a legacy, and leaving an impact that outlasts you.</p>
           </div>
           <div class="pillar-card">
-            <div class="pillar-icon">🏗️</div>
-            <h3>Builder</h3>
-            <p>Creating programs, communities, and frameworks that give people the tools to build their best life.</p>
+            <div class="pillar-icon">◈</div>
+            <h3>Systems</h3>
+            <p>Technology, processes, and organizational design — the architecture of a life that works.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">◇</div>
+            <h3>Beauty</h3>
+            <p>Aesthetic living and living with intention — because how you inhabit your life matters.</p>
           </div>
         </div>
       </div>
@@ -336,8 +339,8 @@ p { line-height: 1.75; }
           <p class="section-eyebrow">New Podcast</p>
           <h2 class="section-title">The User Experience<br>of You</h2>
           <p class="body-large">What if your personality isn't a problem to manage — it's a power to deploy?</p>
-          <p>This podcast is about being the person God designed you to be — holistically, authentically, unapologetically. We explore personality, purpose, faith, and what happens when you stop trying to fit the mold and start becoming the fullest version of yourself.</p>
-          <p>Because when you operate as who He made you, you don't just live better — you glorify Him more fully.</p>
+          <p>Lessons from technology, leadership, faith, entrepreneurship, and the lifelong work of becoming. Real conversations. Purpose-driven. Purposeful living.</p>
+          <p>This is the podcast for the woman who knows she was made for more — and is ready to do the work of figuring out exactly what that means.</p>
           <div class="podcast-cta-group">
             <a href="#" class="btn btn-primary">Learn More &amp; Get Notified</a>
             <div class="podcast-platforms">
@@ -505,13 +508,14 @@ p { line-height: 1.75; }
         <div class="footer-brand">
           <a href="#" class="footer-logo">HeyHunterGirl</a>
           <p>Speaker. Podcast Host. Builder.</p>
-          <p class="footer-tagline">Glorifying God by becoming<br>who He made me to be.</p>
+          <p class="footer-tagline">Stewardship · Excellence · Grace</p>
         </div>
         <div class="footer-nav">
           <h4>Navigate</h4>
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#writing">Writing</a></li>
             <li><a href="#speaking-topics">Speaking</a></li>
             <li><a href="#podcast">Podcast</a></li>
             <li><a href="#apply">Work With Me</a></li>

@@ -295,13 +295,14 @@
         <div class="footer-brand">
           <a href="/" class="footer-logo">HeyHunterGirl</a>
           <p>Speaker. Podcast Host. Builder.</p>
-          <p class="footer-tagline">Glorifying God by becoming<br>who He made me to be.</p>
+          <p class="footer-tagline">Stewardship · Excellence · Grace</p>
         </div>
         <div class="footer-nav">
           <h4>Navigate</h4>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
+            <li><a href="/writing">Writing</a></li>
             <li><a href="/speaking">Speaking</a></li>
             <li><a href="/podcast">Podcast</a></li>
             <li><a href="/apply">Work With Me</a></li>
