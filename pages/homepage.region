@@ -11,7 +11,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
   {squarespace-headers}
 </head>
 <body id="homepage">
@@ -29,10 +29,9 @@
       </button>
       <div class="nav-links" id="nav-links">
         <a href="/#about">About</a>
+        <a href="/writing">Writing</a>
         <a href="/speaking">Speaking</a>
         <a href="/podcast">Podcast</a>
-        <a href="/#accomplishments">Work</a>
-        <a href="/#testimonials">Reviews</a>
         <a href="/apply" class="nav-cta btn btn-outline">Work With Me</a>
       </div>
     </nav>
@@ -45,7 +44,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow">Speaker · Podcast Host · Builder</p>
       <h1 class="hero-name">Hey, I'm <span class="accent">Hunter.</span></h1>
-      <p class="hero-tagline">I build things — people, spaces, and possibilities — the way God designed.</p>
+      <p class="hero-tagline">Old Money · New Experiences.</p>
       <div class="hero-actions">
         <a href="/speaking" class="btn btn-primary">Book Me to Speak</a>
         <a href="/podcast" class="btn btn-ghost">The User Experience of You →</a>
@@ -103,19 +102,24 @@
         </div>
         <div class="builder-pillars">
           <div class="pillar-card">
-            <div class="pillar-icon">🎤</div>
-            <h3>Speaker</h3>
-            <p>Keynotes, panels, conferences — I bring energy, truth, and transformation to every stage.</p>
+            <div class="pillar-icon">✦</div>
+            <h3>Becoming</h3>
+            <p>Identity and purpose — discovering who you are and walking fully in it.</p>
           </div>
           <div class="pillar-card">
-            <div class="pillar-icon">🎙️</div>
-            <h3>Podcast Host</h3>
-            <p>The User Experience of You — exploring how to live as the fullest version of who God made you.</p>
+            <div class="pillar-icon">⬡</div>
+            <h3>Leadership</h3>
+            <p>Leading people, building a legacy, and leaving an impact that outlasts you.</p>
           </div>
           <div class="pillar-card">
-            <div class="pillar-icon">🏗️</div>
-            <h3>Builder</h3>
-            <p>Creating programs, communities, and frameworks that give people the tools to build their best life.</p>
+            <div class="pillar-icon">◈</div>
+            <h3>Systems</h3>
+            <p>Technology, processes, and organizational design — the architecture of a life that works.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">◇</div>
+            <h3>Beauty</h3>
+            <p>Aesthetic living and living with intention — because how you inhabit your life matters.</p>
           </div>
         </div>
       </div>
@@ -141,8 +145,8 @@
           <p class="section-eyebrow">New Podcast</p>
           <h2 class="section-title">The User Experience<br>of You</h2>
           <p class="body-large">What if your personality isn't a problem to manage — it's a power to deploy?</p>
-          <p>This podcast is about being the person God designed you to be — holistically, authentically, unapologetically. We explore personality, purpose, faith, and what happens when you stop trying to fit the mold and start becoming the fullest version of yourself.</p>
-          <p>Because when you operate as who He made you, you don't just live better — you glorify Him more fully.</p>
+          <p>Lessons from technology, leadership, faith, entrepreneurship, and the lifelong work of becoming. Real conversations. Purpose-driven. Purposeful living.</p>
+          <p>This is the podcast for the woman who knows she was made for more — and is ready to do the work of figuring out exactly what that means.</p>
           <div class="podcast-cta-group">
             <a href="/podcast" class="btn btn-primary">Learn More &amp; Get Notified</a>
             <div class="podcast-platforms">
@@ -217,10 +221,10 @@
   ═══════════════════════════════════════════════ -->
   <section class="testimonials-section section" id="testimonials">
     <div class="container">
-      <div class="section-header section-header--light">
+      <div class="section-header">
         <p class="section-eyebrow">From the People</p>
         <h2 class="section-title">What They're Saying</h2>
-        <p class="section-subtitle" style="color:rgba(255,255,255,0.6)">Real words from people who've experienced the room after Hunter speaks.</p>
+        <p class="section-subtitle">Real words from people who've experienced the room after Hunter speaks.</p>
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card">

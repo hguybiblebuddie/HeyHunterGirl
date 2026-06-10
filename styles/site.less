@@ -1,70 +1,70 @@
 /* ==========================================================================
    HeyHunterGirl — Site Stylesheet
-   Palette: "Martha's Vineyard Summer" — sunshine, sky, warm cream, Axon brown
-   Black joy · Vintage warmth · Summery · Vibrant · Airy
+   Palette: "Old Money · New Experiences" — Navy, Dusty Blue, Warm Cream, Gold
+   Stewardship · Excellence · Grace
    ========================================================================== */
 
 /* Cormorant Garamond — editorial serif
    Lora — warm italic serif
    Great Vibes — script for logo/accent (Sunday-adjacent)
    Nunito — warm, friendly sans body */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Nunito:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&display=swap');
 
 /* --------------------------------------------------------------------------
    Custom Properties
    -------------------------------------------------------------------------- */
 :root {
-  /* Warm espresso — footer bg, deepest dark accents */
-  --forest:       #2A1810;
-  --forest-mid:   #3D2518;
-  --forest-light: #5C3824;
+  /* Navy — anchor dark color (footer bg, deep accents, nav) */
+  --forest:       #1E3860;
+  --forest-mid:   #2E4E78;
+  --forest-light: #4A6A90;
 
-  /* Sky blue — Martha's Vineyard water & sky */
-  --sky:          #5BA8BE;
-  --sky-mid:      #84C2D2;
-  --sky-light:    #B5DCE7;
-  --sky-pale:     #DFF0F5;
+  /* Dusty blue — signature accent (characteristic brand blue) */
+  --sky:          #7BAEC4;
+  --sky-mid:      #9BCADC;
+  --sky-light:    #BDDBE8;
+  --sky-pale:     #E4F2F8;
 
-  /* Sunshine yellow — joy, warmth, summer light */
+  /* Sunshine — warm golden accent */
   --sunshine:     #E8B84B;
   --sunshine-light: #F5D17E;
   --sunshine-pale:  #FEF3D6;
 
-  /* Gold — warm, refined, jewelry */
+  /* Gold — jewelry, refined warm accents */
   --gold:         #C49A3C;
   --gold-light:   #DEB96A;
   --gold-pale:    #F7EDD3;
 
-  /* Coral terra — vibrant warmth */
-  --terra:        #C4603A;
-  --terra-light:  #D98060;
+  /* Dusty rose — muted secondary warm accent */
+  --terra:        #C47868;
+  --terra-light:  #D49888;
 
-  /* Axon brown — earthy, grounded, cultural */
-  --brown:        #7A4E32;
-  --brown-light:  #A0704E;
+  /* Warm sage — kept for legacy .region compatibility */
+  --brown:        #7A6450;
+  --brown-light:  #A08870;
 
-  /* Warm cream — primary light bg */
-  --cream:        #FFF9EC;   /* candlelight warm ivory */
+  /* Cream & ivory — primary light backgrounds */
+  --cream:        #FFF9EF;   /* candlelight warm ivory */
   --cream-dark:   #F5EDD8;   /* medium warm cream */
-  --cream-sky:    #EBF6FA;   /* sky-tinted pale cream */
+  --cream-sky:    #EAF4F8;   /* sky-tinted pale cream */
 
   /* Text */
-  --text:         #2A1810;   /* warm espresso */
-  --text-mid:     #6B4230;   /* warm medium brown */
-  --text-light:   #A07860;   /* warm taupe */
+  --text:         #1E3860;   /* navy — editorial dark for all body copy */
+  --text-mid:     #4A6080;   /* medium navy-gray */
+  --text-light:   #8A9AAC;   /* light blue-gray */
   --white:        #FFFFFF;
 
   /* Legacy aliases (used in .region inline styles) */
-  --cream-sage:   #EBF6FA;   /* mapped to sky-pale */
-  --sage:         #5BA8BE;   /* mapped to sky */
-  --sage-mid:     #84C2D2;
-  --sage-light:   #B5DCE7;
-  --sage-pale:    #DFF0F5;
+  --cream-sage:   #EAF4F8;
+  --sage:         #7BAEC4;
+  --sage-mid:     #9BCADC;
+  --sage-light:   #BDDBE8;
+  --sage-pale:    #E4F2F8;
 
-  --font-serif:   'Cormorant Garamond', Georgia, serif;
+  --font-serif:   'Playfair Display', Georgia, serif;   /* Recoleta substitute */
   --font-lora:    'Lora', Georgia, serif;
-  --font-sans:    'Nunito', system-ui, sans-serif;
-  --font-script:  'Great Vibes', cursive;   /* Sunday-style accent script */
+  --font-sans:    'DM Sans', system-ui, sans-serif;     /* Neue Haas Grotesk substitute */
+  --font-script:  'Great Vibes', cursive;               /* Sunday substitute */
 
   --max-w:       1200px;
   --nav-h:       80px;
@@ -295,7 +295,7 @@ p { line-height: 1.75; }
 }
 .nav-logo .logo-hey    { font-family: var(--font-script); font-size: 2rem; color: var(--terra); font-style: normal; line-height: 1; }
 .nav-logo .logo-hunter { font-family: var(--font-serif); font-size: 1.45rem; color: var(--text); letter-spacing: 0.02em; }
-.nav-logo .logo-girl   { font-family: var(--font-script); font-size: 2rem; color: var(--sky); font-style: normal; line-height: 1; }
+.nav-logo .logo-girl   { font-family: var(--font-script); color: var(--terra); font-style: normal; font-size: 1.9rem; line-height: 1; vertical-align: bottom; }
 
 .nav-links {
   display: flex;
@@ -548,13 +548,13 @@ p { line-height: 1.75; }
 /* Podcast cover — warm sunshine/gold palette */
 .podcast-cover {
   aspect-ratio: 1;
-  background: linear-gradient(145deg, var(--sunshine-pale) 0%, #F5E0A0 50%, var(--cream-dark) 100%);
+  background: linear-gradient(145deg, #E4F2F8 0%, #9BCADC 50%, #7BAEC4 100%);
   border-radius: 10px;
-  border: 1px solid rgba(232,184,75,0.45);
+  border: 1px solid rgba(123,174,196,0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 24px 56px rgba(42,24,16,0.12), inset 0 1px 0 rgba(255,255,255,0.8);
+  box-shadow: 0 24px 56px rgba(30,56,96,0.15), inset 0 1px 0 rgba(255,255,255,0.6);
   padding: 2.5rem;
   max-width: 320px;
   position: relative;
@@ -574,7 +574,7 @@ p { line-height: 1.75; }
 
 .podcast-cover-inner {
   text-align: center;
-  color: var(--text);
+  color: var(--forest);
   position: relative;
   z-index: 1;
 }
@@ -737,7 +737,7 @@ p { line-height: 1.75; }
 /* --------------------------------------------------------------------------
    Testimonials Section — warm cream with white cards
    -------------------------------------------------------------------------- */
-.testimonials-section { background: var(--cream-sky); }
+.testimonials-section { background: var(--sky-pale); }
 
 .testimonials-grid {
   display: grid;
@@ -870,7 +870,7 @@ p { line-height: 1.75; }
 .site-footer {
   background: var(--forest);
   padding: 4.5rem 0 2rem;
-  border-top: 2px solid var(--sunshine);
+  border-top: 1px solid rgba(123,174,196,0.2);
 }
 
 .footer-grid {
@@ -933,7 +933,7 @@ p { line-height: 1.75; }
 .footer-cta p { font-size: 0.84rem; color: rgba(255,249,236,0.5); margin-bottom: 1rem; line-height: 1.55; }
 
 .footer-bottom {
-  border-top: 1px solid rgba(232,184,75,0.15);
+  border-top: 1px solid rgba(123,174,196,0.12);
   padding-top: 1.5rem;
   display: flex;
   justify-content: space-between;
