@@ -7,11 +7,11 @@
   <meta name="description" content="The User Experience of You — a podcast with Hunter about being the person God designed you to be. Holistically, authentically, unapologetically. Coming Summer 2025.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   {squarespace-headers}
   <style>
     .podcast-page-hero {
-      background: var(--deep);
+      background: var(--forest);
       min-height: 90vh;
       display: flex;
       flex-direction: column;
@@ -23,8 +23,8 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 70% 80% at 60% 50%, rgba(201,152,58,0.14) 0%, transparent 60%),
-                  radial-gradient(ellipse 50% 50% at 0% 100%, rgba(201,98,58,0.08) 0%, transparent 50%);
+      background: radial-gradient(ellipse 70% 80% at 60% 50%, rgba(196,154,60,0.14) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 50% at 0% 100%, rgba(160,88,64,0.08) 0%, transparent 50%);
     }
     .podcast-hero-inner {
       position: relative;
@@ -38,9 +38,9 @@
     .podcast-hero-cover {
       width: 320px;
       aspect-ratio: 1;
-      background: linear-gradient(135deg, var(--deep-mid) 0%, #3D3A6E 50%, #2A2848 100%);
+      background: linear-gradient(135deg, var(--forest-mid) 0%, #2A5246 50%, #243F38 100%);
       border-radius: 16px;
-      border: 1px solid rgba(201,152,58,0.3);
+      border: 1px solid rgba(196,154,60,0.3);
       box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
       display: flex;
       flex-direction: column;
@@ -99,12 +99,12 @@
       font-family: var(--font-serif);
       font-style: italic;
       font-size: 1.3rem;
-      color: rgba(250,246,240,0.8);
+      color: rgba(240,234,224,0.8);
       margin-bottom: 1.5rem;
       line-height: 1.6;
     }
     .podcast-hero-text p {
-      color: rgba(250,246,240,0.7);
+      color: rgba(240,234,224,0.7);
       max-width: 540px;
       margin-bottom: 2rem;
       font-size: 1rem;
@@ -115,8 +115,8 @@
       align-items: center;
       gap: 0.5rem;
       padding: 0.4rem 1rem;
-      background: rgba(201,152,58,0.15);
-      border: 1px solid rgba(201,152,58,0.4);
+      background: rgba(196,154,60,0.15);
+      border: 1px solid rgba(196,154,60,0.4);
       border-radius: 100px;
       color: var(--gold-light);
       font-size: 0.78rem;
@@ -175,11 +175,11 @@
       border-radius: 6px;
       border-left: 3px solid var(--gold);
     }
-    .show-pillar h4 { color: var(--deep); font-size: 1rem; margin-bottom: 0.35rem; }
+    .show-pillar h4 { color: var(--forest); font-size: 1rem; margin-bottom: 0.35rem; }
     .show-pillar p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.6; margin: 0; }
 
     /* Topics we'll cover */
-    .episode-topics { background: var(--deep); }
+    .episode-topics { background: var(--forest); }
     .episode-topics .section-title { color: var(--white); }
     .episode-topics .section-eyebrow { color: var(--gold); }
     .topics-list {
@@ -204,12 +204,12 @@
       text-align: center;
     }
     .podcast-cta-strip h2 {
-      color: var(--deep);
+      color: var(--forest);
       font-size: clamp(1.8rem, 3vw, 2.5rem);
       margin-bottom: 0.75rem;
     }
-    .podcast-cta-strip p { color: rgba(28,27,58,0.7); margin-bottom: 1.5rem; font-size: 1rem; }
-    .podcast-cta-strip .btn-secondary { background: var(--deep); color: var(--white); }
+    .podcast-cta-strip p { color: rgba(26,56,48,0.7); margin-bottom: 1.5rem; font-size: 1rem; }
+    .podcast-cta-strip .btn-secondary { background: var(--forest); color: var(--white); }
 
     @media (max-width: 900px) {
       .podcast-hero-inner { grid-template-columns: 1fr; }
