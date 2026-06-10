@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HeyHunterGirl — Photo Shoot Inspiration Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream:      #FFF9EC;
+      --cream-dark: #F5EDD8;
+      --sunshine:   #E8B84B;
+      --sun-pale:   #FEF3D6;
+      --sky:        #5BA8BE;
+      --sky-pale:   #DFF0F5;
+      --terra:      #C4603A;
+      --brown:      #2A1810;
+      --brown-mid:  #6B4230;
+      --brown-lt:   #A07860;
+      --gold:       #C49A3C;
+      --white:      #FFFFFF;
+      --sage-green: #7A9E85;
+      --blush:      #E8B4A0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--brown);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ─────────────────────────────── */
+    .board-header {
+      background: var(--brown);
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .board-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 10%, rgba(232,184,75,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 60% at 5% 90%, rgba(91,168,190,0.15) 0%, transparent 50%);
+    }
+    .board-header > * { position: relative; z-index: 1; }
+    .board-header .eyebrow {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 0.5rem;
+    }
+    .board-header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(3rem, 6vw, 5rem);
+      color: var(--sunshine);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    .board-header .sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: rgba(255,249,236,0.75);
+      max-width: 560px;
+      margin: 0 auto 1.5rem;
+    }
+    .vibe-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .vibe-pill {
+      padding: 0.3rem 0.9rem;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .pill-sun  { background: rgba(232,184,75,0.2);  border: 1px solid rgba(232,184,75,0.45); color: var(--sunshine); }
+    .pill-sky  { background: rgba(91,168,190,0.15); border: 1px solid rgba(91,168,190,0.4);  color: #84C2D2; }
+    .pill-terra{ background: rgba(196,96,58,0.15);  border: 1px solid rgba(196,96,58,0.4);   color: #D98060; }
+
+    /* ── PALETTE STRIP ──────────────────────── */
+    .palette-strip {
+      background: var(--cream-dark);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .palette-strip .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--brown-lt);
+    }
+    .swatch-row { display: flex; gap: 0.5rem; align-items: center; }
+    .swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.6);
+      box-shadow: 0 2px 8px rgba(42,24,16,0.15);
+    }
+    .swatch-label { font-size: 0.68rem; color: var(--brown-mid); font-weight: 600; margin-top: 3px; text-align: center; }
+    .swatch-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+
+    /* ── BOARD GRID ─────────────────────────── */
+    .board-wrap { padding: 2.5rem 1.5rem; max-width: 1300px; margin: 0 auto; }
+    .board-section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 1.25rem;
+      padding-left: 0.25rem;
+      border-left: 3px solid var(--sunshine);
+      padding-left: 0.75rem;
+    }
+
+    /* Masonry-style grid via CSS columns */
+    .pin-grid {
+      columns: 4;
+      column-gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+    @media (max-width: 1100px) { .pin-grid { columns: 3; } }
+    @media (max-width: 720px)  { .pin-grid { columns: 2; } }
+    @media (max-width: 480px)  { .pin-grid { columns: 1; } }
+
+    .pin {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(42,24,16,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .pin:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 12px 32px rgba(42,24,16,0.15);
+    }
+
+    /* ── PIN VISUAL AREA ─── */
+    .pin-visual {
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    /* height classes */
+    .h-short  { min-height: 180px; }
+    .h-med    { min-height: 240px; }
+    .h-tall   { min-height: 310px; }
+    .h-xtall  { min-height: 380px; }
+
+    /* ── COLOR THEMES ─── */
+    .bg-golden {
+      background: linear-gradient(150deg, #F5E4A5 0%, #E8B84B 50%, #D4943A 100%);
+    }
+    .bg-sky {
+      background: linear-gradient(150deg, #C5E8F4 0%, #5BA8BE 60%, #3A8AAA 100%);
+    }
+    .bg-cream-warm {
+      background: linear-gradient(140deg, #FFF9EC 0%, #F5EDD8 50%, #EDD8A8 100%);
+    }
+    .bg-terra {
+      background: linear-gradient(140deg, #F2C4A8 0%, #C4603A 60%, #9A3E20 100%);
+    }
+    .bg-sage {
+      background: linear-gradient(140deg, #C8E0CC 0%, #7A9E85 60%, #4E7A5A 100%);
+    }
+    .bg-espresso {
+      background: linear-gradient(140deg, #7A5040 0%, #3D2518 55%, #2A1810 100%);
+    }
+    .bg-blush {
+      background: linear-gradient(140deg, #FDEEE8 0%, #E8B4A0 55%, #C47060 100%);
+    }
+    .bg-linen {
+      background: linear-gradient(140deg, #FFFFFF 0%, #FFF9EC 50%, #F5EDD8 100%);
+    }
+    .bg-sunfield {
+      background: linear-gradient(160deg, #87CEAA 0%, #A8D460 35%, #E8D030 65%, #F5A820 100%);
+    }
+    .bg-dusk {
+      background: linear-gradient(160deg, #F5C4A0 0%, #E08060 35%, #C06090 60%, #4870B8 100%);
+    }
+    .bg-cobalt-sun {
+      background: linear-gradient(140deg, #DFF0F5 0%, #5BA8BE 40%, #3A7898 70%, #E8B84B 100%);
+    }
+
+    /* ── PIN CONTENT ─── */
+    .pin-icon {
+      font-size: 3rem;
+      margin-bottom: 0.75rem;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+    }
+    .pin-scene {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      color: rgba(255,255,255,0.95);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+      padding: 0 1rem;
+      margin-bottom: 0.4rem;
+    }
+    .pin-scene.dark { color: var(--brown); text-shadow: none; }
+    .pin-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.25);
+      border-radius: 100px;
+      padding: 0.2rem 0.65rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 0.5rem;
+    }
+    .pin-tag.dark-tag { background: rgba(42,24,16,0.12); color: var(--brown-mid); }
+
+    /* ── PIN DETAILS ─── */
+    .pin-details {
+      background: var(--white);
+      padding: 1rem 1.1rem 1.2rem;
+    }
+    .pin-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 0.45rem;
+      line-height: 1.3;
+    }
+    .pin-desc {
+      font-size: 0.8rem;
+      color: var(--brown-mid);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .pin-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .meta-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+    }
+    .mt-sun    { background: var(--sun-pale);  color: var(--gold); }
+    .mt-sky    { background: var(--sky-pale);  color: var(--sky); }
+    .mt-terra  { background: #FDEEE8; color: var(--terra); }
+    .mt-sage   { background: #DFF0E8; color: var(--sage-green); }
+    .mt-brown  { background: var(--cream-dark); color: var(--brown-mid); }
+
+    /* Outfit card */
+    .outfit-strip {
+      display: flex;
+      gap: 0;
+    }
+    .outfit-swatch {
+      flex: 1;
+      height: 28px;
+    }
+    .outfit-note {
+      font-size: 0.72rem;
+      color: var(--brown-mid);
+      padding: 0.5rem 1.1rem 0;
+      font-style: italic;
+    }
+
+    /* ── DIRECTION CARDS (wider) ─── */
+    .direction-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+    @media (max-width: 900px) { .direction-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .direction-grid { grid-template-columns: 1fr; } }
+
+    .direction-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 4px 16px rgba(42,24,16,0.08);
+      border-top: 3px solid var(--sunshine);
+    }
+    .direction-card.sky-top { border-top-color: var(--sky); }
+    .direction-card.terra-top { border-top-color: var(--terra); }
+    .direction-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--cream-dark);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .direction-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 0.75rem;
+    }
+    .direction-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .direction-list li {
+      font-size: 0.82rem;
+      color: var(--brown-mid);
+      line-height: 1.5;
+      padding-left: 1.1rem;
+      position: relative;
+    }
+    .direction-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--sunshine);
+      font-weight: 700;
+    }
+    .direction-card.sky-top .direction-list li::before { color: var(--sky); }
+    .direction-card.terra-top .direction-list li::before { color: var(--terra); }
+
+    /* ── OUTFIT GUIDE ─── */
+    .outfit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+    @media (max-width: 900px) { .outfit-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .outfit-grid { grid-template-columns: 1fr; } }
+
+    .outfit-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(42,24,16,0.09);
+    }
+    .outfit-palette {
+      height: 120px;
+      display: flex;
+    }
+    .outfit-color { flex: 1; }
+    .outfit-body {
+      background: var(--white);
+      padding: 1rem;
+    }
+    .outfit-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 0.35rem;
+    }
+    .outfit-pieces {
+      font-size: 0.78rem;
+      color: var(--brown-mid);
+      line-height: 1.6;
+    }
+    .outfit-occasion {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      background: var(--sun-pale);
+      color: var(--gold);
+    }
+
+    /* ── SHOT LIST ─── */
+    .shot-list-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+    @media (max-width: 640px) { .shot-list-grid { grid-template-columns: 1fr; } }
+
+    .shot-block {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 12px rgba(42,24,16,0.07);
+      display: flex;
+      gap: 1rem;
+    }
+    .shot-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--sunshine);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 2.5rem;
+      text-align: right;
+    }
+    .shot-body h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 0.35rem;
+    }
+    .shot-body p {
+      font-size: 0.8rem;
+      color: var(--brown-mid);
+      line-height: 1.55;
+    }
+
+    /* ── FOOTER ─── */
+    .board-footer {
+      background: var(--brown);
+      padding: 2rem;
+      text-align: center;
+      border-top: 2px solid var(--sunshine);
+    }
+    .board-footer p {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      color: var(--sunshine);
+      margin-bottom: 0.4rem;
+    }
+    .board-footer small {
+      font-size: 0.72rem;
+      color: rgba(255,249,236,0.4);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════════════ -->
+<header class="board-header">
+  <p class="eyebrow">HeyHunterGirl · Brand Imagery Direction</p>
+  <h1>The Photo Shoot</h1>
+  <p class="sub">Summertime. Sunlit. Joyful. Purposeful. Black excellence in every frame.</p>
+  <div class="vibe-pills">
+    <span class="vibe-pill pill-sun">Martha's Vineyard Energy</span>
+    <span class="vibe-pill pill-sky">Golden Hour Light</span>
+    <span class="vibe-pill pill-terra">Vintage Warmth</span>
+    <span class="vibe-pill pill-sun">Black Joy Radiating</span>
+    <span class="vibe-pill pill-sky">Outdoor · Earthy · Airy</span>
+    <span class="vibe-pill pill-terra">Speaker · Builder · Host</span>
+  </div>
+</header>
+
+<!-- ══ PALETTE STRIP ══════════════════════════════════════════ -->
+<div class="palette-strip">
+  <span class="label">Wear These Colors →</span>
+  <div class="swatch-row">
+    <div class="swatch-item">
+      <div class="swatch" style="background:#FFF9EC;"></div>
+      <div class="swatch-label">Ivory Linen</div>
+    </div>
+    <div class="swatch-item">
+      <div class="swatch" style="background:#E8B84B;"></div>
+      <div class="swatch-label">Sunshine</div>
+    </div>
+    <div class="swatch-item">
+      <div class="swatch" style="background:#F5EDD8;"></div>
+      <div class="swatch-label">Warm Cream</div>
+    </div>
+    <div class="swatch-item">
+      <div class="swatch" style="background:#C4603A;"></div>
+      <div class="swatch-label">Terracotta</div>
+    </div>
+    <div class="swatch-item">
+      <div class="swatch" style="background:#5BA8BE;"></div>
+      <div class="swatch-label">Sky Blue</div>
+    </div>
+    <div class="swatch-item">
+      <div class="swatch" style="background:#7A9E85;"></div>
+      <div class="swatch-label">Sage Green</div>
+    </div>
+    <div class="swatch-item">
+      <div class="swatch" style="background:#2A1810;"></div>
+      <div class="swatch-label">Espresso</div>
+    </div>
+    <div class="swatch-item">
+      <div class="swatch" style="background:#C49A3C;"></div>
+      <div class="swatch-label">Gold</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BOARD GRID ═════════════════════════════════════════════ -->
+<div class="board-wrap">
+
+  <p class="board-section-label">Location & Scene Inspiration</p>
+
+  <div class="pin-grid">
+
+    <!-- 1. Vintage Convertible -->
+    <div class="pin">
+      <div class="pin-visual h-tall bg-golden">
+        <div class="pin-icon">🚗</div>
+        <div class="pin-tag">Hero Shot</div>
+        <div class="pin-scene">Vintage Convertible</div>
+      </div>
+      <div class="pin-details">
+        <div class="pin-title">The Car Girl Moment</div>
+        <div class="pin-desc">Standing beside a cream or gold vintage convertible (think 1960s Cadillac or Ford Thunderbird). One hand resting on the roof, hip slightly out. Let the light hit your skin like it's 3pm in August. Sunglasses on or dangling from one hand.</div>
+        <div class="outfit-strip">
+          <div class="outfit-swatch" style="background:#FFF9EC;"></div>
+          <div class="outfit-swatch" style="background:#E8B84B;"></div>
+          <div class="outfit-swatch" style="background:#C4603A;"></div>
+        </div>
+        <div class="outfit-note">White linen or ivory midi skirt + terracotta top</div>
+        <div class="pin-meta" style="margin-top:0.65rem;">
+          <span class="meta-tag mt-sun">Golden Hour</span>
+          <span class="meta-tag mt-terra">Hero Image</span>
+          <span class="meta-tag mt-brown">B-Roll</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Gingerbread Cottage -->
+    <div class="pin">
+      <div class="pin-visual h-med bg-blush">
+        <div class="pin-icon">🏡</div>
+        <div class="pin-tag">Location</div>
+        <div class="pin-scene">Painted Porch</div>
+      </div>
+      <div class="pin-details">
+        <div class="pin-title">MV Gingerbread Houses</div>
+        <div class="pin-desc">Leaning against the painted fence or sitting on the steps of a colorful Victorian cottage. Soft laugh, candid joy. The architecture does the work — you bring the warmth.</div>
+        <div class="pin-meta">
+          <span class="meta-tag mt-sky">Candid</span>
+          <span class="meta-tag mt-terra">About Page</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Sunflower Field -->
+    <div class="pin">
+      <div class="pin-visual h-xtall bg-sunfield">
+        <div class="pin-icon">🌻</div>
+        <div class="pin-tag">B-Roll + Headshot</div>
+        <div class="pin-scene">Sunflower Field</div>
+      </div>
+      <div class="pin-details">
+        <div class="pin-title">Standing in the Flowers</div>
+        <div class="pin-desc">Walk through rows of sunflowers or turn and look directly into the camera with one hand grazing a bloom. Arms wide open, looking up. Pure joy, no filter needed. The yellow speaks your brand language.</div>
+        <div class="outfit-strip">
+          <div class="outfit-swatch" style="background:#FFF9EC;"></div>
+          <div class="outfit-swatch" style="background:#F5EDD8;"></div>
+          <div class="outfit-swatch" style="background:#7A9E85;"></div>
+        </div>
+        <div class="outfit-note">White eyelet dress or cream linen set</div>
+        <div class="pin-meta" style="margin-top:0.65rem;">
+          <span class="meta-tag mt-sun">Homepage Hero</span>
+          <span class="meta-tag mt-sage">Outdoors</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Waterfront -->
+    <div class="pin">
+      <div class="pin-visual h-tall bg-sky">
+        <div class="pin-icon">⛵</div>
+        <div class="pin-tag">B-Roll</div>
+        <div class="pin-scene">Golden Hour Water</div>
+      </div>
+      <div class="pin-details">
+        <div class="pin-title">Waterfront at Magic Hour</div>
+        <div class="pin-desc">Standing at a dock or rocky shoreline, facing the water or looking back over one shoulder. The sun at your back creates that warm rim-lit glow — your silhouette, your presence. No words needed.</div>
+        <div class="pin-meta">
+          <span class="meta-tag mt-sky">Speaking Page</span>
+          <span class="meta-tag mt-sun">Golden Hour</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Window Light Close-Up -->
+    <div class="pin">
+      <div class="pin-visual h-med bg-linen">
+        <div class="pin-icon">🪟</div>
+        <div class="pin-tag">Headshot</div>
+        <div class="pin-scene dark">Window Light Portrait</div>
+      </div>
+      <div class="pin-details">
+        <div class="pin-title">The Editorial Close-Up</div>
+        <div class="pin-desc">Seated near a large window — soft directional light painting one side of your face. Eyes forward, slight smile. This is your "I know exactly who I am" shot. Use for About page and podcast artwork.</div>
+        <div class="pin-meta">
+          <span class="meta-tag mt-brown">About Page</span>
+          <span class="meta-tag mt-sky">Podcast Art</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Farmer's Market / Blooms -->
+    <div class="pin">
+      <div class="pin-visual h-tall bg-sage">
+        <div class="pin-icon">💐</div>
+        <div class="pin-tag">Lifestyle</div>
+        <div class="pin-scene">Farmer's Market Flowers</div>
+      </div>
+      <div class="pin-details">
+        <div class="pin-title">She Moves Through the World</div>
+        <div class="pin-desc">Holding an oversized bouquet — sunflowers, wildflowers, eucalyptus — laughing naturally at something just off camera. Candid movement. Captured between moments. This is the "she's human, she's alive" shot.</div>
+        <div class="outfit-strip">
+          <div class="outfit-swatch" style="background:#E8B84B;"></div>
+          <div class="outfit-swatch" style="background:#C4603A;"></div>
+          <div class="outfit-swatch" style="background:#FFF9EC;"></div>
+        </div>
+        <div class="outfit-note">Sunshine sundress or terracotta wrap</div>
+        <div class="pin-meta" style="margin-top:0.65rem;">
+          <span class="meta-tag mt-sage">B-Roll</span>
+          <span class="meta-tag mt-sun">Lifestyle</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Vintage Bicycle -->
+    <div class="pin">
+      <div class="pin-visual h-med bg-cream-warm">
+        <div class="pin-icon">🚲</div>
+        <div class="pin-tag">Lifestyle</div>
+        <div class="pin-scene dark">Vintage Bicycle</div>
+      </div>
+      <div class="pin-details">
+        <div class="pin-title">The Bicycle Shot</div>
+        <div class="pin-desc">Perched on the seat of a vintage cruiser with a wicker basket full of flowers or books. Legs crossed at ankle, looking over your shoulder. Old-town street or gravel path backdrop. Effortlessly joyful.</div>
+        <div class="pin-meta">
+          <span class="meta-tag mt-sun">Lifestyle</span>
+          <span class="meta-tag mt-brown">B-Roll</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Speaking / Commanding Pose -->
+    <div class="pin">
+      <div class="pin-visual h-xtall bg-espresso">
+        <div class="pin-icon">🎤</div>
+        <div class="pin-tag">Brand Statement</div>
+        <div class="pin-scene">The Speaker</div>
+      </div>
+      <div class="pin-details">
+        <div class="pin-title">Commanding Presence, Outdoors</div>
+        <div class="pin-desc">Standing on elevated ground — steps, a low wall, a stage riser — one arm extended as if mid-talk, or hands clasped with intent. Looking just past the lens. This is your homepage hero. Power without trying.</div>
+        <div class="outfit-strip">
+          <div class="outfit-swatch" style="background:#FFF9EC;"></div>
+          <div class="outfit-swatch" style="background:#2A1810;"></div>
+          <div class="outfit-swatch" style="background:#E8B84B;"></div>
+        </div>
+        <div class="outfit-note">White blazer + espresso trousers + gold jewelry</div>
+        <div class="pin-meta" style="margin-top:0.65rem;">
+          <span class="meta-tag mt-sun">Homepage Hero</span>
+          <span class="meta-tag mt-sky">Speaking Page</span>
+          <span class="meta-tag mt-terra">Statement</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Walking Away / Cobblestone -->
+    <div class="pin">
+      <div class="pin-visual h-tall bg-terra">
+        <div class="pin-icon">👣</div>
+        <div class="pin-tag">Movement</div>
+        <div class="pin-scene">Over-the-Shoulder Walk</div>
+      </div>
+      <div class="pin-details">
+        <div class="pin-title">She's Always Moving Forward</div>
+        <div class="pin-desc">Walking away down a cobblestone street or sun-drenched path, then turning halfway to look back with a big smile. Flowy skirt or blazer in motion. Captures the "she's on her way somewhere" energy — perfect for the site's scrolling panels.</div>
+        <div class="pin-meta">
+          <span class="meta-tag mt-terra">B-Roll</span>
+          <span class="meta-tag mt-sun">About Page</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Journaling Under a Tree -->
+    <div class="pin">
+      <div class="pin-visual h-med bg-sage">
+        <div class="pin-icon">📓</div>
+        <div class="pin-tag">Intimate</div>
+        <div class="pin-scene">The Thinker</div>
+      </div>
+      <div class="pin-details">
+        <div class="pin-title">Journaling Under a Oak Tree</div>
+        <div class="pin-desc">Cross-legged in dappled shade — notebook open, pen in hand, looking thoughtfully into the distance or down at the page. Natural and grounded. Shows the contemplative, builder side of your brand.</div>
+        <div class="pin-meta">
+          <span class="meta-tag mt-sage">Podcast Page</span>
+          <span class="meta-tag mt-brown">B-Roll</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. Rooftop / Elevated View -->
+    <div class="pin">
+      <div class="pin-visual h-tall bg-dusk">
+        <div class="pin-icon">🌇</div>
+        <div class="pin-tag">Statement</div>
+        <div class="pin-scene">Elevated View</div>
+      </div>
+      <div class="pin-details">
+        <div class="pin-title">The Rooftop / High Ground</div>
+        <div class="pin-desc">Arms out to your sides, facing the sunset from a rooftop, hillside, or pier. Dusk light turns everything gold and pink. Silhouette or three-quarter. The ultimate "she built this" energy — used for section breaks or testimonial area.</div>
+        <div class="pin-meta">
+          <span class="meta-tag mt-sun">Homepage</span>
+          <span class="meta-tag mt-terra">Statement Shot</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12. Porch Swing / Hammock -->
+    <div class="pin">
+      <div class="pin-visual h-med bg-cobalt-sun">
+        <div class="pin-icon">🌿</div>
+        <div class="pin-tag">Relaxed</div>
+        <div class="pin-scene">Porch Peace</div>
+      </div>
+      <div class="pin-details">
+        <div class="pin-title">The Porch Swing / Hammock</div>
+        <div class="pin-desc">Relaxed, legs draped over the side of a porch swing, laughing or reading. A glass of something golden nearby. This is the "I'm at peace in who I am" shot — your audience needs to feel this ease radiating from you.</div>
+        <div class="pin-meta">
+          <span class="meta-tag mt-sky">About Page</span>
+          <span class="meta-tag mt-sage">Lifestyle</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /pin-grid -->
+
+
+  <!-- ══ POSE DIRECTIONS ════════════════════════════════════════ -->
+  <p class="board-section-label">Pose Direction & Photographer Notes</p>
+
+  <div class="direction-grid">
+
+    <div class="direction-card">
+      <div class="direction-num">01</div>
+      <div class="direction-title">The Power Headshot</div>
+      <ul class="direction-list">
+        <li>Chin slightly forward and down (elongates neck, avoids double-chin)</li>
+        <li>Body at 45° angle to camera, face turned toward lens</li>
+        <li>One shoulder slightly raised — creates visual interest</li>
+        <li>Eyes hold steady, let a small natural smile form — "knowing" not "grinning"</li>
+        <li>Hands: one on hip or relaxed at side</li>
+        <li>Backdrop: painted wall, architectural detail, natural greenery</li>
+      </ul>
+    </div>
+
+    <div class="direction-card sky-top">
+      <div class="direction-num">02</div>
+      <div class="direction-title">The Candid Laugh</div>
+      <ul class="direction-list">
+        <li>Photographer tells a bad joke — your real laugh is the shot</li>
+        <li>Eyes crinkle — genuine, not posed</li>
+        <li>Look down then look up (shoot in the middle of the uplook)</li>
+        <li>Hand can go to chest or mouth mid-laugh — natural</li>
+        <li>Walk toward photographer while laughing = movement + joy</li>
+        <li>Golden hour or open shade — no harsh shadows on face</li>
+      </ul>
+    </div>
+
+    <div class="direction-card terra-top">
+      <div class="direction-num">03</div>
+      <div class="direction-title">The Authority Stance</div>
+      <ul class="direction-list">
+        <li>Standing tall, full body in frame — shows your full presence</li>
+        <li>Feet hip-width, slight weight shift to one side</li>
+        <li>Arms: crossed loosely or one hand in pocket</li>
+        <li>Direct eye contact with camera — unwavering, warm, certain</li>
+        <li>Use for speaking page, hero, and anywhere you want "I mean business"</li>
+        <li>Outerwear: blazer, structured jacket, or kimono overlay</li>
+      </ul>
+    </div>
+
+    <div class="direction-card">
+      <div class="direction-num">04</div>
+      <div class="direction-title">The In-Motion Shot</div>
+      <ul class="direction-list">
+        <li>Walk toward the camera — don't look at lens, look past it</li>
+        <li>Skirt or fabric should be in natural movement</li>
+        <li>Shoot at 1/800 sec minimum to freeze motion + get sharp eyes</li>
+        <li>Mid-stride is the sweet spot — one foot forward, arms naturally swinging</li>
+        <li>Location: open sidewalk, market alley, gravel path, boardwalk</li>
+        <li>Then look back over shoulder for the "follow me" variation</li>
+      </ul>
+    </div>
+
+    <div class="direction-card sky-top">
+      <div class="direction-num">05</div>
+      <div class="direction-title">Environmental B-Roll</div>
+      <ul class="direction-list">
+        <li>Hands tracing a book spine, writing in notebook, holding coffee</li>
+        <li>Detail shots: gold jewelry, curls, bare feet on grass</li>
+        <li>Over-shoulder "working" shot — laptop or journal, looking engaged</li>
+        <li>Silhouette against bright window or open sky</li>
+        <li>Looking out of car window (passenger seat, golden hour driving)</li>
+        <li>Hands holding a mic — even a prop one — confident and natural</li>
+      </ul>
+    </div>
+
+    <div class="direction-card terra-top">
+      <div class="direction-num">06</div>
+      <div class="direction-title">Light & Technical Notes</div>
+      <ul class="direction-list">
+        <li><strong>Golden hour</strong>: shoot 60 min before sunset — everything glows warm</li>
+        <li><strong>Open shade</strong>: beautiful diffused light, no squinting</li>
+        <li>Avoid midday sun overhead — harsh shadows and squinting</li>
+        <li>Reflector: gold or silver to bounce sun back into face</li>
+        <li>Warm presets in editing — Moody Nude, Brown Sugar, Honey filter vibes</li>
+        <li>Skin should glow, not be corrected out of existence</li>
+      </ul>
+    </div>
+
+  </div><!-- /direction-grid -->
+
+
+  <!-- ══ OUTFIT GUIDE ════════════════════════════════════════════ -->
+  <p class="board-section-label">4 Outfit Looks for the Shoot</p>
+
+  <div class="outfit-grid">
+
+    <div class="outfit-card">
+      <div class="outfit-palette">
+        <div class="outfit-color" style="background:#FFF9EC;"></div>
+        <div class="outfit-color" style="background:#F5EDD8;"></div>
+        <div class="outfit-color" style="background:#E8B84B;"></div>
+        <div class="outfit-color" style="background:#C49A3C;"></div>
+      </div>
+      <div class="outfit-body">
+        <div class="outfit-name">Look 1 — Ivory Summer</div>
+        <div class="outfit-pieces">
+          White or cream linen midi dress · Gold hoop earrings · Strappy sandals · Natural hair out or loose bun · Straw bag or no bag
+        </div>
+        <span class="outfit-occasion">Sunflowers · Porch · Waterfront</span>
+      </div>
+    </div>
+
+    <div class="outfit-card">
+      <div class="outfit-palette">
+        <div class="outfit-color" style="background:#C4603A;"></div>
+        <div class="outfit-color" style="background:#E8B84B;"></div>
+        <div class="outfit-color" style="background:#F5EDD8;"></div>
+        <div class="outfit-color" style="background:#7A9E85;"></div>
+      </div>
+      <div class="outfit-body">
+        <div class="outfit-name">Look 2 — Terra & Sunshine</div>
+        <div class="outfit-pieces">
+          Terracotta wrap dress or co-ord set · Gold chain necklace + earrings · White sneakers or tan mules · Sunglasses vintage-frame
+        </div>
+        <span class="outfit-occasion">Vintage Car · Market · Walking</span>
+      </div>
+    </div>
+
+    <div class="outfit-card">
+      <div class="outfit-palette">
+        <div class="outfit-color" style="background:#FFF9EC;"></div>
+        <div class="outfit-color" style="background:#FFFFFF;"></div>
+        <div class="outfit-color" style="background:#2A1810;"></div>
+        <div class="outfit-color" style="background:#E8B84B;"></div>
+      </div>
+      <div class="outfit-body">
+        <div class="outfit-name">Look 3 — The Speaker</div>
+        <div class="outfit-pieces">
+          White linen blazer + wide-leg cream trousers · Espresso or black fitted underneath · Gold statement earrings · Heel or loafer
+        </div>
+        <span class="outfit-occasion">Authority Shots · Speaking Page</span>
+      </div>
+    </div>
+
+    <div class="outfit-card">
+      <div class="outfit-palette">
+        <div class="outfit-color" style="background:#5BA8BE;"></div>
+        <div class="outfit-color" style="background:#84C2D2;"></div>
+        <div class="outfit-color" style="background:#FFF9EC;"></div>
+        <div class="outfit-color" style="background:#E8B84B;"></div>
+      </div>
+      <div class="outfit-body">
+        <div class="outfit-name">Look 4 — Sky & Cream</div>
+        <div class="outfit-pieces">
+          Sky blue sundress or two-piece · Cream cardigan or denim jacket · Natural hair with headscarf accent (sunshine yellow) · Flat sandals
+        </div>
+        <span class="outfit-occasion">Porch · Hammock · Candid Life</span>
+      </div>
+    </div>
+
+  </div><!-- /outfit-grid -->
+
+
+  <!-- ══ MUST-CAPTURE SHOT LIST ══════════════════════════════════ -->
+  <p class="board-section-label">Must-Capture Shot List — Bring This to Your Photographer</p>
+
+  <div class="shot-list-grid">
+    <div class="shot-block">
+      <div class="shot-num">1</div>
+      <div class="shot-body">
+        <h4>The Homepage Hero</h4>
+        <p>Full body or 3/4 length, commanding stance, outdoors, golden light. Clean background so text can overlay. Shoot horizontal (landscape) and vertical both.</p>
+      </div>
+    </div>
+    <div class="shot-block">
+      <div class="shot-num">2</div>
+      <div class="shot-body">
+        <h4>The About Portrait</h4>
+        <p>Close headshot, relaxed and warm. Looking directly at camera. This one should feel approachable, like you're about to start a real conversation.</p>
+      </div>
+    </div>
+    <div class="shot-block">
+      <div class="shot-num">3</div>
+      <div class="shot-body">
+        <h4>The Joy Shot</h4>
+        <p>Genuine full laugh, movement, life. Doesn't need to be "pretty" — needs to be real. This is the one people screenshot and share. Get at least 20 burst shots.</p>
+      </div>
+    </div>
+    <div class="shot-block">
+      <div class="shot-num">4</div>
+      <div class="shot-body">
+        <h4>Podcast / Creator B-Roll</h4>
+        <p>Notebook, pen, thinking pose. Looking away into the distance contemplatively. Over-shoulder desk or outdoor workspace. Mic or headphones if available.</p>
+      </div>
+    </div>
+    <div class="shot-block">
+      <div class="shot-num">5</div>
+      <div class="shot-body">
+        <h4>The Movement Shot</h4>
+        <p>Walking toward camera, skirt or fabric in motion. Shoot mid-stride. Then do the over-shoulder look back. Use for speaking page and b-roll panels.</p>
+      </div>
+    </div>
+    <div class="shot-block">
+      <div class="shot-num">6</div>
+      <div class="shot-body">
+        <h4>Detail / Vibe Shots</h4>
+        <p>Close-ups: gold jewelry on wrist, curls in sunlight, hands on a book cover, feet in grass, silhouette against sky. These fill the site's texture sections.</p>
+      </div>
+    </div>
+    <div class="shot-block">
+      <div class="shot-num">7</div>
+      <div class="shot-body">
+        <h4>Prop Shot — The Car or Bicycle</h4>
+        <p>Against or beside a vintage prop (car, bicycle, old truck). Hand on it, weight shifted, looking right at camera. Relaxed cool. This becomes the most-shared image.</p>
+      </div>
+    </div>
+    <div class="shot-block">
+      <div class="shot-num">8</div>
+      <div class="shot-body">
+        <h4>The Sunset Silhouette</h4>
+        <p>Just before sun drops below horizon. Arms slightly open, hair catching the light. This becomes the testimonials section background or a full-bleed divider image.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /board-wrap -->
+
+<footer class="board-footer">
+  <p>HeyHunterGirl</p>
+  <small>Photo Shoot Inspiration Board · heyhuntergirl.com</small>
+</footer>
+
+</body>
+</html>
