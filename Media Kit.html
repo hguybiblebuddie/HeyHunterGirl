@@ -35,6 +35,18 @@
       .doc-page { width: 100%; min-height: 0; padding: 28px 22px; border-radius: 0; box-shadow: none; }
       .mk-bar { max-width: 100%; }
     }
+    /* Phones: stack everything into a single column */
+    @media (max-width: 640px) {
+      .mk-head { flex-direction: column; align-items: flex-start !important; gap: 12px; }
+      .mk-head > div:last-child { text-align: left !important; }
+      .mk-bio { flex-direction: column; }
+      .mk-bio img { width: 2.4in !important; height: 3in !important; }
+      .mk-stats { flex-direction: column; }
+      .mk-topics { grid-template-columns: 1fr !important; }
+      .mk-gallery { flex-direction: column; }
+      .mk-booking { flex-direction: column; align-items: flex-start !important; }
+      .mk-booking > div:last-child { text-align: left !important; }
+    }
     @media print {
       @page { size: letter portrait; margin: 0.7in; }
       body { background: #fff; }
@@ -50,7 +62,7 @@
   </div>
 
   <div class="doc-page">
-  <div style="display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #1F1E1B;padding-bottom:14px">
+  <div class="mk-head" style="display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #1F1E1B;padding-bottom:14px">
     <div>
       <p class="mono">Speaker media kit · 2026</p>
       <h1 style="font-size:30pt;margin:6px 0 0">Hunter <em style="font-weight:340">Guy</em></h1>
@@ -64,7 +76,7 @@
     </div>
   </div>
 
-  <div style="display:flex;gap:24px;margin-top:22px">
+  <div class="mk-bio" style="display:flex;gap:24px;margin-top:22px">
     <img src="assets/hunter-portrait.jpg" alt="Hunter Guy portrait" style="width:1.9in;height:2.5in;object-fit:cover;object-position:top;border-radius:8px;border:1px solid #E4E4E0;image-rendering:auto">
     <div style="flex:1">
       <p class="mono">Speaker bio</p>
@@ -74,7 +86,7 @@
     </div>
   </div>
 
-  <div class="kept" style="display:flex;gap:12px;margin-top:20px">
+  <div class="kept mk-stats" style="display:flex;gap:12px;margin-top:20px">
     <div style="flex:1;border:1px solid #E4E4E0;border-radius:8px;padding:12px 14px"><div style="font-family:'Fraunces',serif;font-weight:560;font-size:16pt;color:#76800A">$1M+</div><div style="font-size:8.5pt;color:#5C5A54">incremental revenue in 8 months at Christianbook</div></div>
     <div style="flex:1;border:1px solid #E4E4E0;border-radius:8px;padding:12px 14px"><div style="font-family:'Fraunces',serif;font-weight:560;font-size:16pt;color:#1A55C4">70%</div><div style="font-size:8.5pt;color:#5C5A54">NPS — highest in Office Depot history</div></div>
     <div style="flex:1;border:1px solid #E4E4E0;border-radius:8px;padding:12px 14px"><div style="font-family:'Fraunces',serif;font-weight:560;font-size:16pt;color:#C45F00">3</div><div style="font-size:8.5pt;color:#5C5A54">continents of teams led weekly as founder &amp; CEO</div></div>
@@ -83,7 +95,7 @@
 
   <div class="kept" style="margin-top:22px">
     <p class="mono">Signature topics</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">
+    <div class="mk-topics" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">
       <div style="border:1px solid #E4E4E0;border-radius:8px;padding:12px 14px">
         <div class="mono" style="color:#76800A;font-size:7.5pt">Keynote · Workshop</div>
         <h3 style="font-size:11.5pt;font-weight:560;margin:4px 0 4px">Human-Centered AI for the Enterprise</h3>
@@ -122,13 +134,13 @@
     </table>
   </div>
 
-  <div class="kept" style="margin-top:22px;display:flex;gap:12px">
+  <div class="kept mk-gallery" style="margin-top:22px;display:flex;gap:12px">
     <figure style="flex:1;margin:0"><img src="assets/speaking-talent-x-tech.jpg" alt="Hunter Guy on the Talents x Tech mainstage" style="width:100%;height:1.7in;object-fit:cover;border-radius:8px;border:1px solid #E4E4E0"><figcaption class="mono" style="margin-top:4px">Talents × Tech · Mainstage</figcaption></figure>
     <figure style="flex:1;margin:0"><img src="assets/speaking-faith-ai.jpg" alt="Faith + AI talk" style="width:100%;height:1.7in;object-fit:cover;border-radius:8px;border:1px solid #E4E4E0"><figcaption class="mono" style="margin-top:4px">Faith + AI · Ethical Frontiers</figcaption></figure>
     <figure style="flex:1;margin:0"><img src="assets/girls-design-too.jpg" alt="Girls Design Too keynote" style="width:100%;height:1.7in;object-fit:cover;border-radius:8px;border:1px solid #E4E4E0"><figcaption class="mono" style="margin-top:4px">Girls Design Too · Keynote</figcaption></figure>
   </div>
 
-  <div class="kept" style="margin-top:22px;border:2px solid #1F1E1B;border-radius:8px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:18px">
+  <div class="kept mk-booking" style="margin-top:22px;border:2px solid #1F1E1B;border-radius:8px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:18px">
     <div>
       <h3 style="font-size:12.5pt;font-weight:560;margin:0">Booking &amp; media inquiries</h3>
       <p style="font-size:9.5pt;color:#5C5A54;margin:4px 0 0">Keynotes, executive workshops, panels, guest lectures, cohort facilitation, and podcast or media appearances — tailored to your audience and the decisions in front of them.</p>
