@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resources — HeyHuntergirl</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@6..72,400;6..72,560&family=Spline+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400&display=swap');
+    :root {
+      --ink: #1F1E1B;
+      --ink-soft: #5C5A54;
+      --taupe: #8F8D86;
+      --card: #FFFFFF;
+      --paper: #F7F7F5;
+      --line: #E4E4E0;
+      --chart: #C9D31F;
+      --chart-deep: #76800A;
+      --m-blue: #2F7CFF;
+      --blue-deep: #1A55C4;
+      --blue-wash: #E7EFFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { font-family: 'Spline Sans', sans-serif; color: var(--ink); line-height: 1.6; background: var(--card); }
+    h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 420; letter-spacing: -0.015em; }
+    h1 { font-size: 56px; line-height: 1.2; }
+    h2 { font-size: 40px; line-height: 1.3; margin-bottom: 24px; }
+    h3 { font-size: 20px; margin-bottom: 12px; }
+    h4 { font-size: 16px; font-weight: 560; margin-bottom: 8px; }
+    p { font-size: 16px; color: var(--ink-soft); margin-bottom: 16px; }
+    a { color: var(--m-blue); text-decoration: none; }
+    a:hover { color: var(--blue-deep); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .section { padding: 80px 0; }
+    .hero { padding-top: 120px; margin-bottom: 40px; }
+    .hero h1 { color: var(--m-blue); }
+    .hero p { font-size: 18px; }
+    .magnet { background: var(--blue-wash); padding: 60px; border-radius: 8px; margin-bottom: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .magnet h3 { color: var(--m-blue); margin-bottom: 20px; }
+    .magnet p { font-size: 15px; margin-bottom: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 6px; }
+    .form-group input { width: 100%; padding: 10px; border: 1px solid var(--line); border-radius: 4px; font-size: 14px; }
+    .btn { display: inline-block; padding: 12px 24px; border: 1px solid var(--m-blue); background: transparent; color: var(--m-blue); font-family: 'Spline Sans', sans-serif; font-size: 14px; border-radius: 4px; cursor: pointer; text-decoration: none; transition: 200ms; }
+    .btn:hover { background: var(--m-blue); color: var(--card); }
+    .btn.primary { background: var(--m-blue); color: var(--card); }
+    .btn.primary:hover { background: var(--blue-deep); }
+    .toolkits-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+    .toolkit-card { background: var(--paper); padding: 40px; border-radius: 8px; }
+    .toolkit-card h4 { margin-bottom: 12px; }
+    .toolkit-card p { font-size: 14px; margin-bottom: 16px; }
+    .reading-section { margin-bottom: 60px; }
+    .reading-category h3 { color: var(--m-blue); margin-bottom: 20px; margin-top: 40px; }
+    .reading-list { list-style: none; }
+    .reading-item { padding: 16px; background: var(--paper); border-radius: 4px; margin-bottom: 12px; }
+    .reading-item .title { font-weight: 500; color: var(--ink); }
+    .reading-item .author { font-size: 13px; color: var(--taupe); margin: 4px 0; }
+    .reading-item .description { font-size: 14px; color: var(--ink-soft); margin-top: 8px; }
+    .speaking-materials { margin-bottom: 60px; }
+    .materials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .material-card { background: var(--paper); padding: 40px; border-radius: 8px; }
+    .material-card h4 { margin-bottom: 16px; }
+    .material-card p { font-size: 14px; margin-bottom: 12px; }
+    .material-list { list-style: none; padding-left: 0; }
+    .material-list li { font-size: 14px; color: var(--ink-soft); padding: 8px 0; }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .section { padding: 60px 0; }
+      .magnet, .toolkits-grid, .materials-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 40px; }
+      h2 { font-size: 28px; }
+    }
+  </style>
+
+</head>
+<body>
+
+
+<nav style="padding: 20px 40px; border-bottom: 1px solid var(--line);">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <h2 style="font-size: 24px; margin: 0; font-weight: 560;">Hunter</h2>
+    <div style="display: flex; gap: 40px;">
+      <a href="index.html" style="color: var(--ink);">Home</a>
+      <a href="Work.html" style="color: var(--ink);">Work</a>
+      <a href="Speaking.html" style="color: var(--ink);">Speaking</a>
+      <a href="Podcast.html" style="color: var(--ink);">Podcast</a>
+      <a href="About.html" style="color: var(--ink);">About</a>
+    </div>
+  </div>
+</nav>
+
+<section class="section hero">
+  <div class="container">
+    <h1>Resources</h1>
+    <p>Tools, frameworks, and thinking to support your journey of becoming.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="magnet">
+      <div>
+        <h3>The User Experience of You — Reflection Guide</h3>
+        <p>A guided workbook exploring identity, values, gifts, and purpose. Use it to audit your own experience and clarify who you're becoming.</p>
+        <p style="font-size: 13px; color: var(--taupe); margin-top: 20px;">Download free. Join 1,000+ subscribers exploring the intersection of identity and leadership.</p>
+      </div>
+      <form style="display: flex; flex-direction: column;">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" placeholder="you@example.com" required>
+        </div>
+        <button type="submit" class="btn primary" style="align-self: flex-start; margin-top: 8px;">Download Free →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--paper);">
+  <div class="container">
+    <h2 style="margin-bottom: 40px;">Frameworks & Toolkits</h2>
+    <div class="toolkits-grid">
+      <div class="toolkit-card">
+        <h4>Identity Audit Checklist</h4>
+        <p>A practical framework for understanding your values, gifts, calling, and how they align with the work you do.</p>
+        <a href="#" class="btn">Download →</a>
+      </div>
+      <div class="toolkit-card">
+        <h4>Systems Audit Exercise</h4>
+        <p>How to read the systems in your organization and identify which ones are broken. Includes a practical fix-it template.</p>
+        <a href="#" class="btn">Download →</a>
+      </div>
+      <div class="toolkit-card">
+        <h4>Team Design Framework</h4>
+        <p>Approach to building and developing teams the way you'd build products—with intention, feedback loops, and genuine growth.</p>
+        <a href="#" class="btn">Download →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 style="margin-bottom: 40px;">Reading List</h2>
+    
+    <div class="reading-section">
+      <h3>Faith & Theology</h3>
+      <ul class="reading-list">
+        <li class="reading-item">
+          <div class="title">The Vine Project</div>
+          <div class="author">by R.C. Sproul Jr. & Timothy Z. Witmer</div>
+          <div class="description">A framework for disciple-making and spiritual development in the context of community.</div>
+        </li>
+        <li class="reading-item">
+          <div class="title">Generous Justice</div>
+          <div class="author">by Tim Keller</div>
+          <div class="description">How Christian faith calls us toward stewardship, justice, and care for the vulnerable.</div>
+        </li>
+        <li class="reading-item">
+          <div class="title">The Common Good</div>
+          <div class="author">by Charles Murray</div>
+          <div class="description">Exploring what we owe each other and how faith shapes community responsibility.</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="reading-section">
+      <h3>Leadership & Systems</h3>
+      <ul class="reading-list">
+        <li class="reading-item">
+          <div class="title">The Goal</div>
+          <div class="author">by Eliyahu M. Goldratt</div>
+          <div class="description">A novel about systems thinking, bottlenecks, and the constraints that shape behavior.</div>
+        </li>
+        <li class="reading-item">
+          <div class="title">Radical Candor</div>
+          <div class="author">by Kim Scott</div>
+          <div class="description">How to care personally while challenging directly as a leader and team member.</div>
+        </li>
+        <li class="reading-item">
+          <div class="title">The Advantage</div>
+          <div class="author">by Patrick Lencioni</div>
+          <div class="description">How organizational health creates competitive advantage and human flourishing.</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="reading-section">
+      <h3>Design & Product</h3>
+      <ul class="reading-list">
+        <li class="reading-item">
+          <div class="title">The Design of Everyday Things</div>
+          <div class="author">by Don Norman</div>
+          <div class="description">How intentional design shapes human behavior and experience.</div>
+        </li>
+        <li class="reading-item">
+          <div class="title">Inspired</div>
+          <div class="author">by Marty Cagan</div>
+          <div class="description">How to build products people actually want through discovery and validation.</div>
+        </li>
+        <li class="reading-item">
+          <div class="title">Lean Product Playbook</div>
+          <div class="author">by Dan Olsen</div>
+          <div class="description">A framework for iterating, learning, and building products that deliver value.</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="reading-section">
+      <h3>Identity & Becoming</h3>
+      <ul class="reading-list">
+        <li class="reading-item">
+          <div class="title">Atomic Habits</div>
+          <div class="author">by James Clear</div>
+          <div class="description">How small systems and identity-based habits compound into transformation.</div>
+        </li>
+        <li class="reading-item">
+          <div class="title">Man's Search for Meaning</div>
+          <div class="author">by Viktor Frankl</div>
+          <div class="description">Why purpose and meaning matter more than circumstances.</div>
+        </li>
+        <li class="reading-item">
+          <div class="title">The Road Less Traveled</div>
+          <div class="author">by M. Scott Peck</div>
+          <div class="description">On discipline, grace, and the lifelong journey of becoming.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--paper);">
+  <div class="container">
+    <h2 style="margin-bottom: 40px;">Speaking Materials</h2>
+    <p style="margin-bottom: 40px;">For event organizers and conference planners.</p>
+    
+    <div class="materials-grid">
+      <div class="material-card">
+        <h4>Speaker Bios</h4>
+        <p>Three versions for different contexts and word counts:</p>
+        <ul class="material-list">
+          <li>30 words (social media)</li>
+          <li>100 words (conference program)</li>
+          <li>300 words (detailed bio)</li>
+        </ul>
+        <a href="#" class="btn" style="margin-top: 16px;">Download →</a>
+      </div>
+
+      <div class="material-card">
+        <h4>Headshots & Photos</h4>
+        <p>High-resolution photography for programs, websites, and promotional materials.</p>
+        <ul class="material-list">
+          <li>Professional headshot (1:1)</li>
+          <li>Speaking engagement photo (16:9)</li>
+          <li>Full-length photo (for keynotes)</li>
+        </ul>
+        <a href="#" class="btn" style="margin-top: 16px;">Download →</a>
+      </div>
+
+      <div class="material-card">
+        <h4>Talk Descriptions</h4>
+        <p>Customizable descriptions for each of the five signature talks.</p>
+        <ul class="material-list">
+          <li>Full talk synopsis</li>
+          <li>Audience fit</li>
+          <li>Key takeaways</li>
+          <li>Format options</li>
+        </ul>
+        <a href="#" class="btn" style="margin-top: 16px;">Download →</a>
+      </div>
+
+      <div class="material-card">
+        <h4>Technical Requirements</h4>
+        <p>Everything you need to know to host Hunter for a speaking engagement.</p>
+        <ul class="material-list">
+          <li>AV setup requirements</li>
+          <li>Stage configuration</li>
+          <li>Pre-talk preparation</li>
+          <li>Q&A guidance</li>
+        </ul>
+        <a href="#" class="btn" style="margin-top: 16px;">Download →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background: var(--paper); padding: 40px; text-align: center; border-top: 1px solid var(--line);">
+  <p style="font-size: 14px; color: var(--taupe);">© 2026 Hunter Guy. All rights reserved.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const subject = encodeURIComponent('Reflection Guide Download Request');
+      const body = encodeURIComponent(`Hi Hunter,\n\nI'd like to download The User Experience of You Reflection Guide.\n\nEmail: ${email}\n\nThanks!`);
+      window.location.href = `mailto:hunter@studyaloud.com?subject=${subject}&body=${body}`;
+    });
+});
+</script>
+
+</body>
+</html>

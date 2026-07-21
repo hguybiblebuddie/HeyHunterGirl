@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Media Kit — Hunter Guy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,420;0,9..144,560;1,9..144,340&family=Spline+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --paper:#F7F7F5; --ink:#1F1E1B; --line:#E4E4E0; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body { background: var(--paper); font-family: 'Spline Sans', sans-serif; color: var(--ink); }
+
+    /* Screen toolbar (hidden when printing) */
+    .mk-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      max-width: 8.5in; margin: 24px auto 8px; padding: 0 6px; }
+    .mk-bar a, .mk-bar button { font-family: 'Spline Sans Mono', monospace; font-size: 12px;
+      letter-spacing: .1em; text-transform: uppercase; text-decoration: none; color: var(--ink);
+      border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 9px 14px; cursor: pointer; }
+    .mk-bar button { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+    /* The letter-size sheet */
+    .doc-page { width: 8.5in; min-height: 11in; margin: 0 auto 40px; padding: 0.7in;
+      background: #fff; border: 1px solid var(--line); border-radius: 6px;
+      box-shadow: 0 20px 60px rgba(31,30,27,.08); line-height: 1.55; font-size: 10.5pt; }
+    .doc-page h1, .doc-page h2, .doc-page h3 { font-family: 'Fraunces', serif; font-weight: 420; letter-spacing: -.015em; }
+    .doc-page .mono { font-family: 'Spline Sans Mono', monospace; letter-spacing: .13em; text-transform: uppercase; font-size: 8pt; color: #8F8D86; }
+    .doc-page .mk-mark { background: linear-gradient(104deg, transparent 2%, #FF5DA2 2.5%, #FF5DA2 97%, transparent 97.5%); padding: 1px 6px; }
+    .doc-page .kept { break-inside: avoid; }
+    .doc-page p { orphans: 3; widows: 3; }
+
+    @media (max-width: 8.9in) {
+      .doc-page { width: 100%; min-height: 0; padding: 28px 22px; border-radius: 0; box-shadow: none; }
+      .mk-bar { max-width: 100%; }
+    }
+    @media print {
+      @page { size: letter portrait; margin: 0.7in; }
+      body { background: #fff; }
+      .mk-bar { display: none; }
+      .doc-page { width: auto; min-height: 0; margin: 0; padding: 0; border: 0; border-radius: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mk-bar">
+    <a href="index.html">← Back to site</a>
+    <button type="button" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <div class="doc-page">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #1F1E1B;padding-bottom:14px">
+    <div>
+      <p class="mono">Speaker media kit · 2026</p>
+      <h1 style="font-size:30pt;margin:6px 0 0">Hunter <em style="font-weight:340">Guy</em></h1>
+      <p style="margin:4px 0 0;color:#5C5A54;font-size:11pt">Experience design leader · Tech Founder · Minister · Speaker &amp; educator</p>
+    </div>
+    <div style="text-align:right;font-size:9.5pt;color:#5C5A54">
+      <div>hunter@studyaloud.com</div>
+      <div>heyhuntergirl.com</div>
+      <div>@heyhuntergirl</div>
+      <div>linkedin.com/in/hunterguy</div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:24px;margin-top:22px">
+    <img src="assets/hunter-portrait.jpg" alt="Hunter Guy portrait" style="width:1.9in;height:2.5in;object-fit:cover;object-position:top;border-radius:8px;border:1px solid #E4E4E0;image-rendering:auto">
+    <div style="flex:1">
+      <p class="mono">Speaker bio</p>
+      <h2 style="font-size:15pt;margin:6px 0 8px">A speaker who <span class="mk-mark">builds what she talks about.</span></h2>
+      <p style="color:#5C5A54;margin:0 0 8px"><strong style="color:#1F1E1B">Hunter Guy is a strategic experience design leader, founder, minister, and educator</strong> at the intersection of technology, leadership, and human impact. Over a decade in product and experience design she has driven more than $1M in incremental revenue, led design to a company-record NPS of 70%, and shipped award-winning platforms in fintech, edtech, and ecommerce. She serves as Principal UX Designer at Christianbook.com and is Co-Founder and CEO of Study Aloud — the company behind PathWEH, the world's first adaptive Bible study platform.</p>
+      <p style="color:#5C5A54;margin:0">She is also a licensed minister with more than twelve years of ministry experience across two churches, now serving at Progressive Baptist Church in Chicago — teaching biblical literacy, developing discipleship curriculum, and equipping leaders. A sought-after voice on faith, AI, design, and innovation, she has spoken at places such as the Legacy Conference, Wheaton College's Billy Graham Center, and Brown University — featured in Christianity Today for her voice on AI and ethics. Her conviction: technology should help people become who God created them to be — digital formation, not just digital engagement.</p>
+    </div>
+  </div>
+
+  <div class="kept" style="display:flex;gap:12px;margin-top:20px">
+    <div style="flex:1;border:1px solid #E4E4E0;border-radius:8px;padding:12px 14px"><div style="font-family:'Fraunces',serif;font-weight:560;font-size:16pt;color:#76800A">$1M+</div><div style="font-size:8.5pt;color:#5C5A54">incremental revenue in 8 months at Christianbook</div></div>
+    <div style="flex:1;border:1px solid #E4E4E0;border-radius:8px;padding:12px 14px"><div style="font-family:'Fraunces',serif;font-weight:560;font-size:16pt;color:#1A55C4">70%</div><div style="font-size:8.5pt;color:#5C5A54">NPS — highest in Office Depot history</div></div>
+    <div style="flex:1;border:1px solid #E4E4E0;border-radius:8px;padding:12px 14px"><div style="font-family:'Fraunces',serif;font-weight:560;font-size:16pt;color:#C45F00">3</div><div style="font-size:8.5pt;color:#5C5A54">continents of teams led weekly as founder &amp; CEO</div></div>
+    <div style="flex:1;border:1px solid #E4E4E0;border-radius:8px;padding:12px 14px"><div style="font-family:'Fraunces',serif;font-weight:560;font-size:16pt;color:#D1327A">5</div><div style="font-size:8.5pt;color:#5C5A54">industry awards incl. Best In Show &amp; 2 Infosec Awards</div></div>
+  </div>
+
+  <div class="kept" style="margin-top:22px">
+    <p class="mono">Signature topics</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">
+      <div style="border:1px solid #E4E4E0;border-radius:8px;padding:12px 14px">
+        <div class="mono" style="color:#76800A;font-size:7.5pt">Keynote · Workshop</div>
+        <h3 style="font-size:11.5pt;font-weight:560;margin:4px 0 4px">Human-Centered AI for the Enterprise</h3>
+        <p style="font-size:9pt;color:#5C5A54;margin:0">How leaders build an AI strategy that starts with the humans it serves — what to adopt, what to resist, and how to make the call.</p>
+      </div>
+      <div style="border:1px solid #E4E4E0;border-radius:8px;padding:12px 14px">
+        <div class="mono" style="color:#76800A;font-size:7.5pt">Keynote · Cohort series</div>
+        <h3 style="font-size:11.5pt;font-weight:560;margin:4px 0 4px">Ethical Frontiers: Leading Technology with Conviction</h3>
+        <p style="font-size:9pt;color:#5C5A54;margin:0">A framework for making ethical decisions under pressure — where values, velocity, and business reality collide.</p>
+      </div>
+      <div style="border:1px solid #E4E4E0;border-radius:8px;padding:12px 14px">
+        <div class="mono" style="color:#76800A;font-size:7.5pt">Executive session</div>
+        <h3 style="font-size:11.5pt;font-weight:560;margin:4px 0 4px">Building the Right Thing</h3>
+        <p style="font-size:9pt;color:#5C5A54;margin:0">Vision before backlog: deciding what deserves to be built and aligning organizations around it.</p>
+      </div>
+      <div style="border:1px solid #E4E4E0;border-radius:8px;padding:12px 14px">
+        <div class="mono" style="color:#76800A;font-size:7.5pt">Workshop · Advisory</div>
+        <h3 style="font-size:11.5pt;font-weight:560;margin:4px 0 4px">Systems &amp; People: Making Strategy Real</h3>
+        <p style="font-size:9pt;color:#5C5A54;margin:0">How structure, culture, and process have to move together for change to land.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="kept" style="margin-top:22px">
+    <p class="mono">Selected engagements &amp; press</p>
+    <table style="width:100%;border-collapse:collapse;margin-top:8px;font-size:9.5pt">
+      <thead><tr style="text-align:left;border-bottom:1px solid #1F1E1B"><th style="padding:4px 0;font-weight:600;width:0.9in">Year</th><th style="padding:4px 0;font-weight:600">Engagement</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px dashed #E4E4E0"><td style="padding:5px 0;color:#8F8D86">2024–26</td><td style="padding:5px 0"><b>Wheaton College — Amplify Conference</b> · Three consecutive years, incl. "Digital Shepherds: Discipling with AI Leverage"</td></tr>
+        <tr style="border-bottom:1px dashed #E4E4E0"><td style="padding:5px 0;color:#8F8D86">2026</td><td style="padding:5px 0"><b>Brown University</b> · Guest lecturer, "Responsibly Building with LLMs/AI"</td></tr>
+        <tr style="border-bottom:1px dashed #E4E4E0"><td style="padding:5px 0;color:#8F8D86">2025</td><td style="padding:5px 0"><b>Christianity Today</b> · Featured voice, "Meet the Christian Engineers Helping to Shape AI"</td></tr>
+        <tr style="border-bottom:1px dashed #E4E4E0"><td style="padding:5px 0;color:#8F8D86">2024</td><td style="padding:5px 0"><b>AI Summit</b> · "Human-Centered AI for Enterprises," Beyond the Hype series</td></tr>
+        <tr style="border-bottom:1px dashed #E4E4E0"><td style="padding:5px 0;color:#8F8D86">2024</td><td style="padding:5px 0"><b>Talents × Tech Conference</b> · Mainstage speaker, #TXT24</td></tr>
+        <tr style="border-bottom:1px dashed #E4E4E0"><td style="padding:5px 0;color:#8F8D86">Ongoing</td><td style="padding:5px 0"><b>Faith + AI: Navigating Ethical Frontiers</b> · Founder &amp; lead facilitator, ethics cohorts</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="kept" style="margin-top:22px;display:flex;gap:12px">
+    <figure style="flex:1;margin:0"><img src="assets/speaking-talent-x-tech.jpg" alt="Hunter Guy on the Talents x Tech mainstage" style="width:100%;height:1.7in;object-fit:cover;border-radius:8px;border:1px solid #E4E4E0"><figcaption class="mono" style="margin-top:4px">Talents × Tech · Mainstage</figcaption></figure>
+    <figure style="flex:1;margin:0"><img src="assets/speaking-faith-ai.jpg" alt="Faith + AI talk" style="width:100%;height:1.7in;object-fit:cover;border-radius:8px;border:1px solid #E4E4E0"><figcaption class="mono" style="margin-top:4px">Faith + AI · Ethical Frontiers</figcaption></figure>
+    <figure style="flex:1;margin:0"><img src="assets/girls-design-too.jpg" alt="Girls Design Too keynote" style="width:100%;height:1.7in;object-fit:cover;border-radius:8px;border:1px solid #E4E4E0"><figcaption class="mono" style="margin-top:4px">Girls Design Too · Keynote</figcaption></figure>
+  </div>
+
+  <div class="kept" style="margin-top:22px;border:2px solid #1F1E1B;border-radius:8px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:18px">
+    <div>
+      <h3 style="font-size:12.5pt;font-weight:560;margin:0">Booking &amp; media inquiries</h3>
+      <p style="font-size:9.5pt;color:#5C5A54;margin:4px 0 0">Keynotes, executive workshops, panels, guest lectures, cohort facilitation, and podcast or media appearances — tailored to your audience and the decisions in front of them.</p>
+    </div>
+    <div style="text-align:right;font-size:10pt;white-space:nowrap">
+      <div style="font-weight:600">hunter@studyaloud.com</div>
+      <div style="color:#5C5A54">heyhuntergirl.com/speaking</div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

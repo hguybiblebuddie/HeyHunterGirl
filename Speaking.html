@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Speaking — Hunter Guy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,420;0,9..144,560;1,9..144,340&family=Spline+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .speaker-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);align-items:start}
+    .speaker-grid .bio h2{margin-bottom:10px}
+    .speaker-grid .bio p{margin-top:16px;color:var(--ink-soft)}
+    .speaker-grid .bio p strong{color:var(--ink)}
+    .topics{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .topic{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px}
+    .topic h3{font-family:'Fraunces',serif;font-weight:560;font-size:19px;letter-spacing:-.01em}
+    .topic .tag{font-family:'Spline Sans Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--chart-deep);display:block;margin-bottom:12px}
+    .topic p{margin-top:10px;font-size:14.5px;color:var(--ink-soft)}
+    .engagements{list-style:none;display:grid;gap:0;padding:0}
+    .engagements li{display:grid;grid-template-columns:110px 1fr;gap:6px 22px;padding:18px 0;border-bottom:1px dashed var(--line);font-size:15px}
+    .engagements li:first-child{border-top:1px dashed var(--line)}
+    .engagements .yr{font-family:'Spline Sans Mono',monospace;font-size:12.5px;letter-spacing:.08em;color:var(--taupe);padding-top:3px}
+    .engagements b{font-weight:600}
+    .engagements span{display:block;color:var(--ink-soft);font-size:14px;margin-top:2px}
+    #discography{background:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    #discography h2, #discography .eyebrow{color:#f3f1ec}
+    #discography .section-head p{color:#c9c4b8}
+    #discography .pillar{background:#2a2823;border:1px solid #47433a}
+    #discography .pillar h3{color:#f3f1ec}
+    #discography .pillar p{color:#c9c4b8}
+    #discography .pillar b{color:#f3f1ec}
+    .car-stage{display:flex;align-items:center;gap:14px}
+    .car-main{flex:1;margin:0;min-width:0}
+    .car-main img{width:100%;height:min(480px,58vw);object-fit:contain;display:block;border-radius:12px;background:#211f1b;border:1px solid #47433a;cursor:zoom-in;transition:opacity 180ms ease}
+    .car-main figcaption{font-family:'Spline Sans Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#a39c8e;margin-top:10px;text-align:center}
+    .car-arrow{flex:0 0 auto;width:42px;height:42px;border-radius:99px;border:1px solid #47433a;background:transparent;color:#c9c3b6;font-size:24px;line-height:1;cursor:pointer;transition:180ms}
+    .car-arrow:hover{border-color:var(--chart);color:var(--chart)}
+    .car-thumbs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+    .car-thumb{padding:0;border:2px solid transparent;border-radius:10px;background:none;cursor:pointer;overflow:hidden;transition:180ms}
+    .car-thumb img{width:88px;height:64px;object-fit:cover;display:block;border-radius:8px;opacity:.65;transition:180ms}
+    .car-thumb:hover img{opacity:1}
+    .car-thumb.active{border-color:var(--chart)}
+    .car-thumb.active img{opacity:1}
+    @media(max-width:640px){.car-thumb img{width:64px;height:48px}.car-arrow{width:36px;height:36px;font-size:20px}}
+    .lightbox{position:fixed;inset:0;z-index:100;display:none;flex-direction:row;align-items:center;justify-content:center;background:rgba(20,19,16,.92);padding:32px 84px;cursor:zoom-out}
+    .lb-arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:99px;border:1px solid #47433a;background:rgba(20,19,16,.6);color:#c9c3b6;font-size:26px;line-height:1;cursor:pointer;transition:180ms}
+    .lb-prev{left:calc(50% - min(550px,46vw) - 64px)}
+    .lb-next{right:calc(50% - min(550px,46vw) - 64px)}
+    .lb-arrow:hover{border-color:var(--chart);color:var(--chart)}
+    @media(max-width:640px){.lb-arrow{width:38px;height:38px;font-size:21px}}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:min(1100px,92vw);max-height:80vh;border-radius:12px}
+    .lightbox .lb-caption{font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#c9c3b6;text-align:center}
+    @media(max-width:640px){.hl-scroll img{height:220px}}
+    @media(max-width:820px){.speaker-grid{grid-template-columns:1fr}.topics{grid-template-columns:1fr}.engagements li{grid-template-columns:1fr}}
+  </style>
+
+</head>
+<body>
+
+
+<div class="page-speaking" id="top">
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">Hunter <em>Guy</em></a>
+    <button class="nav-burger" type="button" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="#top" aria-current="page" style="color:var(--ink);font-weight:600;border-bottom:2px solid var(--m-pink);padding-bottom:2px">Speaking</a></li>
+      <li><a href="Work.html">Work</a></li>
+      <li><a class="nav-cta" href="#book">Let's talk</a></li>
+    
+      <li><a href="https://www.instagram.com/heyhuntergirl/" target="_blank" rel="noopener" aria-label="Instagram" style="display:flex"><svg width="17" height="17" viewBox="0 0 256 256" fill="currentColor" style="display:block"><path d="M128 80a48 48 0 1 0 48 48 48.05 48.05 0 0 0-48-48Zm0 80a32 32 0 1 1 32-32 32 32 0 0 1-32 32Zm48-136H80a56.06 56.06 0 0 0-56 56v96a56.06 56.06 0 0 0 56 56h96a56.06 56.06 0 0 0 56-56V80a56.06 56.06 0 0 0-56-56Zm40 152a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40V80a40 40 0 0 1 40-40h96a40 40 0 0 1 40 40ZM192 76a12 12 0 1 1-12-12 12 12 0 0 1 12 12Z"/></svg></a></li>
+      <li><a href="https://www.linkedin.com/in/hunterguy/" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:flex"><svg width="17" height="17" viewBox="0 0 256 256" fill="currentColor" style="display:block"><path d="M216 24H40a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V40a16 16 0 0 0-16-16Zm0 192H40V40h176ZM96 112v64a8 8 0 0 1-16 0v-64a8 8 0 0 1 16 0Zm88 28v36a8 8 0 0 1-16 0v-36a20 20 0 0 0-40 0v36a8 8 0 0 1-16 0v-64a8 8 0 0 1 15.79-1.78A36 36 0 0 1 184 140ZM100 84a12 12 0 1 1-12-12 12 12 0 0 1 12 12Z"/></svg></a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-inner" style="padding-bottom:clamp(40px,6vw,64px)">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Speaking · Advisory · Facilitation</p>
+        <h1 style="max-width:19ch">Helping leaders make technology decisions <span class="mark">worthy of their people.</span></h1>
+        <p class="lede">Hunter Guy speaks to executive teams, universities, and organizations navigating the biggest questions of the AI era — how to lead through it, who it should serve, and what it takes to build systems and teams that hold up.</p>
+        <div class="hero-actions">
+          <a class="btn solid" href="#book">Book Hunter to speak</a>
+          <a class="btn ghost" href="#topics">See topics</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/speaking-talent-x-tech.jpg" alt="Hunter Guy speaking on the main stage at the Talents x Tech conference." width="1000" height="1330">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="bio">
+  <div class="wrap">
+    <div class="speaker-grid">
+      <div class="reveal">
+        <img src="assets/speaking-faith-ai.jpg" alt="Hunter Guy presenting her Faith + AI talk, Navigating Ethical Frontiers." style="width:100%;border-radius:18px;border:1px solid var(--line);display:block">
+        <a class="press-line" href="https://www.christianitytoday.com/2025/07/meet-christian-engineers-helping-shape-ai/" target="_blank" rel="noopener" style="text-decoration:none;margin-top:18px;color:var(--ink-soft);border-color:var(--line)">Featured in <b style="color:var(--blue-deep)">Christianity Today</b> ↗</a>
+      </div>
+      <div class="bio reveal">
+        <p class="eyebrow">Speaker bio</p>
+        <h2 style="font-family:'Fraunces',serif;font-weight:420;font-size:clamp(26px,3.2vw,38px);letter-spacing:-.015em;line-height:1.16;margin-top:20px;margin-bottom:14px">A speaker who builds what she talks about.</h2>
+        <p><strong>Hunter Guy is a strategic experience design leader, founder, minister, and educator</strong> operating at the intersection of technology, leadership, and human impact. Over a decade in product and experience design, she has driven more than $1M in incremental revenue, led design across three business units to a company-record NPS of 70%, and shipped award-winning platforms in fintech, edtech, and ecommerce. Today she serves as Principal UX Designer at Christianbook.com, leading digital experiences that reach millions of Christians worldwide.</p>
+        <p>As Co-Founder and CEO of Study Aloud — the company behind <strong>PathWEH</strong>, the world's first adaptive Bible study platform — she leads distributed teams across three continents and has taken a product from concept to the App Store, building tools that help people form lifelong habits of Scripture engagement.</p>
+        <p>She is also a licensed minister and discipleship leader with more than twelve years of ministry experience across two churches, now serving at Progressive Baptist Church in the Chicago area — teaching biblical literacy, developing discipleship curriculum, and equipping leaders to help people mature in their faith. Her work bridges theology and technology: not only how products should function, but how they form people.</p>
+        <p>Hunter is a sought-after speaker on the intersection of faith, artificial intelligence, design, and innovation — speaking at places such as the <strong>Legacy Conference</strong>, <strong>Wheaton College's Billy Graham Center</strong>, and <strong>Brown University</strong>, to name a few, and featured in <strong>Christianity Today</strong> for her voice on AI and ethics. Her work challenges leaders to think beyond digital engagement toward digital formation — from the conviction that technology should help people become who God created them to be.</p>
+        <p style="font-size:14px;color:var(--taupe)">Available for keynotes, executive workshops, panels, guest lectures, and advisory engagements.</p>
+        <a class="btn ghost" href="Media Kit.html" style="margin-top:14px">Download the media kit →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="topics" style="background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Signature topics</p>
+      <h2>Talks built for rooms where <span class="mark">decisions get made.</span></h2>
+      <p>Every session is tailored to the audience — executive team, cohort, congregation, or classroom — and grounded in real operating experience, not theory.</p>
+    </div>
+    <div class="topics">
+      <div class="topic reveal">
+        <span class="tag">Keynote · Workshop</span>
+        <h3>Human-Centered AI for the Enterprise</h3>
+        <p>Beyond the hype: how leaders build an AI strategy that starts with the humans it serves. What to adopt, what to resist, and how to make the call when the vendors are all shouting.</p>
+      </div>
+      <div class="topic reveal">
+        <span class="tag">Keynote · Cohort series</span>
+        <h3>Ethical Frontiers: Leading Technology with Conviction</h3>
+        <p>The framework Hunter teaches tech founders and professionals for making ethical decisions under pressure — where values, velocity, and business reality collide.</p>
+      </div>
+      <div class="topic reveal">
+        <span class="tag">Executive session</span>
+        <h3>Building the Right Thing</h3>
+        <p>Vision before backlog. How leaders decide what deserves to be built, align organizations around it, and steward the resources — people, capital, attention — that building well requires.</p>
+      </div>
+      <div class="topic reveal">
+        <span class="tag">Workshop · Advisory</span>
+        <h3>Systems &amp; People: Making Strategy Real</h3>
+        <p>Strategy fails at implementation. Drawing on a decade of leading distributed teams and multi-unit organizations, Hunter shows how structure, culture, and process have to move together for change to land.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:34px">
+      <p style="color:var(--ink-soft);font-size:15px;max-width:48ch;margin:0 auto 18px">Don't see the exact room you're planning? Every talk starts as a conversation about your audience.</p>
+      <a class="btn solid" href="#book">Let's explore it together →</a>
+    </div>
+  </div>
+</section>
+
+<section id="voice">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">On stage</p>
+      <h2>Hunter in Action</h2>
+    </div>
+    <figure class="reveal" style="margin:34px 0 14px">
+      <img src="assets/girls-design-too.jpg" alt="Hunter Guy keynoting the Girls Design Too luncheon, speaking to a full room of attendees at round tables." style="width:100%;border-radius:12px;border:1px solid #47433a;display:block" loading="lazy">
+      <figcaption style="font-family:'Spline Sans Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#a39c8e;margin-top:10px">Girls Design Too · Women in Technology keynote · UIUC Research Park</figcaption>
+    </figure>
+    <div class="stage-gallery reveal">
+      <figure>
+        <img src="assets/wheaton-amplify.jpeg" alt="Hunter Guy presenting Digital Shepherds: Discipling with AI Leverage at the Wheaton College Amplify Conference." loading="lazy">
+        <figcaption>Wheaton College Amplify · Digital Shepherds</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/link-unlimited-mentor.png" alt="Hunter Guy on set for a Link Unlimited Scholars interview, seated in a studio with cameras and lighting." loading="lazy">
+        <figcaption>Link Unlimited Scholars · Mentor commercial</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/speaking-ministry.jpg" alt="Hunter Guy speaking from a pulpit to a congregation." loading="lazy">
+        <figcaption>Ministry &amp; community · Preaching and teaching</figcaption>
+      </figure>
+    </div>
+    <div class="lightbox" id="lightbox" role="dialog" aria-label="Enlarged photo">
+      <button class="lb-arrow lb-prev" type="button" aria-label="Previous photo">‹</button>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;min-width:0">
+        <img src="" alt="">
+        <div class="lb-caption"></div>
+      </div>
+      <button class="lb-arrow lb-next" type="button" aria-label="Next photo">›</button>
+    </div>
+  </div>
+</section>
+
+<section id="engagements">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Selected engagements</p>
+      <h2>From the mainstage to the lecture hall.</h2>
+    </div>
+    <ul class="engagements reveal">
+      <li><span class="yr">Ongoing</span><div><b>Faith + AI: Navigating Ethical Frontiers</b> — Founder &amp; lead facilitator<span>Cohorts educating tech founders and professionals on ethical decision-making in technology</span></div></li>
+      <li><span class="yr">Ongoing</span><div><b>Progressive Baptist Church</b> — Licensed minister &amp; discipleship leader<span>Preaching, biblical literacy teaching, and leader development</span></div></li>
+      <li><span class="yr">Ongoing</span><div><b>Universities, ministries &amp; organizations</b> — Guest speaker &amp; advisor<span>On the impacts of integrating AI, and on leadership, systems, and people implementation</span></div></li>
+      <li><span class="yr">2026</span><div><b>Brown University</b> — Guest lecturer, Intro to Machine Learning<span>"Responsibly Building with LLMs/AI"</span></div></li>
+      <li><span class="yr">2024–26</span><div><b>Wheaton College — Amplify Conference</b> — Workshop presenter, three consecutive years<span>Including "Digital Shepherds: Discipling with AI Leverage" (2026)</span></div></li>
+      <li><span class="yr">2025</span><div><b>FaithWorks Conference — Apostolic Faith Church</b> — Preacher<span>"The User Experience of Church"</span></div></li>
+      <li><span class="yr">2025</span><div><b>Legacy Conference</b> — Speaker<span>On faith, technology, and the future of discipleship</span></div></li>
+      <li><span class="yr">2025</span><div><b>Christianity Today</b> — Featured voice<span>"Meet the Christian Engineers Helping to Shape AI" — on AI, faith, and shaping technology ethically</span></div></li>
+      <li><span class="yr">2024</span><div><b>Talents × Tech Conference</b> — Host (Study Aloud) &amp; mainstage speaker<span>A one-day tech conference about God — talents for God's glory</span></div></li>
+      <li><span class="yr">2023</span><div><b>The Point of Reference Podcast</b> — Guest, "Being Before Going"</div></li>
+      <li><span class="yr">2020</span><div><b>University of Illinois Urbana-Champaign</b> — Guest lecturer, Intro to UI/UX<span>"Making Sense of UX Research"</span></div></li>
+      <li><span class="yr">2019</span><div><b>Women in Technology Luncheon</b> — Keynote speaker, UIUC Research Park</div></li>
+      <li><span class="yr">2019–20</span><div><b>COUNTRY Financial</b> — Multicultural Resource Group presenter &amp; event leader; founder of high school innovation days at the UIUC DigitaLab</div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="discography">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Full speaking record</p>
+      <h2>One voice, <span class="mark">many industries.</span></h2>
+      <p>From enterprise AI summits to university lecture halls to ministry pulpits — the range is the point. Influence that travels across rooms is influence that translates.</p>
+    </div>
+    <div class="pillars reveal" style="grid-template-columns:repeat(2,1fr);gap:16px">
+      <div class="pillar">
+        <span class="tag">Technology &amp; AI</span>
+        <h3>Conferences &amp; summits</h3>
+        <p style="margin-top:14px">
+        <b>AI Summit 2024</b> — "Human-Centered AI for Enterprises," Beyond the Hype speaker series<br><br>
+        <b>Talents × Tech Conference 2024</b> — Hosted by Study Aloud · Mainstage speaker, #TXT24<br><br>
+        <b>Faith + AI: Navigating Ethical Frontiers</b> — Founder &amp; lead facilitator, ongoing cohorts for tech founders and professionals</p>
+      </div>
+      <div class="pillar">
+        <span class="tag">Universities &amp; academia</span>
+        <h3>Lectures &amp; keynotes</h3>
+        <p style="margin-top:14px">
+        <b>Brown University</b> — Guest lecturer, Intro to Machine Learning: "Responsibly Building with LLMs/AI" (2026)<br><br>
+        <b>Women in Technology Luncheon</b> — Keynote, "Girls Design Too," UIUC Research Park (2019)<br><br>
+        <b>University of Illinois Urbana-Champaign</b> — Guest lecturer, Intro to UI/UX: "Making Sense of UX Research" (2020)<br><br>
+        <b>UIUC DigitaLab</b> — Founder &amp; organizer, high school innovation days introducing students to technology careers (2020)</p>
+      </div>
+      <div class="pillar">
+        <span class="tag">Faith &amp; ministry</span>
+        <h3>Churches &amp; faith-tech</h3>
+        <p style="margin-top:14px">
+        <b>Wheaton College — Amplify Conference</b> — Workshop presenter, 2024, 2025 &amp; 2026<br><br>
+        <b>Progressive Baptist Church</b> — Licensed minister: preaching, biblical literacy teaching, and discipleship curriculum<br><br>
+        <b>FaithWorks Conference</b> — Preacher, "The User Experience of Church," Apostolic Faith Church (2025)<br><br>
+        <b>Christianity Today</b> — Featured voice, "Meet the Christian Engineers Helping to Shape AI" (2025)<br><br>
+        <b>Ministries &amp; congregations</b> — Ongoing preaching and teaching on Scripture, technology, leadership, and faithful innovation<br><br>
+        <b>Faith-tech founder cohorts</b> — Leading ethical decision-making curriculum for builders in the faith space</p>
+      </div>
+      <div class="pillar">
+        <span class="tag">Corporate &amp; media</span>
+        <h3>Enterprise rooms &amp; airwaves</h3>
+        <p style="margin-top:14px">
+        <b>COUNTRY Financial</b> — Multicultural Resource Group presenter &amp; event leader (2019–20)<br><br>
+        <b>The Point of Reference Podcast</b> — Guest, "Being Before Going" (2023)<br><br>
+        <b>Industry showcases</b> — Multi-state product presentations and partner engagements since 2016</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="podcast" style="background:var(--sand);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">On the airwaves</p>
+      <h2>Podcast <span class="mark">appearances.</span></h2>
+    </div>
+    <div class="speaker-grid" style="align-items:center">
+      <figure style="margin:0">
+        <img src="assets/podcast-legacy-disciple.png" alt="Hunter Guy as a guest on the Legacy Disciple podcast." style="width:100%;border-radius:12px;border:1px solid var(--line);display:block" loading="lazy">
+        <figcaption style="font-family:'Spline Sans Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--taupe);margin-top:10px">Legacy Disciple · Podcast guest</figcaption>
+      </figure>
+      <div>
+        <ul class="engagements" style="margin:0">
+          <li><span class="yr">2023</span><div><b>The Point of Reference Podcast</b> — Guest<span>"Being Before Going" — on identity, purpose, and leading from who you are</span></div></li>
+          <li><span class="yr">2026</span><div><b>Legacy Disciple Podcast</b> — Guest<span>"What Does God Think of AI?"</span></div></li>
+          <li><span class="yr">2023–24</span><div><b>Faith Declassified: Career and Tech Survival Guide</b> — Co-host<span>On faith, career, and navigating technology with conviction</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book" style="text-align:center">
+  <div class="wrap reveal">
+    <p class="eyebrow" style="justify-content:center">Book Hunter</p>
+    <h2 style="font-family:'Fraunces',serif;font-weight:420;font-size:clamp(30px,4.4vw,52px);letter-spacing:-.015em;line-height:1.14;max-width:22ch;margin:22px auto 0">Bring a builder's voice to your <em style="font-weight:340">next room.</em></h2>
+    <p style="max-width:52ch;margin:20px auto 0;color:var(--ink-soft)">Keynotes, executive workshops, panels, guest lectures, and cohort facilitation — tailored to your audience and the decisions in front of them.</p>
+    <div class="book-form" style="margin:36px auto 0;text-align:left">
+      <div><label>I'm reaching out about</label>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px">
+          <button type="button" class="tt-opt" data-mode="work" style="flex:1;min-width:190px;padding:16px 18px;border:2px solid var(--line);border-radius:10px;background:var(--card);cursor:pointer;text-align:left;font-family:'Spline Sans',sans-serif">
+            <span style="display:block;font-weight:600;font-size:15px;color:var(--ink)">Working together</span>
+            <span style="display:block;font-size:13px;color:var(--ink-soft);margin-top:3px">Leadership roles, consulting &amp; advisory</span>
+          </button>
+          <button type="button" class="tt-opt" data-mode="speaking" style="flex:1;min-width:190px;padding:16px 18px;border:2px solid var(--line);border-radius:10px;background:var(--card);cursor:pointer;text-align:left;font-family:'Spline Sans',sans-serif">
+            <span style="display:block;font-weight:600;font-size:15px;color:var(--ink)">Speaking</span>
+            <span style="display:block;font-size:13px;color:var(--ink-soft);margin-top:3px">Keynotes, workshops &amp; lectures</span>
+          </button>
+        </div>
+      </div>
+      <div><label for="c-name">Your name</label><input id="c-name" type="text" placeholder="First and last name"></div>
+      <div><label for="c-org">Organization / event</label><input id="c-org" type="text" placeholder="Company, university, ministry, or event name"></div>
+      <div><label for="c-type">What is this about?</label>
+        <select id="c-type"></select>
+      </div>
+      <div><label for="c-date">Target date(s) / timeline</label><input id="c-date" type="text" placeholder="e.g. October 2026, or flexible"></div>
+      <div><label for="c-msg">About your audience &amp; goals</label><textarea id="c-msg" placeholder="Who's in the room, and what decision or theme matters to them."></textarea></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;justify-content:center">
+        <button class="btn solid" id="c-send" style="cursor:pointer;font-family:'Spline Sans',sans-serif">Compose inquiry email</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="#top" class="to-top" aria-label="Back to top">↑</a>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="f-brand">
+        <div class="f-name">Hunter <em>Guy</em></div>
+        <div class="f-tag">hey, hunter girl</div>
+        <div class="f-loc">Chicago, IL · Working everywhere</div>
+      </div>
+      <div class="f-cols">
+        <div class="f-col">
+          <span class="f-head">Explore</span>
+          <a href="index.html">Home</a>
+          <a href="Speaking.html" aria-current="page">Speaking</a>
+          <a href="Work.html">Work</a>
+          <a href="Media Kit.html">Media kit</a>
+        </div>
+        <div class="f-col">
+          <span class="f-head">Connect</span>
+          <a href="#book">Let's talk</a>
+          <a href="https://www.instagram.com/heyhuntergirl/" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 256 256" fill="currentColor"><path d="M128 80a48 48 0 1 0 48 48 48.05 48.05 0 0 0-48-48Zm0 80a32 32 0 1 1 32-32 32 32 0 0 1-32 32Zm48-136H80a56.06 56.06 0 0 0-56 56v96a56.06 56.06 0 0 0 56 56h96a56.06 56.06 0 0 0 56-56V80a56.06 56.06 0 0 0-56-56Zm40 152a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40V80a40 40 0 0 1 40-40h96a40 40 0 0 1 40 40ZM192 76a12 12 0 1 1-12-12 12 12 0 0 1 12 12Z"/></svg>Instagram</a>
+          <a href="https://www.linkedin.com/in/hunterguy/" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 256 256" fill="currentColor"><path d="M216 24H40a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V40a16 16 0 0 0-16-16Zm0 192H40V40h176ZM96 112v64a8 8 0 0 1-16 0v-64a8 8 0 0 1 16 0Zm88 28v36a8 8 0 0 1-16 0v-36a20 20 0 0 0-40 0v36a8 8 0 0 1-16 0v-64a8 8 0 0 1 15.79-1.78A36 36 0 0 1 184 140ZM100 84a12 12 0 1 1-12-12 12 12 0 0 1 12 12Z"/></svg>LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Hunter Guy · All rights reserved</span>
+      <a href="#top">Back to top</a>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const toTop = document.querySelector('.to-top');
+    if (toTop) {
+      window.addEventListener('scroll', () => {
+        toTop.classList.toggle('show', window.scrollY > 600);
+      }, { passive: true });
+      toTop.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+    const burger = document.querySelector('.nav-burger');
+    if (burger) {
+      const links = document.querySelector('.nav-links');
+      burger.addEventListener('click', () => links.classList.toggle('open'));
+      links.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => links.classList.remove('open')));
+    }
+    document.body.classList.add('page-speaking');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
+    }
+    // Gallery lightbox with prev/next
+    const lb = document.getElementById('lightbox');
+    if (lb) {
+      const figs = [...document.querySelectorAll('#voice figure')];
+      let cur = 0;
+      const showAt = (i) => {
+        cur = (i + figs.length) % figs.length;
+        const fig = figs[cur];
+        lb.querySelector('img').src = fig.querySelector('img').src;
+        lb.querySelector('.lb-caption').textContent = fig.querySelector('figcaption').textContent;
+      };
+      figs.forEach((fig, i) => {
+        fig.querySelector('img').style.cursor = 'zoom-in';
+        fig.setAttribute('tabindex', '0');
+        fig.setAttribute('role', 'button');
+        const open = () => { showAt(i); lb.classList.add('open'); };
+        fig.addEventListener('click', open);
+        fig.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+      });
+      lb.querySelector('.lb-prev').addEventListener('click', (e) => { e.stopPropagation(); showAt(cur - 1); });
+      lb.querySelector('.lb-next').addEventListener('click', (e) => { e.stopPropagation(); showAt(cur + 1); });
+      lb.querySelector('img').addEventListener('click', (e) => e.stopPropagation());
+      lb.addEventListener('click', () => lb.classList.remove('open'));
+      document.addEventListener('keydown', (e) => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') lb.classList.remove('open');
+        if (e.key === 'ArrowLeft') showAt(cur - 1);
+        if (e.key === 'ArrowRight') showAt(cur + 1);
+      });
+    }
+    let mode = 'speaking';
+    const workOpts = ['Design leadership role', 'Fractional leadership / consulting', 'Advisory engagement', 'Something else'];
+    const speakOpts = ['Keynote', 'Executive workshop', 'Panel / fireside', 'Guest lecture', 'Cohort facilitation', 'Podcast / media inquiry', 'Not sure yet'];
+    const typeSel = document.getElementById('c-type');
+    const setMode = (m) => {
+      mode = m;
+      document.querySelectorAll('.tt-opt').forEach((b) => {
+        const on = b.dataset.mode === m;
+        b.style.borderColor = on ? 'var(--m-pink)' : 'var(--line)';
+        b.style.background = on ? 'var(--pink-wash)' : 'var(--card)';
+      });
+      typeSel.innerHTML = (m === 'work' ? workOpts : speakOpts).map((o) => '<option>' + o + '</option>').join('');
+    };
+    document.querySelectorAll('.tt-opt').forEach((b) => b.addEventListener('click', () => setMode(b.dataset.mode)));
+    setMode('speaking');
+    document.getElementById('c-send').addEventListener('click', () => {
+      const v = (id) => document.getElementById(id).value.trim();
+      const type = typeSel.value;
+      const subject = encodeURIComponent((mode === 'speaking' ? 'Speaking' : 'Work') + ' inquiry (' + type + ') — ' + (v('c-org') || 'your event'));
+      const body = encodeURIComponent(
+        'Hi Hunter,\n\n' +
+        'Name: ' + (v('c-name') || '—') + '\n' +
+        'Organization / event: ' + (v('c-org') || '—') + '\n' +
+        'Inquiry type: ' + type + '\n' +
+        'Target date(s): ' + (v('c-date') || '—') + '\n\n' +
+        'About the audience & goals:\n' + (v('c-msg') || '—') + '\n\nThanks!');
+      window.location.href = 'mailto:hunter@studyaloud.com?subject=' + subject + '&body=' + body;
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found — Hunter Guy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,420;0,9..144,560;1,9..144,340&family=Spline+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style></style>
+
+</head>
+<body>
+
+
+<div class="page-work" id="top">
+<div><p class="eyebrow" style="justify-content:center">404</p>
+<h1 style="font-family:'Fraunces',serif;font-weight:420;font-size:clamp(30px,5vw,52px);margin-top:18px">This page isn't on the <span class="mark">blueprint.</span></h1>
+<p style="color:var(--ink-soft);margin-top:16px">Let's get you back to the work.</p>
+<div class="hero-actions" style="justify-content:center"><a class="btn solid" href="index.html">Home</a><a class="btn ghost" href="Work.html">The work</a></div>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.body.classList.add("page-work");
+    document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
+});
+</script>
+
+</body>
+</html>

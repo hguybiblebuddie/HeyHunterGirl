@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Podcast — HeyHuntergirl</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@6..72,400;6..72,560&family=Spline+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400&display=swap');
+    :root {
+      --ink: #1F1E1B;
+      --ink-soft: #5C5A54;
+      --taupe: #8F8D86;
+      --card: #FFFFFF;
+      --paper: #F7F7F5;
+      --line: #E4E4E0;
+      --chart: #C9D31F;
+      --chart-deep: #76800A;
+      --m-blue: #2F7CFF;
+      --m-pink: #FF5DA2;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { font-family: 'Spline Sans', sans-serif; color: var(--ink); line-height: 1.6; background: var(--card); }
+    h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 420; letter-spacing: -0.015em; }
+    h1 { font-size: 56px; line-height: 1.2; }
+    h2 { font-size: 40px; line-height: 1.3; margin-bottom: 24px; }
+    h3 { font-size: 20px; margin-bottom: 12px; }
+    h4 { font-size: 16px; font-weight: 560; margin-bottom: 8px; }
+    p { font-size: 16px; color: var(--ink-soft); margin-bottom: 16px; }
+    a { color: var(--m-blue); text-decoration: none; }
+    a:hover { color: var(--ink); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .section { padding: 80px 0; }
+    .section.dark { background: var(--ink); color: var(--card); }
+    .section.dark h2, .section.dark h3, .section.dark p { color: var(--card); }
+    .hero { padding-top: 120px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 40px; }
+    .hero-content h1 { color: var(--chart); margin-bottom: 16px; }
+    .hero-content .tagline { font-size: 24px; font-family: 'Fraunces', serif; color: var(--ink); margin-bottom: 12px; }
+    .hero-content p { font-size: 16px; margin-bottom: 20px; }
+    .hero-image { width: 100%; aspect-ratio: 1; background: var(--paper); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--taupe); }
+    .episodes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+    .episode-card { background: var(--paper); padding: 32px; border-radius: 8px; }
+    .episode-card .date { font-size: 12px; color: var(--taupe); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px; }
+    .episode-card h4 { color: var(--ink); margin-bottom: 12px; }
+    .episode-card .duration { font-size: 12px; color: var(--taupe); margin-bottom: 12px; }
+    .episode-card p { font-size: 14px; margin-bottom: 16px; }
+    .btn { display: inline-block; padding: 12px 24px; border: 1px solid var(--chart); background: transparent; color: var(--chart); font-family: 'Spline Sans', sans-serif; font-size: 14px; border-radius: 4px; cursor: pointer; text-decoration: none; transition: 200ms; }
+    .btn:hover { background: var(--chart); color: var(--ink); }
+    .btn.primary { background: var(--chart); color: var(--ink); }
+    .btn.primary:hover { background: var(--chart-deep); }
+    .btn.light { border-color: var(--card); color: var(--card); }
+    .btn.light:hover { background: var(--card); color: var(--ink); }
+    .playlists { margin-bottom: 60px; }
+    .playlist { margin-bottom: 40px; }
+    .playlist h3 { color: var(--chart); margin-bottom: 16px; }
+    .playlist p { font-size: 14px; color: var(--ink-soft); margin-bottom: 16px; }
+    .playlist-episodes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .playlist-episode { background: var(--paper); padding: 20px; border-radius: 8px; }
+    .playlist-episode h5 { font-family: 'Fraunces', serif; font-size: 14px; margin-bottom: 8px; }
+    .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .testimonial { background: var(--paper); padding: 40px; border-radius: 8px; position: relative; }
+    .testimonial p { font-size: 16px; color: var(--ink-soft); margin-bottom: 20px; font-style: italic; }
+    .testimonial-author { font-weight: 500; color: var(--ink); font-size: 14px; }
+    .testimonial-title { font-size: 12px; color: var(--taupe); }
+    .cta-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    .subscribe-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .subscribe-button { background: var(--paper); padding: 24px; border-radius: 8px; text-align: center; text-decoration: none; transition: 200ms; }
+    .subscribe-button:hover { background: var(--chart); color: var(--ink); }
+    .subscribe-button h4 { margin-bottom: 12px; }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .section { padding: 60px 0; }
+      .hero, .episodes-grid, .testimonial-grid, .playlist-episodes, .subscribe-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 40px; }
+      h2 { font-size: 28px; }
+      .hero { gap: 40px; }
+    }
+  </style>
+
+</head>
+<body>
+
+
+<nav style="padding: 20px 40px; border-bottom: 1px solid var(--line);">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+    <h2 style="font-size: 24px; margin: 0; font-weight: 560;">Hunter</h2>
+    <div style="display: flex; gap: 40px;">
+      <a href="index.html" style="color: var(--ink);">Home</a>
+      <a href="Work.html" style="color: var(--ink);">Work</a>
+      <a href="Speaking.html" style="color: var(--ink);">Speaking</a>
+      <a href="#podcast" style="color: var(--ink);">Podcast</a>
+      <a href="About.html" style="color: var(--ink);">About</a>
+    </div>
+  </div>
+</nav>
+
+<section class="section" id="podcast">
+  <div class="container">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>The User Experience of You</h1>
+        <div class="tagline">The most important experience you'll ever design is your own.</div>
+        <p>A podcast exploring identity, faith, leadership, purpose, and the lifelong work of becoming through lessons from technology, ministry, leadership, and life.</p>
+        <div class="cta-buttons" style="margin-top: 32px;">
+          <a href="#" class="btn primary">Latest episode →</a>
+          <a href="#subscribe" class="btn">Subscribe</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div style="text-align: center; color: var(--taupe);">
+          <div style="font-size: 48px; margin-bottom: 12px;">🎙️</div>
+          <p>Podcast Set</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--paper);">
+  <div class="container">
+    <h2 style="margin-bottom: 40px;">Latest Episodes</h2>
+    <div class="episodes-grid">
+      <div class="episode-card">
+        <div class="date">July 2026</div>
+        <h4>Who Are You Becoming Now?</h4>
+        <div class="duration">42 minutes</div>
+        <p>An exploration of transitions, reinvention, and the lifelong work of becoming. How design, faith, and leadership shape each other.</p>
+        <a href="#" class="btn">Listen →</a>
+      </div>
+      <div class="episode-card">
+        <div class="date">June 2026</div>
+        <h4>Systems Shape Behavior</h4>
+        <div class="duration">38 minutes</div>
+        <p>The systems in your organization are training people to be certain kinds of humans. How to make that intentional.</p>
+        <a href="#" class="btn">Listen →</a>
+      </div>
+      <div class="episode-card">
+        <div class="date">May 2026</div>
+        <h4>The Gap Between Success and Identity</h4>
+        <div class="duration">45 minutes</div>
+        <p>We chase success without asking if it aligns with who we are. Here's how to notice the misalignment and reset.</p>
+        <a href="#" class="btn">Listen →</a>
+      </div>
+      <div class="episode-card">
+        <div class="date">April 2026</div>
+        <h4>Building Better Humans</h4>
+        <div class="duration">41 minutes</div>
+        <p>Design products and develop people the same way—with intention, iteration, and care. How product thinking applies to people.</p>
+        <a href="#" class="btn">Listen →</a>
+      </div>
+      <div class="episode-card">
+        <div class="date">March 2026</div>
+        <h4>Stewardship in an Age of Self-Promotion</h4>
+        <div class="duration">39 minutes</div>
+        <p>We live in an age of self-promotion, but stewardship calls for something different. How to build without losing your soul.</p>
+        <a href="#" class="btn">Listen →</a>
+      </div>
+      <div class="episode-card">
+        <div class="date">February 2026</div>
+        <h4>What Does Mature Faith Look Like?</h4>
+        <div class="duration">44 minutes</div>
+        <p>An exploration of faith in everyday life, technology, leadership, and the intersection of belief and work.</p>
+        <a href="#" class="btn">Listen →</a>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="#" class="btn">Browse all episodes →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 style="margin-bottom: 60px;">Listen By Theme</h2>
+    
+    <div class="playlists">
+      <div class="playlist">
+        <h3>Identity Pillar</h3>
+        <p>What does it mean to be whole? The gap between success and identity. Who are you becoming?</p>
+        <div class="playlist-episodes">
+          <div class="playlist-episode">
+            <h5>Who Are You Becoming Now?</h5>
+          </div>
+          <div class="playlist-episode">
+            <h5>The Gap Between Success and Identity</h5>
+          </div>
+          <div class="playlist-episode">
+            <h5>Cultural Identity in Leadership</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="playlist">
+        <h3>Faith Pillar</h3>
+        <p>Stewardship in a digital age. Mature faith in everyday life. Building faith-forward cultures.</p>
+        <div class="playlist-episodes">
+          <div class="playlist-episode">
+            <h5>Stewardship in an Age of Self-Promotion</h5>
+          </div>
+          <div class="playlist-episode">
+            <h5>What Does Mature Faith Look Like?</h5>
+          </div>
+          <div class="playlist-episode">
+            <h5>Faith & Technology: A Conversation</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="playlist">
+        <h3>Leadership Pillar</h3>
+        <p>Systems design as people development. Leading with wisdom and integrity. Building better humans.</p>
+        <div class="playlist-episodes">
+          <div class="playlist-episode">
+            <h5>Systems Shape Behavior</h5>
+          </div>
+          <div class="playlist-episode">
+            <h5>Building Better Humans</h5>
+          </div>
+          <div class="playlist-episode">
+            <h5>How to Lead with Integrity</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="playlist">
+        <h3>Stewardship Pillar</h3>
+        <p>What it means to steward your gifts. Building legacy, not just impact. Time, talent, treasure.</p>
+        <div class="playlist-episodes">
+          <div class="playlist-episode">
+            <h5>Stewardship in an Age of Self-Promotion</h5>
+          </div>
+          <div class="playlist-episode">
+            <h5>Building Legacy in a Digital Age</h5>
+          </div>
+          <div class="playlist-episode">
+            <h5>Time, Talent, Treasure: A Framework</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="playlist">
+        <h3>Becoming Pillar</h3>
+        <p>Transitions and reinvention. Growth and transformation. The lifelong work of becoming.</p>
+        <div class="playlist-episodes">
+          <div class="playlist-episode">
+            <h5>Who Are You Becoming Now?</h5>
+          </div>
+          <div class="playlist-episode">
+            <h5>Reinvention & Growth</h5>
+          </div>
+          <div class="playlist-episode">
+            <h5>The Lifelong Work of Becoming</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--paper);">
+  <div class="container">
+    <h2 style="margin-bottom: 40px;">What Listeners Are Saying</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p>"This podcast is the conversation I didn't know I needed. Hunter asks the hard questions and sits with the complexity. A gift."</p>
+        <div class="testimonial-author">Sarah Chen</div>
+        <div class="testimonial-title">Product Leader, Tech Company</div>
+      </div>
+      <div class="testimonial">
+        <p>"Hunter's approach to faith and work isn't tokenized or separate. It's integrated, thoughtful, and real. Exactly what I've been searching for."</p>
+        <div class="testimonial-author">James Martinez</div>
+        <div class="testimonial-title">Founder, Faith-Tech Startup</div>
+      </div>
+      <div class="testimonial">
+        <p>"Every episode challenges me to think differently about identity, systems, and what it means to lead with integrity. I recommend it to everyone."</p>
+        <div class="testimonial-author">Rachel Kim</div>
+        <div class="testimonial-title">Executive Director, Nonprofit</div>
+      </div>
+      <div class="testimonial">
+        <p>"Finally, a voice that doesn't choose between faith and excellence. Hunter shows how they're inseparable. Life-changing."</p>
+        <div class="testimonial-author">Michael Torres</div>
+        <div class="testimonial-title">Pastor & Entrepreneur</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="subscribe">
+  <div class="container">
+    <h2 style="margin-bottom: 40px; text-align: center;">Subscribe & Follow</h2>
+    <div class="subscribe-grid">
+      <a href="#" class="subscribe-button" style="color: var(--ink); text-decoration: none;">
+        <h4>🎵 Spotify</h4>
+        <p style="font-size: 12px; color: var(--taupe);">Listen on Spotify</p>
+      </a>
+      <a href="#" class="subscribe-button" style="color: var(--ink); text-decoration: none;">
+        <h4>🎧 Apple Podcasts</h4>
+        <p style="font-size: 12px; color: var(--taupe);">Listen & Subscribe</p>
+      </a>
+      <a href="#" class="subscribe-button" style="color: var(--ink); text-decoration: none;">
+        <h4>▶️ YouTube</h4>
+        <p style="font-size: 12px; color: var(--taupe);">Watch Episodes</p>
+      </a>
+      <a href="#" class="subscribe-button" style="color: var(--ink); text-decoration: none;">
+        <h4>📧 Email</h4>
+        <p style="font-size: 12px; color: var(--taupe);">Weekly Newsletter</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer style="background: var(--paper); padding: 40px; text-align: center; border-top: 1px solid var(--line);">
+  <p style="font-size: 14px; color: var(--taupe);">© 2026 Hunter Guy. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
